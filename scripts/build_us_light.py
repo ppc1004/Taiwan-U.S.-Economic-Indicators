@@ -5,7 +5,7 @@ Steps:
    survey is used as is).
 2. Give each indicator 1-5 points by comparing it with its own history.
 3. Add up the 9 indicators (9-45 points) and pick the light using Taiwan's official bands.
-Input: data/us_raw.csv   Output: data/us_light.json
+Input: data/us_raw.csv   Output: docs/data/us_light.json (read by the website)
 """
 import json, sys
 from datetime import datetime, timezone
@@ -15,7 +15,8 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent))
 from indicators import INDICATORS, LIGHTS, BASE_START, BASE_END, PERCENTILES
 
-DATA = Path(__file__).resolve().parent.parent / "data"
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "data"
 
 
 def light_for(score):
@@ -63,7 +64,8 @@ def main():
         "indicators": [{**ind, "cutoffs": cutoffs[ind["key"]]} for ind in INDICATORS],
         "months": months,
     }
-    path = DATA / "us_light.json"
+    path = ROOT / "docs" / "data" / "us_light.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():   # keep the old "updated" date if nothing actually changed
         old = json.loads(path.read_text())
         if old.get("months") == months and old.get("indicators") == out["indicators"]:
