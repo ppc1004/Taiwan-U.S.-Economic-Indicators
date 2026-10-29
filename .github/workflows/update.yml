@@ -26,6 +26,9 @@ jobs:
         continue-on-error: true
       - name: Calculate U.S. light
         run: python scripts/build_us_light.py
+      - name: Build Taiwan light
+        run: python scripts/build_taiwan_light.py
+        continue-on-error: true
       - name: Build trade chapter
         run: python scripts/build_taiwan_trade.py
       - name: Build products chapter
