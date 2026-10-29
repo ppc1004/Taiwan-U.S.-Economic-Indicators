@@ -3,6 +3,9 @@
 Source: data/original/taiwan_trade.xlsx, four product sheets (thousand USD),
 January 2004 - December 2024. Product groups follow the HS customs code sections.
 "China" means mainland China only. Hong Kong is not included.
+Detailed export groups (18 HS sections) come from data/original/US Export.xlsx and
+China Export.xlsx. Each is checked against the official table above before use.
+(US Import.xlsx is not used: its column names do not line up with its numbers.)
 Output: docs/data/taiwan_products.json (billion USD, by year)
 """
 import json, re
@@ -50,6 +53,26 @@ def main():
         out["data"][f"{partner}_{flow}"] = {
             "years": yearly.index.tolist(),
             **{name: yearly[name].tolist() for name in yearly.columns},
+        }
+    # Detailed export groups, checked against the official table
+    out["detailed_exports"] = {}
+    for partner, fname in {"us": "US Export.xlsx", "cn": "China Export.xlsx"}.items():
+        df = pd.read_excel(ROOT / "data" / "original" / fname, sheet_name=0)
+        df["year"] = df.iloc[:, 0].map(year_of)
+        df = df.dropna(subset=["year"])
+        cats = [c for c in df.columns[1:] if c != "year" and not str(c).startswith("Unnamed")]
+        yearly = df[cats].apply(pd.to_numeric, errors="coerce").groupby(df["year"].astype(int)).sum() / 1e6
+        yearly.columns = [" ".join(str(c).replace("&amp;", "and").replace("&", "and").split()) for c in yearly.columns]
+        official = out["data"][f"{partner}_exports"]
+        check = {"Machinery and Electrical Equipment": "Machinery and electrical equipment",
+                 "Optical and Precision Instruments": "Optical and precision instruments"}
+        for detail_name, official_name in check.items():
+            a, b = yearly[detail_name].round(2).tolist(), official[official_name]
+            if any(abs(x - y) > 0.05 for x, y in zip(a, b)):
+                raise ValueError(f"{fname}: {detail_name} does not match the official table")
+        out["detailed_exports"][partner] = {
+            "years": yearly.index.tolist(),
+            **{c: yearly[c].round(3).tolist() for c in yearly.columns},
         }
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(out, indent=1, ensure_ascii=False))

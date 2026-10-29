@@ -50,6 +50,7 @@ def orders():
 def investment():
     china = year_table("taiwan_investment_in_china.csv")
     into_tw = year_table("foreign_investment_in_taiwan.csv")
+    china_in = year_table("china_investment_in_taiwan.csv")       # starts in 2015
 
     reg = read("outward_investment_by_region_1.csv")
     years = [int(float(y)) for y in reg.iloc[0, 1:]]
@@ -74,6 +75,7 @@ def investment():
         "regions": {k: [b(v[y]) for y in years] for k, v in regions.items()},
         "us": [b(us.get(y)) if y in us else None for y in years],
         "into_taiwan": [b(into_tw[y][0]) for y in years],
+        "china_into_taiwan": [b(china_in[y][0]) if y in china_in else None for y in years],
     }
 
 
