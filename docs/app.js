@@ -187,3 +187,38 @@ function renderTrade(d) {
 
 fetch("data/us_light.json").then((r) => r.json()).then(renderLight).catch((e) => console.error("U.S. light:", e));
 fetch("data/taiwan_trade.json").then((r) => r.json()).then(renderTrade).catch((e) => console.error("Trade:", e));
+
+/* ---------- 3. Products ---------- */
+function renderProducts(d) {
+  const US = css("--us"), CN = css("--cn");
+  const ue = d.data.us_exports, ce = d.data.cn_exports, Y = ue.years;
+  const M = "Machinery and electrical equipment", O = "Optical and precision instruments";
+  const B = (v) => "$" + v.toFixed(1) + "B";
+  const yearTick = (i, small) => (Y[i] % (small ? 5 : 2) === 0 ? Y[i] : null);
+
+  lineChart(document.getElementById("chart-mach"), {
+    n: Y.length, yMin: 0, yMax: 100, yTicks: [0, 25, 50, 75, 100], yFmt: (t) => "$" + t + "B", xTick: yearTick,
+    series: [
+      { name: "To the U.S.", short: "U.S.", color: US, values: ue[M], markers: true, label: true },
+      { name: "To mainland China", short: "China", color: CN, values: ce[M], markers: true, label: true },
+    ],
+    tip: (i) => `<b>${Y[i]}</b>Machinery exports:${tipRow(US, "To the U.S.", B(ue[M][i]))}${tipRow(CN, "To mainland China", B(ce[M][i]))}`,
+  });
+
+  const shU = ue[M].map((v, i) => (v / ue.total[i]) * 100), shC = ce[M].map((v, i) => (v / ce.total[i]) * 100);
+  lineChart(document.getElementById("chart-mach-share"), {
+    n: Y.length, yMin: 0, yMax: 100, yTicks: [0, 25, 50, 75, 100], yFmt: (t) => t + "%", xTick: yearTick,
+    series: [
+      { name: "Exports to the U.S.", short: "U.S.", color: US, values: shU, markers: true, label: true },
+      { name: "Exports to mainland China", short: "China", color: CN, values: shC, markers: true, label: true },
+    ],
+    tip: (i) => `<b>${Y[i]}</b>Machinery share of exports:${tipRow(US, "To the U.S.", shU[i].toFixed(0) + "%")}${tipRow(CN, "To mainland China", shC[i].toFixed(0) + "%")}`,
+  });
+
+  lineChart(document.getElementById("chart-optical"), {
+    n: Y.length, yMin: 0, yMax: 20, yTicks: [0, 5, 10, 15, 20], yFmt: (t) => "$" + t + "B", xTick: yearTick,
+    series: [{ name: "To mainland China", color: CN, values: ce[O], markers: true }],
+    tip: (i) => `<b>${Y[i]}</b>Optical and precision instruments:${tipRow(CN, "To mainland China", B(ce[O][i]))}`,
+  });
+}
+fetch("data/taiwan_products.json").then((r) => r.json()).then(renderProducts).catch((e) => console.error("Products:", e));
