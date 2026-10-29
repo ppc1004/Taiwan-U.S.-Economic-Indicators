@@ -2,8 +2,8 @@
  "updated": "2026-10-29",
  "latest": {
   "date": "2026-08",
-  "score": 30,
-  "light": "green",
+  "score": 32,
+  "light": "yellow-red",
   "recession": false,
   "indicators": {
    "money": {
@@ -18,9 +18,9 @@
     "value": 1.62,
     "points": 3
    },
-   "jobs": {
-    "value": 0.34,
-    "points": 2
+   "hours": {
+    "value": 10.81,
+    "points": 4
    },
    "exports": {
     "value": 10.69,
@@ -129,16 +129,16 @@
    ]
   },
   {
-   "key": "jobs",
-   "fred": "PAYEMS",
+   "key": "hours",
+   "fred": "AWOTMAN",
    "transform": "yoy",
-   "name": "Non-farm jobs",
-   "taiwan": "Non-farm employment",
+   "name": "Factory overtime hours",
+   "taiwan": "Overtime hours (industry and services)",
    "cutoffs": [
-    -0.63,
-    1.28,
-    1.99,
-    2.57
+    -10.37,
+    -3.95,
+    4.65,
+    11.85
    ]
   },
   {
@@ -210,8 +210,8 @@
  "months": [
   {
    "date": "1993-02",
-   "score": 30,
-   "light": "green",
+   "score": 32,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -226,9 +226,9 @@
      "value": 4.87,
      "points": 4
     },
-    "jobs": {
-     "value": 1.6,
-     "points": 3
+    "hours": {
+     "value": 12.82,
+     "points": 5
     },
     "exports": {
      "value": 1.54,
@@ -254,7 +254,7 @@
   },
   {
    "date": "1993-03",
-   "score": 27,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -270,9 +270,9 @@
      "value": 3.89,
      "points": 4
     },
-    "jobs": {
-     "value": 1.51,
-     "points": 3
+    "hours": {
+     "value": 5.0,
+     "points": 4
     },
     "exports": {
      "value": 5.45,
@@ -298,7 +298,7 @@
   },
   {
    "date": "1993-04",
-   "score": 27,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -314,9 +314,9 @@
      "value": 3.39,
      "points": 3
     },
-    "jobs": {
-     "value": 1.64,
-     "points": 3
+    "hours": {
+     "value": 11.9,
+     "points": 5
     },
     "exports": {
      "value": 5.64,
@@ -342,7 +342,7 @@
   },
   {
    "date": "1993-05",
-   "score": 26,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -358,9 +358,9 @@
      "value": 2.66,
      "points": 3
     },
-    "jobs": {
-     "value": 1.77,
-     "points": 3
+    "hours": {
+     "value": 4.88,
+     "points": 4
     },
     "exports": {
      "value": 8.36,
@@ -386,7 +386,7 @@
   },
   {
    "date": "1993-06",
-   "score": 24,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -402,9 +402,9 @@
      "value": 2.84,
      "points": 3
     },
-    "jobs": {
-     "value": 1.87,
-     "points": 3
+    "hours": {
+     "value": 7.32,
+     "points": 4
     },
     "exports": {
      "value": 1.2,
@@ -446,8 +446,8 @@
      "value": 2.18,
      "points": 3
     },
-    "jobs": {
-     "value": 2.08,
+    "hours": {
+     "value": 7.32,
      "points": 4
     },
     "exports": {
@@ -490,8 +490,8 @@
      "value": 2.63,
      "points": 3
     },
-    "jobs": {
-     "value": 2.1,
+    "hours": {
+     "value": 7.32,
      "points": 4
     },
     "exports": {
@@ -518,7 +518,7 @@
   },
   {
    "date": "1993-09",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -534,9 +534,9 @@
      "value": 2.83,
      "points": 3
     },
-    "jobs": {
-     "value": 2.29,
-     "points": 4
+    "hours": {
+     "value": 15.0,
+     "points": 5
     },
     "exports": {
      "value": 3.2,
@@ -578,8 +578,8 @@
      "value": 2.89,
      "points": 3
     },
-    "jobs": {
-     "value": 2.38,
+    "hours": {
+     "value": 9.76,
      "points": 4
     },
     "exports": {
@@ -606,7 +606,7 @@
   },
   {
    "date": "1993-11",
-   "score": 29,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -622,9 +622,9 @@
      "value": 2.97,
      "points": 3
     },
-    "jobs": {
-     "value": 2.47,
-     "points": 4
+    "hours": {
+     "value": 12.2,
+     "points": 5
     },
     "exports": {
      "value": 4.02,
@@ -666,8 +666,8 @@
      "value": 3.41,
      "points": 3
     },
-    "jobs": {
-     "value": 2.58,
+    "hours": {
+     "value": 14.63,
      "points": 5
     },
     "exports": {
@@ -710,8 +710,8 @@
      "value": 3.31,
      "points": 3
     },
-    "jobs": {
-     "value": 2.56,
+    "hours": {
+     "value": 9.3,
      "points": 4
     },
     "exports": {
@@ -754,8 +754,8 @@
      "value": 2.87,
      "points": 3
     },
-    "jobs": {
-     "value": 2.49,
+    "hours": {
+     "value": 6.82,
      "points": 4
     },
     "exports": {
@@ -798,8 +798,8 @@
      "value": 4.01,
      "points": 4
     },
-    "jobs": {
-     "value": 2.95,
+    "hours": {
+     "value": 19.05,
      "points": 5
     },
     "exports": {
@@ -826,7 +826,7 @@
   },
   {
    "date": "1994-04",
-   "score": 34,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -842,9 +842,9 @@
      "value": 4.34,
      "points": 4
     },
-    "jobs": {
-     "value": 2.98,
-     "points": 5
+    "hours": {
+     "value": 6.38,
+     "points": 4
     },
     "exports": {
      "value": 6.2,
@@ -886,8 +886,8 @@
      "value": 5.22,
      "points": 4
     },
-    "jobs": {
-     "value": 3.03,
+    "hours": {
+     "value": 13.95,
      "points": 5
     },
     "exports": {
@@ -930,8 +930,8 @@
      "value": 5.69,
      "points": 4
     },
-    "jobs": {
-     "value": 3.16,
+    "hours": {
+     "value": 13.64,
      "points": 5
     },
     "exports": {
@@ -974,8 +974,8 @@
      "value": 5.55,
      "points": 4
     },
-    "jobs": {
-     "value": 3.2,
+    "hours": {
+     "value": 13.64,
      "points": 5
     },
     "exports": {
@@ -1018,8 +1018,8 @@
      "value": 6.38,
      "points": 5
     },
-    "jobs": {
-     "value": 3.33,
+    "hours": {
+     "value": 13.64,
      "points": 5
     },
     "exports": {
@@ -1046,7 +1046,7 @@
   },
   {
    "date": "1994-09",
-   "score": 35,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -1062,9 +1062,9 @@
      "value": 6.16,
      "points": 5
     },
-    "jobs": {
-     "value": 3.41,
-     "points": 5
+    "hours": {
+     "value": 6.52,
+     "points": 4
     },
     "exports": {
      "value": 13.17,
@@ -1106,8 +1106,8 @@
      "value": 6.23,
      "points": 5
     },
-    "jobs": {
-     "value": 3.33,
+    "hours": {
+     "value": 13.33,
      "points": 5
     },
     "exports": {
@@ -1134,7 +1134,7 @@
   },
   {
    "date": "1994-11",
-   "score": 36,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -1150,9 +1150,9 @@
      "value": 6.47,
      "points": 5
     },
-    "jobs": {
-     "value": 3.46,
-     "points": 5
+    "hours": {
+     "value": 8.7,
+     "points": 4
     },
     "exports": {
      "value": 13.22,
@@ -1178,7 +1178,7 @@
   },
   {
    "date": "1994-12",
-   "score": 33,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -1194,9 +1194,9 @@
      "value": 6.93,
      "points": 5
     },
-    "jobs": {
-     "value": 3.43,
-     "points": 5
+    "hours": {
+     "value": 8.51,
+     "points": 4
     },
     "exports": {
      "value": 13.09,
@@ -1222,7 +1222,7 @@
   },
   {
    "date": "1995-01",
-   "score": 35,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -1238,9 +1238,9 @@
      "value": 6.8,
      "points": 5
     },
-    "jobs": {
-     "value": 3.47,
-     "points": 5
+    "hours": {
+     "value": 10.64,
+     "points": 4
     },
     "exports": {
      "value": 14.43,
@@ -1266,7 +1266,7 @@
   },
   {
    "date": "1995-02",
-   "score": 33,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -1282,9 +1282,9 @@
      "value": 6.62,
      "points": 5
     },
-    "jobs": {
-     "value": 3.47,
-     "points": 5
+    "hours": {
+     "value": 8.51,
+     "points": 4
     },
     "exports": {
      "value": 17.4,
@@ -1310,7 +1310,7 @@
   },
   {
    "date": "1995-03",
-   "score": 29,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1326,9 +1326,9 @@
      "value": 5.72,
      "points": 4
     },
-    "jobs": {
-     "value": 3.23,
-     "points": 5
+    "hours": {
+     "value": -2.0,
+     "points": 3
     },
     "exports": {
      "value": 10.36,
@@ -1354,7 +1354,7 @@
   },
   {
    "date": "1995-04",
-   "score": 31,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1370,9 +1370,9 @@
      "value": 4.91,
      "points": 4
     },
-    "jobs": {
-     "value": 3.06,
-     "points": 5
+    "hours": {
+     "value": -12.0,
+     "points": 1
     },
     "exports": {
      "value": 15.31,
@@ -1398,8 +1398,8 @@
   },
   {
    "date": "1995-05",
-   "score": 32,
-   "light": "yellow-red",
+   "score": 29,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -1414,9 +1414,9 @@
      "value": 4.95,
      "points": 4
     },
-    "jobs": {
-     "value": 2.74,
-     "points": 5
+    "hours": {
+     "value": -8.16,
+     "points": 2
     },
     "exports": {
      "value": 14.67,
@@ -1442,7 +1442,7 @@
   },
   {
    "date": "1995-06",
-   "score": 30,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1458,9 +1458,9 @@
      "value": 4.59,
      "points": 4
     },
-    "jobs": {
-     "value": 2.67,
-     "points": 5
+    "hours": {
+     "value": -8.0,
+     "points": 2
     },
     "exports": {
      "value": 10.96,
@@ -1486,7 +1486,7 @@
   },
   {
    "date": "1995-07",
-   "score": 29,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1502,9 +1502,9 @@
      "value": 4.01,
      "points": 4
     },
-    "jobs": {
-     "value": 2.42,
-     "points": 4
+    "hours": {
+     "value": -8.0,
+     "points": 2
     },
     "exports": {
      "value": 13.79,
@@ -1530,7 +1530,7 @@
   },
   {
    "date": "1995-08",
-   "score": 30,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1546,9 +1546,9 @@
      "value": 4.69,
      "points": 4
     },
-    "jobs": {
-     "value": 2.39,
-     "points": 4
+    "hours": {
+     "value": -6.0,
+     "points": 2
     },
     "exports": {
      "value": 11.69,
@@ -1574,7 +1574,7 @@
   },
   {
    "date": "1995-09",
-   "score": 34,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -1590,9 +1590,9 @@
      "value": 4.78,
      "points": 4
     },
-    "jobs": {
-     "value": 2.28,
-     "points": 4
+    "hours": {
+     "value": -4.08,
+     "points": 2
     },
     "exports": {
      "value": 13.55,
@@ -1618,8 +1618,8 @@
   },
   {
    "date": "1995-10",
-   "score": 33,
-   "light": "yellow-red",
+   "score": 31,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -1634,9 +1634,9 @@
      "value": 3.76,
      "points": 4
     },
-    "jobs": {
-     "value": 2.23,
-     "points": 4
+    "hours": {
+     "value": -7.84,
+     "points": 2
     },
     "exports": {
      "value": 13.77,
@@ -1662,7 +1662,7 @@
   },
   {
    "date": "1995-11",
-   "score": 28,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1678,9 +1678,9 @@
      "value": 3.33,
      "points": 3
     },
-    "jobs": {
-     "value": 1.98,
-     "points": 3
+    "hours": {
+     "value": -6.0,
+     "points": 2
     },
     "exports": {
      "value": 10.53,
@@ -1706,7 +1706,7 @@
   },
   {
    "date": "1995-12",
-   "score": 30,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1722,9 +1722,9 @@
      "value": 2.64,
      "points": 3
     },
-    "jobs": {
-     "value": 1.85,
-     "points": 3
+    "hours": {
+     "value": -11.76,
+     "points": 1
     },
     "exports": {
      "value": 9.94,
@@ -1750,8 +1750,8 @@
   },
   {
    "date": "1996-01",
-   "score": 24,
-   "light": "green",
+   "score": 22,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -1766,9 +1766,9 @@
      "value": 1.88,
      "points": 3
     },
-    "jobs": {
-     "value": 1.56,
-     "points": 3
+    "hours": {
+     "value": -13.46,
+     "points": 1
     },
     "exports": {
      "value": 8.21,
@@ -1794,7 +1794,7 @@
   },
   {
    "date": "1996-02",
-   "score": 28,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1810,9 +1810,9 @@
      "value": 3.49,
      "points": 3
     },
-    "jobs": {
-     "value": 1.75,
-     "points": 3
+    "hours": {
+     "value": -7.84,
+     "points": 2
     },
     "exports": {
      "value": 10.82,
@@ -1838,7 +1838,7 @@
   },
   {
    "date": "1996-03",
-   "score": 29,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1854,9 +1854,9 @@
      "value": 3.19,
      "points": 3
     },
-    "jobs": {
-     "value": 1.78,
-     "points": 3
+    "hours": {
+     "value": -8.16,
+     "points": 2
     },
     "exports": {
      "value": 8.47,
@@ -1882,7 +1882,7 @@
   },
   {
    "date": "1996-04",
-   "score": 30,
+   "score": 31,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1898,9 +1898,9 @@
      "value": 4.4,
      "points": 4
     },
-    "jobs": {
-     "value": 1.79,
-     "points": 3
+    "hours": {
+     "value": 6.82,
+     "points": 4
     },
     "exports": {
      "value": 7.76,
@@ -1942,8 +1942,8 @@
      "value": 4.66,
      "points": 4
     },
-    "jobs": {
-     "value": 2.09,
+    "hours": {
+     "value": 6.67,
      "points": 4
     },
     "exports": {
@@ -1970,7 +1970,7 @@
   },
   {
    "date": "1996-06",
-   "score": 31,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -1986,9 +1986,9 @@
      "value": 5.11,
      "points": 4
     },
-    "jobs": {
-     "value": 2.11,
-     "points": 4
+    "hours": {
+     "value": 4.35,
+     "points": 3
     },
     "exports": {
      "value": 9.56,
@@ -2014,7 +2014,7 @@
   },
   {
    "date": "1996-07",
-   "score": 31,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -2030,9 +2030,9 @@
      "value": 5.57,
      "points": 4
     },
-    "jobs": {
-     "value": 2.25,
-     "points": 4
+    "hours": {
+     "value": 4.35,
+     "points": 3
     },
     "exports": {
      "value": 4.27,
@@ -2058,7 +2058,7 @@
   },
   {
    "date": "1996-08",
-   "score": 28,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -2074,9 +2074,9 @@
      "value": 4.72,
      "points": 4
     },
-    "jobs": {
-     "value": 2.17,
-     "points": 4
+    "hours": {
+     "value": 2.13,
+     "points": 3
     },
     "exports": {
      "value": 4.59,
@@ -2102,7 +2102,7 @@
   },
   {
    "date": "1996-09",
-   "score": 28,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -2118,9 +2118,9 @@
      "value": 4.95,
      "points": 4
     },
-    "jobs": {
-     "value": 2.14,
-     "points": 4
+    "hours": {
+     "value": 4.26,
+     "points": 3
     },
     "exports": {
      "value": 2.34,
@@ -2146,7 +2146,7 @@
   },
   {
    "date": "1996-10",
-   "score": 29,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -2162,9 +2162,9 @@
      "value": 5.17,
      "points": 4
     },
-    "jobs": {
-     "value": 2.24,
-     "points": 4
+    "hours": {
+     "value": 2.13,
+     "points": 3
     },
     "exports": {
      "value": 8.32,
@@ -2190,7 +2190,7 @@
   },
   {
    "date": "1996-11",
-   "score": 29,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -2206,9 +2206,9 @@
      "value": 5.86,
      "points": 4
     },
-    "jobs": {
-     "value": 2.35,
-     "points": 4
+    "hours": {
+     "value": 4.26,
+     "points": 3
     },
     "exports": {
      "value": 9.2,
@@ -2250,8 +2250,8 @@
      "value": 6.17,
      "points": 5
     },
-    "jobs": {
-     "value": 2.38,
+    "hours": {
+     "value": 8.89,
      "points": 4
     },
     "exports": {
@@ -2294,8 +2294,8 @@
      "value": 6.95,
      "points": 5
     },
-    "jobs": {
-     "value": 2.57,
+    "hours": {
+     "value": 8.89,
      "points": 4
     },
     "exports": {
@@ -2338,8 +2338,8 @@
      "value": 6.66,
      "points": 5
     },
-    "jobs": {
-     "value": 2.47,
+    "hours": {
+     "value": 6.38,
      "points": 4
     },
     "exports": {
@@ -2366,7 +2366,7 @@
   },
   {
    "date": "1997-03",
-   "score": 32,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2382,9 +2382,9 @@
      "value": 7.47,
      "points": 5
     },
-    "jobs": {
-     "value": 2.52,
-     "points": 4
+    "hours": {
+     "value": 13.33,
+     "points": 5
     },
     "exports": {
      "value": 10.39,
@@ -2410,7 +2410,7 @@
   },
   {
    "date": "1997-04",
-   "score": 35,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2426,9 +2426,9 @@
      "value": 6.54,
      "points": 5
     },
-    "jobs": {
-     "value": 2.63,
-     "points": 5
+    "hours": {
+     "value": 8.51,
+     "points": 4
     },
     "exports": {
      "value": 10.9,
@@ -2470,8 +2470,8 @@
      "value": 6.33,
      "points": 5
     },
-    "jobs": {
-     "value": 2.56,
+    "hours": {
+     "value": 6.25,
      "points": 4
     },
     "exports": {
@@ -2498,7 +2498,7 @@
   },
   {
    "date": "1997-06",
-   "score": 34,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2514,9 +2514,9 @@
      "value": 6.01,
      "points": 5
     },
-    "jobs": {
-     "value": 2.54,
-     "points": 4
+    "hours": {
+     "value": 2.08,
+     "points": 3
     },
     "exports": {
      "value": 11.02,
@@ -2542,8 +2542,8 @@
   },
   {
    "date": "1997-07",
-   "score": 39,
-   "light": "red",
+   "score": 37,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -2558,9 +2558,9 @@
      "value": 6.9,
      "points": 5
     },
-    "jobs": {
-     "value": 2.58,
-     "points": 5
+    "hours": {
+     "value": 4.17,
+     "points": 3
     },
     "exports": {
      "value": 15.41,
@@ -2602,8 +2602,8 @@
      "value": 7.42,
      "points": 5
     },
-    "jobs": {
-     "value": 2.4,
+    "hours": {
+     "value": 6.25,
      "points": 4
     },
     "exports": {
@@ -2630,8 +2630,8 @@
   },
   {
    "date": "1997-09",
-   "score": 39,
-   "light": "red",
+   "score": 37,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -2646,9 +2646,9 @@
      "value": 7.73,
      "points": 5
     },
-    "jobs": {
-     "value": 2.64,
-     "points": 5
+    "hours": {
+     "value": 4.08,
+     "points": 3
     },
     "exports": {
      "value": 12.38,
@@ -2674,7 +2674,7 @@
   },
   {
    "date": "1997-10",
-   "score": 36,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2690,9 +2690,9 @@
      "value": 8.65,
      "points": 5
     },
-    "jobs": {
-     "value": 2.7,
-     "points": 5
+    "hours": {
+     "value": 8.33,
+     "points": 4
     },
     "exports": {
      "value": 7.61,
@@ -2718,7 +2718,7 @@
   },
   {
    "date": "1997-11",
-   "score": 36,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2734,9 +2734,9 @@
      "value": 8.51,
      "points": 5
     },
-    "jobs": {
-     "value": 2.71,
-     "points": 5
+    "hours": {
+     "value": 6.12,
+     "points": 4
     },
     "exports": {
      "value": 5.44,
@@ -2762,7 +2762,7 @@
   },
   {
    "date": "1997-12",
-   "score": 35,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2778,9 +2778,9 @@
      "value": 8.28,
      "points": 5
     },
-    "jobs": {
-     "value": 2.81,
-     "points": 5
+    "hours": {
+     "value": 6.12,
+     "points": 4
     },
     "exports": {
      "value": 8.51,
@@ -2806,7 +2806,7 @@
   },
   {
    "date": "1998-01",
-   "score": 35,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2822,9 +2822,9 @@
      "value": 8.58,
      "points": 5
     },
-    "jobs": {
-     "value": 2.84,
-     "points": 5
+    "hours": {
+     "value": 6.12,
+     "points": 4
     },
     "exports": {
      "value": 8.36,
@@ -2850,7 +2850,7 @@
   },
   {
    "date": "1998-02",
-   "score": 34,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2866,9 +2866,9 @@
      "value": 7.48,
      "points": 5
     },
-    "jobs": {
-     "value": 2.75,
-     "points": 5
+    "hours": {
+     "value": 2.0,
+     "points": 3
     },
     "exports": {
      "value": 3.6,
@@ -2894,8 +2894,8 @@
   },
   {
    "date": "1998-03",
-   "score": 33,
-   "light": "yellow-red",
+   "score": 31,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -2910,9 +2910,9 @@
      "value": 6.84,
      "points": 5
     },
-    "jobs": {
-     "value": 2.6,
-     "points": 5
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 2.29,
@@ -2938,7 +2938,7 @@
   },
   {
    "date": "1998-04",
-   "score": 34,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2954,9 +2954,9 @@
      "value": 7.08,
      "points": 5
     },
-    "jobs": {
-     "value": 2.58,
-     "points": 5
+    "hours": {
+     "value": -3.92,
+     "points": 3
     },
     "exports": {
      "value": -0.18,
@@ -2982,7 +2982,7 @@
   },
   {
    "date": "1998-05",
-   "score": 35,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -2998,9 +2998,9 @@
      "value": 7.19,
      "points": 5
     },
-    "jobs": {
-     "value": 2.68,
-     "points": 5
+    "hours": {
+     "value": -3.92,
+     "points": 3
     },
     "exports": {
      "value": -0.95,
@@ -3026,8 +3026,8 @@
   },
   {
    "date": "1998-06",
-   "score": 33,
-   "light": "yellow-red",
+   "score": 31,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -3042,9 +3042,9 @@
      "value": 6.06,
      "points": 5
     },
-    "jobs": {
-     "value": 2.65,
-     "points": 5
+    "hours": {
+     "value": -2.04,
+     "points": 3
     },
     "exports": {
      "value": -2.44,
@@ -3070,7 +3070,7 @@
   },
   {
    "date": "1998-07",
-   "score": 27,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -3086,9 +3086,9 @@
      "value": 4.76,
      "points": 4
     },
-    "jobs": {
-     "value": 2.52,
-     "points": 4
+    "hours": {
+     "value": -4.0,
+     "points": 2
     },
     "exports": {
      "value": -4.93,
@@ -3114,7 +3114,7 @@
   },
   {
    "date": "1998-08",
-   "score": 29,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -3130,9 +3130,9 @@
      "value": 5.87,
      "points": 5
     },
-    "jobs": {
-     "value": 2.81,
-     "points": 5
+    "hours": {
+     "value": -5.88,
+     "points": 2
     },
     "exports": {
      "value": -3.96,
@@ -3158,7 +3158,7 @@
   },
   {
    "date": "1998-09",
-   "score": 26,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -3174,9 +3174,9 @@
      "value": 4.85,
      "points": 4
     },
-    "jobs": {
-     "value": 2.56,
-     "points": 4
+    "hours": {
+     "value": -7.84,
+     "points": 2
     },
     "exports": {
      "value": -2.66,
@@ -3202,7 +3202,7 @@
   },
   {
    "date": "1998-10",
-   "score": 26,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -3218,9 +3218,9 @@
      "value": 4.64,
      "points": 4
     },
-    "jobs": {
-     "value": 2.44,
-     "points": 4
+    "hours": {
+     "value": -7.69,
+     "points": 2
     },
     "exports": {
      "value": -0.04,
@@ -3246,7 +3246,7 @@
   },
   {
    "date": "1998-11",
-   "score": 28,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -3262,9 +3262,9 @@
      "value": 3.74,
      "points": 3
     },
-    "jobs": {
-     "value": 2.41,
-     "points": 4
+    "hours": {
+     "value": -7.69,
+     "points": 2
     },
     "exports": {
      "value": 1.04,
@@ -3290,8 +3290,8 @@
   },
   {
    "date": "1998-12",
-   "score": 32,
-   "light": "yellow-red",
+   "score": 30,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -3306,9 +3306,9 @@
      "value": 3.77,
      "points": 4
     },
-    "jobs": {
-     "value": 2.45,
-     "points": 4
+    "hours": {
+     "value": -7.69,
+     "points": 2
     },
     "exports": {
      "value": -0.83,
@@ -3334,7 +3334,7 @@
   },
   {
    "date": "1999-01",
-   "score": 34,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3350,9 +3350,9 @@
      "value": 3.76,
      "points": 4
     },
-    "jobs": {
-     "value": 2.32,
-     "points": 4
+    "hours": {
+     "value": -7.69,
+     "points": 2
     },
     "exports": {
      "value": -0.84,
@@ -3378,7 +3378,7 @@
   },
   {
    "date": "1999-02",
-   "score": 30,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -3394,9 +3394,9 @@
      "value": 4.23,
      "points": 4
     },
-    "jobs": {
-     "value": 2.48,
-     "points": 4
+    "hours": {
+     "value": -5.88,
+     "points": 2
     },
     "exports": {
      "value": 0.2,
@@ -3422,7 +3422,7 @@
   },
   {
    "date": "1999-03",
-   "score": 31,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -3438,9 +3438,9 @@
      "value": 4.43,
      "points": 4
     },
-    "jobs": {
-     "value": 2.45,
-     "points": 4
+    "hours": {
+     "value": -5.88,
+     "points": 2
     },
     "exports": {
      "value": -0.34,
@@ -3466,8 +3466,8 @@
   },
   {
    "date": "1999-04",
-   "score": 32,
-   "light": "yellow-red",
+   "score": 31,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -3482,9 +3482,9 @@
      "value": 4.31,
      "points": 4
     },
-    "jobs": {
-     "value": 2.51,
-     "points": 4
+    "hours": {
+     "value": -2.04,
+     "points": 3
     },
     "exports": {
      "value": 2.26,
@@ -3510,8 +3510,8 @@
   },
   {
    "date": "1999-05",
-   "score": 32,
-   "light": "yellow-red",
+   "score": 31,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -3526,9 +3526,9 @@
      "value": 4.28,
      "points": 4
     },
-    "jobs": {
-     "value": 2.36,
-     "points": 4
+    "hours": {
+     "value": -2.04,
+     "points": 3
     },
     "exports": {
      "value": 2.9,
@@ -3554,7 +3554,7 @@
   },
   {
    "date": "1999-06",
-   "score": 34,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3570,9 +3570,9 @@
      "value": 4.83,
      "points": 4
     },
-    "jobs": {
-     "value": 2.39,
-     "points": 4
+    "hours": {
+     "value": 2.08,
+     "points": 3
     },
     "exports": {
      "value": 3.48,
@@ -3598,7 +3598,7 @@
   },
   {
    "date": "1999-07",
-   "score": 36,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3614,9 +3614,9 @@
      "value": 5.84,
      "points": 4
     },
-    "jobs": {
-     "value": 2.54,
-     "points": 4
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 6.3,
@@ -3642,7 +3642,7 @@
   },
   {
    "date": "1999-08",
-   "score": 34,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3658,9 +3658,9 @@
      "value": 4.11,
      "points": 4
     },
-    "jobs": {
-     "value": 2.39,
-     "points": 4
+    "hours": {
+     "value": 2.08,
+     "points": 3
     },
     "exports": {
      "value": 9.2,
@@ -3686,7 +3686,7 @@
   },
   {
    "date": "1999-09",
-   "score": 33,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3702,9 +3702,9 @@
      "value": 3.74,
      "points": 3
     },
-    "jobs": {
-     "value": 2.39,
-     "points": 4
+    "hours": {
+     "value": 4.26,
+     "points": 3
     },
     "exports": {
      "value": 8.24,
@@ -3730,7 +3730,7 @@
   },
   {
    "date": "1999-10",
-   "score": 34,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3746,9 +3746,9 @@
      "value": 4.3,
      "points": 4
     },
-    "jobs": {
-     "value": 2.54,
-     "points": 4
+    "hours": {
+     "value": 2.08,
+     "points": 3
     },
     "exports": {
      "value": 5.53,
@@ -3774,7 +3774,7 @@
   },
   {
    "date": "1999-11",
-   "score": 34,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3790,9 +3790,9 @@
      "value": 4.88,
      "points": 4
     },
-    "jobs": {
-     "value": 2.55,
-     "points": 4
+    "hours": {
+     "value": 2.08,
+     "points": 3
     },
     "exports": {
      "value": 6.73,
@@ -3818,7 +3818,7 @@
   },
   {
    "date": "1999-12",
-   "score": 33,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3834,9 +3834,9 @@
      "value": 5.22,
      "points": 4
     },
-    "jobs": {
-     "value": 2.5,
-     "points": 4
+    "hours": {
+     "value": 2.08,
+     "points": 3
     },
     "exports": {
      "value": 9.73,
@@ -3862,7 +3862,7 @@
   },
   {
    "date": "2000-01",
-   "score": 36,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3878,9 +3878,9 @@
      "value": 4.62,
      "points": 4
     },
-    "jobs": {
-     "value": 2.59,
-     "points": 5
+    "hours": {
+     "value": 2.08,
+     "points": 3
     },
     "exports": {
      "value": 9.6,
@@ -3906,8 +3906,8 @@
   },
   {
    "date": "2000-02",
-   "score": 32,
-   "light": "yellow-red",
+   "score": 31,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -3922,9 +3922,9 @@
      "value": 4.31,
      "points": 4
     },
-    "jobs": {
-     "value": 2.34,
-     "points": 4
+    "hours": {
+     "value": 4.17,
+     "points": 3
     },
     "exports": {
      "value": 10.65,
@@ -3950,7 +3950,7 @@
   },
   {
    "date": "2000-03",
-   "score": 36,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -3966,9 +3966,9 @@
      "value": 4.45,
      "points": 4
     },
-    "jobs": {
-     "value": 2.63,
-     "points": 5
+    "hours": {
+     "value": -2.08,
+     "points": 3
     },
     "exports": {
      "value": 12.05,
@@ -3994,7 +3994,7 @@
   },
   {
    "date": "2000-04",
-   "score": 36,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -4010,9 +4010,9 @@
      "value": 4.83,
      "points": 4
     },
-    "jobs": {
-     "value": 2.56,
-     "points": 4
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 12.27,
@@ -4038,7 +4038,7 @@
   },
   {
    "date": "2000-05",
-   "score": 33,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -4054,9 +4054,9 @@
      "value": 4.45,
      "points": 4
     },
-    "jobs": {
-     "value": 2.56,
-     "points": 4
+    "hours": {
+     "value": -2.08,
+     "points": 3
     },
     "exports": {
      "value": 11.85,
@@ -4082,7 +4082,7 @@
   },
   {
    "date": "2000-06",
-   "score": 34,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -4098,9 +4098,9 @@
      "value": 4.57,
      "points": 4
     },
-    "jobs": {
-     "value": 2.31,
-     "points": 4
+    "hours": {
+     "value": -4.08,
+     "points": 2
     },
     "exports": {
      "value": 14.83,
@@ -4126,8 +4126,8 @@
   },
   {
    "date": "2000-07",
-   "score": 32,
-   "light": "yellow-red",
+   "score": 31,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -4142,9 +4142,9 @@
      "value": 3.77,
      "points": 4
     },
-    "jobs": {
-     "value": 2.17,
-     "points": 4
+    "hours": {
+     "value": -2.08,
+     "points": 3
     },
     "exports": {
      "value": 12.44,
@@ -4170,7 +4170,7 @@
   },
   {
    "date": "2000-08",
-   "score": 31,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -4186,9 +4186,9 @@
      "value": 3.07,
      "points": 3
     },
-    "jobs": {
-     "value": 2.05,
-     "points": 4
+    "hours": {
+     "value": -6.12,
+     "points": 2
     },
     "exports": {
      "value": 12.7,
@@ -4214,7 +4214,7 @@
   },
   {
    "date": "2000-09",
-   "score": 31,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -4230,9 +4230,9 @@
      "value": 3.97,
      "points": 4
     },
-    "jobs": {
-     "value": 1.98,
-     "points": 3
+    "hours": {
+     "value": -6.12,
+     "points": 2
     },
     "exports": {
      "value": 10.98,
@@ -4258,7 +4258,7 @@
   },
   {
    "date": "2000-10",
-   "score": 26,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -4274,9 +4274,9 @@
      "value": 2.31,
      "points": 3
     },
-    "jobs": {
-     "value": 1.67,
-     "points": 3
+    "hours": {
+     "value": -6.12,
+     "points": 2
     },
     "exports": {
      "value": 9.84,
@@ -4302,7 +4302,7 @@
   },
   {
    "date": "2000-11",
-   "score": 25,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -4318,9 +4318,9 @@
      "value": 1.85,
      "points": 3
     },
-    "jobs": {
-     "value": 1.6,
-     "points": 3
+    "hours": {
+     "value": -10.2,
+     "points": 2
     },
     "exports": {
      "value": 8.64,
@@ -4346,7 +4346,7 @@
   },
   {
    "date": "2000-12",
-   "score": 20,
+   "score": 18,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -4362,9 +4362,9 @@
      "value": 0.74,
      "points": 2
     },
-    "jobs": {
-     "value": 1.48,
-     "points": 3
+    "hours": {
+     "value": -16.33,
+     "points": 1
     },
     "exports": {
      "value": 5.64,
@@ -4390,7 +4390,7 @@
   },
   {
    "date": "2001-01",
-   "score": 20,
+   "score": 18,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -4406,9 +4406,9 @@
      "value": 0.4,
      "points": 2
     },
-    "jobs": {
-     "value": 1.29,
-     "points": 3
+    "hours": {
+     "value": -14.29,
+     "points": 1
     },
     "exports": {
      "value": 5.56,
@@ -4434,7 +4434,7 @@
   },
   {
    "date": "2001-02",
-   "score": 20,
+   "score": 19,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -4450,9 +4450,9 @@
      "value": -0.57,
      "points": 2
     },
-    "jobs": {
-     "value": 1.27,
-     "points": 2
+    "hours": {
+     "value": -20.0,
+     "points": 1
     },
     "exports": {
      "value": 5.27,
@@ -4478,7 +4478,7 @@
   },
   {
    "date": "2001-03",
-   "score": 15,
+   "score": 14,
    "light": "blue",
    "recession": false,
    "indicators": {
@@ -4494,9 +4494,9 @@
      "value": -1.12,
      "points": 2
     },
-    "jobs": {
-     "value": 0.87,
-     "points": 2
+    "hours": {
+     "value": -12.77,
+     "points": 1
     },
     "exports": {
      "value": 1.28,
@@ -4522,7 +4522,7 @@
   },
   {
    "date": "2001-04",
-   "score": 18,
+   "score": 17,
    "light": "yellow-blue",
    "recession": true,
    "indicators": {
@@ -4538,9 +4538,9 @@
      "value": -2.06,
      "points": 2
     },
-    "jobs": {
-     "value": 0.44,
-     "points": 2
+    "hours": {
+     "value": -14.58,
+     "points": 1
     },
     "exports": {
      "value": -1.6,
@@ -4566,7 +4566,7 @@
   },
   {
    "date": "2001-05",
-   "score": 16,
+   "score": 15,
    "light": "blue",
    "recession": true,
    "indicators": {
@@ -4582,9 +4582,9 @@
      "value": -2.79,
      "points": 1
     },
-    "jobs": {
-     "value": 0.23,
-     "points": 2
+    "hours": {
+     "value": -14.89,
+     "points": 1
     },
     "exports": {
      "value": -0.52,
@@ -4610,7 +4610,7 @@
   },
   {
    "date": "2001-06",
-   "score": 16,
+   "score": 15,
    "light": "blue",
    "recession": true,
    "indicators": {
@@ -4626,9 +4626,9 @@
      "value": -3.34,
      "points": 1
     },
-    "jobs": {
-     "value": 0.18,
-     "points": 2
+    "hours": {
+     "value": -14.89,
+     "points": 1
     },
     "exports": {
      "value": -6.2,
@@ -4654,7 +4654,7 @@
   },
   {
    "date": "2001-07",
-   "score": 15,
+   "score": 14,
    "light": "blue",
    "recession": true,
    "indicators": {
@@ -4670,9 +4670,9 @@
      "value": -3.77,
      "points": 1
     },
-    "jobs": {
-     "value": -0.04,
-     "points": 2
+    "hours": {
+     "value": -10.64,
+     "points": 1
     },
     "exports": {
      "value": -8.77,
@@ -4698,7 +4698,7 @@
   },
   {
    "date": "2001-08",
-   "score": 15,
+   "score": 14,
    "light": "blue",
    "recession": true,
    "indicators": {
@@ -4714,9 +4714,9 @@
      "value": -3.62,
      "points": 1
     },
-    "jobs": {
-     "value": -0.16,
-     "points": 2
+    "hours": {
+     "value": -13.04,
+     "points": 1
     },
     "exports": {
      "value": -9.92,
@@ -4742,7 +4742,7 @@
   },
   {
    "date": "2001-09",
-   "score": 15,
+   "score": 14,
    "light": "blue",
    "recession": true,
    "indicators": {
@@ -4758,9 +4758,9 @@
      "value": -4.55,
      "points": 1
     },
-    "jobs": {
-     "value": -0.43,
-     "points": 2
+    "hours": {
+     "value": -15.22,
+     "points": 1
     },
     "exports": {
      "value": -14.39,
@@ -4802,8 +4802,8 @@
      "value": -4.44,
      "points": 1
     },
-    "jobs": {
-     "value": -0.68,
+    "hours": {
+     "value": -17.39,
      "points": 1
     },
     "exports": {
@@ -4846,8 +4846,8 @@
      "value": -5.04,
      "points": 1
     },
-    "jobs": {
-     "value": -1.07,
+    "hours": {
+     "value": -13.64,
      "points": 1
     },
     "exports": {
@@ -4874,7 +4874,7 @@
   },
   {
    "date": "2001-12",
-   "score": 14,
+   "score": 15,
    "light": "blue",
    "recession": false,
    "indicators": {
@@ -4890,9 +4890,9 @@
      "value": -4.77,
      "points": 1
     },
-    "jobs": {
-     "value": -1.31,
-     "points": 1
+    "hours": {
+     "value": -9.76,
+     "points": 2
     },
     "exports": {
      "value": -14.51,
@@ -4918,7 +4918,7 @@
   },
   {
    "date": "2002-01",
-   "score": 15,
+   "score": 16,
    "light": "blue",
    "recession": false,
    "indicators": {
@@ -4934,9 +4934,9 @@
      "value": -3.68,
      "points": 1
     },
-    "jobs": {
-     "value": -1.39,
-     "points": 1
+    "hours": {
+     "value": -7.14,
+     "points": 2
     },
     "exports": {
      "value": -12.66,
@@ -4962,8 +4962,8 @@
   },
   {
    "date": "2002-02",
-   "score": 16,
-   "light": "blue",
+   "score": 18,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -4978,9 +4978,9 @@
      "value": -3.04,
      "points": 1
     },
-    "jobs": {
-     "value": -1.54,
-     "points": 1
+    "hours": {
+     "value": -2.5,
+     "points": 3
     },
     "exports": {
      "value": -12.97,
@@ -5006,7 +5006,7 @@
   },
   {
    "date": "2002-03",
-   "score": 18,
+   "score": 20,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -5022,9 +5022,9 @@
      "value": -2.14,
      "points": 2
     },
-    "jobs": {
-     "value": -1.53,
-     "points": 1
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": -10.02,
@@ -5050,7 +5050,7 @@
   },
   {
    "date": "2002-04",
-   "score": 19,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -5066,9 +5066,9 @@
      "value": -1.31,
      "points": 2
     },
-    "jobs": {
-     "value": -1.39,
-     "points": 1
+    "hours": {
+     "value": 2.44,
+     "points": 3
     },
     "exports": {
      "value": -6.53,
@@ -5094,7 +5094,7 @@
   },
   {
    "date": "2002-05",
-   "score": 17,
+   "score": 20,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -5110,9 +5110,9 @@
      "value": -0.43,
      "points": 2
     },
-    "jobs": {
-     "value": -1.34,
-     "points": 1
+    "hours": {
+     "value": 7.5,
+     "points": 4
     },
     "exports": {
      "value": -6.83,
@@ -5138,8 +5138,8 @@
   },
   {
    "date": "2002-06",
-   "score": 20,
-   "light": "yellow-blue",
+   "score": 23,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -5154,9 +5154,9 @@
      "value": 0.92,
      "points": 2
     },
-    "jobs": {
-     "value": -1.23,
-     "points": 1
+    "hours": {
+     "value": 7.5,
+     "points": 4
     },
     "exports": {
      "value": -2.74,
@@ -5182,7 +5182,7 @@
   },
   {
    "date": "2002-07",
-   "score": 20,
+   "score": 22,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -5198,9 +5198,9 @@
      "value": 1.54,
      "points": 2
     },
-    "jobs": {
-     "value": -1.2,
-     "points": 1
+    "hours": {
+     "value": 2.38,
+     "points": 3
     },
     "exports": {
      "value": 0.67,
@@ -5226,8 +5226,8 @@
   },
   {
    "date": "2002-08",
-   "score": 21,
-   "light": "yellow-blue",
+   "score": 24,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -5242,9 +5242,9 @@
      "value": 1.54,
      "points": 3
     },
-    "jobs": {
-     "value": -1.09,
-     "points": 1
+    "hours": {
+     "value": 7.5,
+     "points": 4
     },
     "exports": {
      "value": -0.18,
@@ -5270,7 +5270,7 @@
   },
   {
    "date": "2002-09",
-   "score": 24,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -5286,9 +5286,9 @@
      "value": 2.15,
      "points": 3
     },
-    "jobs": {
-     "value": -0.96,
-     "points": 1
+    "hours": {
+     "value": 7.69,
+     "points": 4
     },
     "exports": {
      "value": 5.02,
@@ -5314,8 +5314,8 @@
   },
   {
    "date": "2002-10",
-   "score": 20,
-   "light": "yellow-blue",
+   "score": 23,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -5330,9 +5330,9 @@
      "value": 2.21,
      "points": 3
     },
-    "jobs": {
-     "value": -0.64,
-     "points": 1
+    "hours": {
+     "value": 10.53,
+     "points": 4
     },
     "exports": {
      "value": 4.68,
@@ -5358,8 +5358,8 @@
   },
   {
    "date": "2002-11",
-   "score": 22,
-   "light": "yellow-blue",
+   "score": 24,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -5374,9 +5374,9 @@
      "value": 3.41,
      "points": 3
     },
-    "jobs": {
-     "value": -0.4,
-     "points": 2
+    "hours": {
+     "value": 10.53,
+     "points": 4
     },
     "exports": {
      "value": 6.98,
@@ -5402,8 +5402,8 @@
   },
   {
    "date": "2002-12",
-   "score": 22,
-   "light": "yellow-blue",
+   "score": 25,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -5418,9 +5418,9 @@
      "value": 2.88,
      "points": 3
     },
-    "jobs": {
-     "value": -0.4,
-     "points": 2
+    "hours": {
+     "value": 16.22,
+     "points": 5
     },
     "exports": {
      "value": 4.85,
@@ -5446,7 +5446,7 @@
   },
   {
    "date": "2003-01",
-   "score": 23,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -5462,9 +5462,9 @@
      "value": 3.07,
      "points": 3
     },
-    "jobs": {
-     "value": -0.22,
-     "points": 2
+    "hours": {
+     "value": 7.69,
+     "points": 4
     },
     "exports": {
      "value": 4.09,
@@ -5490,7 +5490,7 @@
   },
   {
    "date": "2003-02",
-   "score": 20,
+   "score": 22,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -5506,9 +5506,9 @@
      "value": 3.18,
      "points": 3
     },
-    "jobs": {
-     "value": -0.23,
-     "points": 2
+    "hours": {
+     "value": 7.69,
+     "points": 4
     },
     "exports": {
      "value": 4.82,
@@ -5534,7 +5534,7 @@
   },
   {
    "date": "2003-03",
-   "score": 24,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -5550,9 +5550,9 @@
      "value": 2.17,
      "points": 3
     },
-    "jobs": {
-     "value": -0.37,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 3.58,
@@ -5578,7 +5578,7 @@
   },
   {
    "date": "2003-04",
-   "score": 20,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -5594,9 +5594,9 @@
      "value": 1.07,
      "points": 2
     },
-    "jobs": {
-     "value": -0.34,
-     "points": 2
+    "hours": {
+     "value": -2.38,
+     "points": 3
     },
     "exports": {
      "value": 0.56,
@@ -5638,8 +5638,8 @@
      "value": 0.64,
      "points": 2
     },
-    "jobs": {
-     "value": -0.33,
+    "hours": {
+     "value": -4.65,
      "points": 2
     },
     "exports": {
@@ -5682,8 +5682,8 @@
      "value": -0.06,
      "points": 2
     },
-    "jobs": {
-     "value": -0.37,
+    "hours": {
+     "value": -4.65,
      "points": 2
     },
     "exports": {
@@ -5726,8 +5726,8 @@
      "value": 0.49,
      "points": 2
     },
-    "jobs": {
-     "value": -0.31,
+    "hours": {
+     "value": -6.98,
      "points": 2
     },
     "exports": {
@@ -5770,8 +5770,8 @@
      "value": 0.38,
      "points": 2
     },
-    "jobs": {
-     "value": -0.33,
+    "hours": {
+     "value": -4.65,
      "points": 2
     },
     "exports": {
@@ -5798,8 +5798,8 @@
   },
   {
    "date": "2003-09",
-   "score": 31,
-   "light": "green",
+   "score": 32,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -5814,9 +5814,9 @@
      "value": 0.94,
      "points": 2
     },
-    "jobs": {
-     "value": -0.19,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 4.16,
@@ -5842,7 +5842,7 @@
   },
   {
    "date": "2003-10",
-   "score": 29,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -5858,9 +5858,9 @@
      "value": 1.28,
      "points": 2
     },
-    "jobs": {
-     "value": -0.14,
-     "points": 2
+    "hours": {
+     "value": 2.38,
+     "points": 3
     },
     "exports": {
      "value": 7.42,
@@ -5886,7 +5886,7 @@
   },
   {
    "date": "2003-11",
-   "score": 28,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -5902,9 +5902,9 @@
      "value": 1.39,
      "points": 2
     },
-    "jobs": {
-     "value": -0.1,
-     "points": 2
+    "hours": {
+     "value": 7.14,
+     "points": 4
     },
     "exports": {
      "value": 8.84,
@@ -5930,7 +5930,7 @@
   },
   {
    "date": "2003-12",
-   "score": 32,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -5946,9 +5946,9 @@
      "value": 1.98,
      "points": 3
     },
-    "jobs": {
-     "value": 0.1,
-     "points": 2
+    "hours": {
+     "value": 4.65,
+     "points": 4
     },
     "exports": {
      "value": 11.6,
@@ -5974,7 +5974,7 @@
   },
   {
    "date": "2004-01",
-   "score": 28,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -5990,9 +5990,9 @@
      "value": 1.28,
      "points": 2
     },
-    "jobs": {
-     "value": 0.14,
-     "points": 2
+    "hours": {
+     "value": 7.14,
+     "points": 4
     },
     "exports": {
      "value": 9.74,
@@ -6018,8 +6018,8 @@
   },
   {
    "date": "2004-02",
-   "score": 31,
-   "light": "green",
+   "score": 33,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -6034,9 +6034,9 @@
      "value": 1.77,
      "points": 3
     },
-    "jobs": {
-     "value": 0.29,
-     "points": 2
+    "hours": {
+     "value": 7.14,
+     "points": 4
     },
     "exports": {
      "value": 13.26,
@@ -6062,7 +6062,7 @@
   },
   {
    "date": "2004-03",
-   "score": 34,
+   "score": 37,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -6078,9 +6078,9 @@
      "value": 1.63,
      "points": 3
     },
-    "jobs": {
-     "value": 0.69,
-     "points": 2
+    "hours": {
+     "value": 12.2,
+     "points": 5
     },
     "exports": {
      "value": 16.26,
@@ -6106,7 +6106,7 @@
   },
   {
    "date": "2004-04",
-   "score": 34,
+   "score": 36,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -6122,9 +6122,9 @@
      "value": 2.62,
      "points": 3
     },
-    "jobs": {
-     "value": 0.95,
-     "points": 2
+    "hours": {
+     "value": 9.76,
+     "points": 4
     },
     "exports": {
      "value": 16.77,
@@ -6150,7 +6150,7 @@
   },
   {
    "date": "2004-05",
-   "score": 32,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -6166,9 +6166,9 @@
      "value": 3.38,
      "points": 3
     },
-    "jobs": {
-     "value": 1.15,
-     "points": 2
+    "hours": {
+     "value": 12.2,
+     "points": 5
     },
     "exports": {
      "value": 18.83,
@@ -6194,7 +6194,7 @@
   },
   {
    "date": "2004-06",
-   "score": 28,
+   "score": 31,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -6210,9 +6210,9 @@
      "value": 2.45,
      "points": 3
     },
-    "jobs": {
-     "value": 1.24,
-     "points": 2
+    "hours": {
+     "value": 12.2,
+     "points": 5
     },
     "exports": {
      "value": 12.42,
@@ -6238,8 +6238,8 @@
   },
   {
    "date": "2004-07",
-   "score": 30,
-   "light": "green",
+   "score": 32,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -6254,9 +6254,9 @@
      "value": 2.68,
      "points": 3
     },
-    "jobs": {
-     "value": 1.28,
-     "points": 3
+    "hours": {
+     "value": 15.0,
+     "points": 5
     },
     "exports": {
      "value": 12.75,
@@ -6282,7 +6282,7 @@
   },
   {
    "date": "2004-08",
-   "score": 30,
+   "score": 31,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -6298,9 +6298,9 @@
      "value": 2.98,
      "points": 3
     },
-    "jobs": {
-     "value": 1.37,
-     "points": 3
+    "hours": {
+     "value": 9.76,
+     "points": 4
     },
     "exports": {
      "value": 14.61,
@@ -6326,7 +6326,7 @@
   },
   {
    "date": "2004-09",
-   "score": 29,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -6342,9 +6342,9 @@
      "value": 2.45,
      "points": 3
     },
-    "jobs": {
-     "value": 1.41,
-     "points": 3
+    "hours": {
+     "value": 9.52,
+     "points": 4
     },
     "exports": {
      "value": 13.61,
@@ -6370,8 +6370,8 @@
   },
   {
    "date": "2004-10",
-   "score": 31,
-   "light": "green",
+   "score": 32,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -6386,9 +6386,9 @@
      "value": 3.2,
      "points": 3
     },
-    "jobs": {
-     "value": 1.53,
-     "points": 3
+    "hours": {
+     "value": 4.65,
+     "points": 4
     },
     "exports": {
      "value": 13.07,
@@ -6430,8 +6430,8 @@
      "value": 2.76,
      "points": 3
     },
-    "jobs": {
-     "value": 1.55,
+    "hours": {
+     "value": -2.22,
      "points": 3
     },
     "exports": {
@@ -6474,8 +6474,8 @@
      "value": 3.55,
      "points": 3
     },
-    "jobs": {
-     "value": 1.56,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -6518,8 +6518,8 @@
      "value": 3.77,
      "points": 4
     },
-    "jobs": {
-     "value": 1.55,
+    "hours": {
+     "value": 2.22,
      "points": 3
     },
     "exports": {
@@ -6562,8 +6562,8 @@
      "value": 3.89,
      "points": 4
     },
-    "jobs": {
-     "value": 1.69,
+    "hours": {
+     "value": 2.22,
      "points": 3
     },
     "exports": {
@@ -6606,8 +6606,8 @@
      "value": 4.17,
      "points": 4
     },
-    "jobs": {
-     "value": 1.54,
+    "hours": {
+     "value": -2.17,
      "points": 3
     },
     "exports": {
@@ -6650,8 +6650,8 @@
      "value": 4.01,
      "points": 4
     },
-    "jobs": {
-     "value": 1.6,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -6678,7 +6678,7 @@
   },
   {
    "date": "2005-05",
-   "score": 27,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -6694,9 +6694,9 @@
      "value": 3.35,
      "points": 3
     },
-    "jobs": {
-     "value": 1.51,
-     "points": 3
+    "hours": {
+     "value": -4.35,
+     "points": 2
     },
     "exports": {
      "value": 9.05,
@@ -6722,7 +6722,7 @@
   },
   {
    "date": "2005-06",
-   "score": 30,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -6738,9 +6738,9 @@
      "value": 4.63,
      "points": 4
     },
-    "jobs": {
-     "value": 1.63,
-     "points": 3
+    "hours": {
+     "value": -4.35,
+     "points": 2
     },
     "exports": {
      "value": 11.76,
@@ -6766,7 +6766,7 @@
   },
   {
    "date": "2005-07",
-   "score": 29,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -6782,9 +6782,9 @@
      "value": 3.53,
      "points": 3
     },
-    "jobs": {
-     "value": 1.86,
-     "points": 3
+    "hours": {
+     "value": -4.35,
+     "points": 2
     },
     "exports": {
      "value": 10.51,
@@ -6826,8 +6826,8 @@
      "value": 3.8,
      "points": 4
     },
-    "jobs": {
-     "value": 1.94,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -6870,8 +6870,8 @@
      "value": 1.66,
      "points": 3
     },
-    "jobs": {
-     "value": 1.86,
+    "hours": {
+     "value": -2.17,
      "points": 3
     },
     "exports": {
@@ -6914,8 +6914,8 @@
      "value": 2.02,
      "points": 3
     },
-    "jobs": {
-     "value": 1.67,
+    "hours": {
+     "value": 2.22,
      "points": 3
     },
     "exports": {
@@ -6958,8 +6958,8 @@
      "value": 2.91,
      "points": 3
     },
-    "jobs": {
-     "value": 1.88,
+    "hours": {
+     "value": 4.55,
      "points": 3
     },
     "exports": {
@@ -7002,8 +7002,8 @@
      "value": 2.63,
      "points": 3
     },
-    "jobs": {
-     "value": 1.91,
+    "hours": {
+     "value": 2.22,
      "points": 3
     },
     "exports": {
@@ -7030,7 +7030,7 @@
   },
   {
    "date": "2006-01",
-   "score": 31,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7046,9 +7046,9 @@
      "value": 2.42,
      "points": 3
     },
-    "jobs": {
-     "value": 1.99,
-     "points": 4
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 12.27,
@@ -7074,7 +7074,7 @@
   },
   {
    "date": "2006-02",
-   "score": 31,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7090,9 +7090,9 @@
      "value": 1.72,
      "points": 3
     },
-    "jobs": {
-     "value": 2.03,
-     "points": 4
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 12.41,
@@ -7118,7 +7118,7 @@
   },
   {
    "date": "2006-03",
-   "score": 33,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -7134,9 +7134,9 @@
      "value": 2.09,
      "points": 3
     },
-    "jobs": {
-     "value": 2.17,
-     "points": 4
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 13.18,
@@ -7162,7 +7162,7 @@
   },
   {
    "date": "2006-04",
-   "score": 31,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7178,9 +7178,9 @@
      "value": 2.18,
      "points": 3
     },
-    "jobs": {
-     "value": 2.01,
-     "points": 4
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 11.47,
@@ -7222,8 +7222,8 @@
      "value": 2.12,
      "points": 3
     },
-    "jobs": {
-     "value": 1.91,
+    "hours": {
+     "value": 2.27,
      "points": 3
     },
     "exports": {
@@ -7266,8 +7266,8 @@
      "value": 1.98,
      "points": 3
     },
-    "jobs": {
-     "value": 1.78,
+    "hours": {
+     "value": 2.27,
      "points": 3
     },
     "exports": {
@@ -7310,8 +7310,8 @@
      "value": 2.25,
      "points": 3
     },
-    "jobs": {
-     "value": 1.66,
+    "hours": {
+     "value": 4.55,
      "points": 3
     },
     "exports": {
@@ -7354,8 +7354,8 @@
      "value": 2.37,
      "points": 3
     },
-    "jobs": {
-     "value": 1.63,
+    "hours": {
+     "value": -2.22,
      "points": 3
     },
     "exports": {
@@ -7382,7 +7382,7 @@
   },
   {
    "date": "2006-09",
-   "score": 30,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7398,9 +7398,9 @@
      "value": 4.22,
      "points": 4
     },
-    "jobs": {
-     "value": 1.69,
-     "points": 3
+    "hours": {
+     "value": -6.67,
+     "points": 2
     },
     "exports": {
      "value": 15.81,
@@ -7426,7 +7426,7 @@
   },
   {
    "date": "2006-10",
-   "score": 28,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7442,9 +7442,9 @@
      "value": 2.85,
      "points": 3
     },
-    "jobs": {
-     "value": 1.64,
-     "points": 3
+    "hours": {
+     "value": -8.7,
+     "points": 2
     },
     "exports": {
      "value": 14.32,
@@ -7470,7 +7470,7 @@
   },
   {
    "date": "2006-11",
-   "score": 28,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7486,9 +7486,9 @@
      "value": 1.66,
      "points": 3
     },
-    "jobs": {
-     "value": 1.53,
-     "points": 3
+    "hours": {
+     "value": -10.87,
+     "points": 1
     },
     "exports": {
      "value": 14.27,
@@ -7514,7 +7514,7 @@
   },
   {
    "date": "2006-12",
-   "score": 27,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7530,9 +7530,9 @@
      "value": 2.17,
      "points": 3
     },
-    "jobs": {
-     "value": 1.55,
-     "points": 3
+    "hours": {
+     "value": -8.7,
+     "points": 2
     },
     "exports": {
      "value": 13.15,
@@ -7558,7 +7558,7 @@
   },
   {
    "date": "2007-01",
-   "score": 26,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7574,9 +7574,9 @@
      "value": 1.66,
      "points": 3
     },
-    "jobs": {
-     "value": 1.51,
-     "points": 3
+    "hours": {
+     "value": -10.87,
+     "points": 1
     },
     "exports": {
      "value": 12.77,
@@ -7602,7 +7602,7 @@
   },
   {
    "date": "2007-02",
-   "score": 26,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7618,9 +7618,9 @@
      "value": 2.58,
      "points": 3
     },
-    "jobs": {
-     "value": 1.35,
-     "points": 3
+    "hours": {
+     "value": -10.87,
+     "points": 1
     },
     "exports": {
      "value": 10.78,
@@ -7646,7 +7646,7 @@
   },
   {
    "date": "2007-03",
-   "score": 26,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7662,9 +7662,9 @@
      "value": 2.53,
      "points": 3
     },
-    "jobs": {
-     "value": 1.28,
-     "points": 3
+    "hours": {
+     "value": -4.44,
+     "points": 2
     },
     "exports": {
      "value": 12.61,
@@ -7706,8 +7706,8 @@
      "value": 2.91,
      "points": 3
     },
-    "jobs": {
-     "value": 1.2,
+    "hours": {
+     "value": -6.67,
      "points": 2
     },
     "exports": {
@@ -7750,8 +7750,8 @@
      "value": 2.98,
      "points": 3
     },
-    "jobs": {
-     "value": 1.28,
+    "hours": {
+     "value": -6.67,
      "points": 2
     },
     "exports": {
@@ -7794,8 +7794,8 @@
      "value": 2.71,
      "points": 3
     },
-    "jobs": {
-     "value": 1.27,
+    "hours": {
+     "value": -4.44,
      "points": 2
     },
     "exports": {
@@ -7838,8 +7838,8 @@
      "value": 2.64,
      "points": 3
     },
-    "jobs": {
-     "value": 1.11,
+    "hours": {
+     "value": -8.7,
      "points": 2
     },
     "exports": {
@@ -7882,8 +7882,8 @@
      "value": 2.39,
      "points": 3
     },
-    "jobs": {
-     "value": 0.97,
+    "hours": {
+     "value": -4.55,
      "points": 2
     },
     "exports": {
@@ -7910,7 +7910,7 @@
   },
   {
    "date": "2007-09",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7926,9 +7926,9 @@
      "value": 2.79,
      "points": 3
     },
-    "jobs": {
-     "value": 0.93,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 14.53,
@@ -7954,7 +7954,7 @@
   },
   {
    "date": "2007-10",
-   "score": 27,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -7970,9 +7970,9 @@
      "value": 2.62,
      "points": 3
     },
-    "jobs": {
-     "value": 0.97,
-     "points": 2
+    "hours": {
+     "value": -2.38,
+     "points": 3
     },
     "exports": {
      "value": 15.13,
@@ -7998,7 +7998,7 @@
   },
   {
    "date": "2007-11",
-   "score": 27,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -8014,9 +8014,9 @@
      "value": 3.21,
      "points": 3
     },
-    "jobs": {
-     "value": 0.9,
-     "points": 2
+    "hours": {
+     "value": 2.44,
+     "points": 3
     },
     "exports": {
      "value": 14.82,
@@ -8058,8 +8058,8 @@
      "value": 2.2,
      "points": 3
     },
-    "jobs": {
-     "value": 0.83,
+    "hours": {
+     "value": -4.76,
      "points": 2
     },
     "exports": {
@@ -8086,7 +8086,7 @@
   },
   {
    "date": "2008-01",
-   "score": 25,
+   "score": 26,
    "light": "green",
    "recession": true,
    "indicators": {
@@ -8102,9 +8102,9 @@
      "value": 2.41,
      "points": 3
     },
-    "jobs": {
-     "value": 0.67,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 15.67,
@@ -8130,7 +8130,7 @@
   },
   {
    "date": "2008-02",
-   "score": 23,
+   "score": 24,
    "light": "green",
    "recession": true,
    "indicators": {
@@ -8146,9 +8146,9 @@
      "value": 1.06,
      "points": 2
     },
-    "jobs": {
-     "value": 0.56,
-     "points": 2
+    "hours": {
+     "value": -2.44,
+     "points": 3
     },
     "exports": {
      "value": 18.72,
@@ -8190,8 +8190,8 @@
      "value": 0.57,
      "points": 2
     },
-    "jobs": {
-     "value": 0.34,
+    "hours": {
+     "value": -4.65,
      "points": 2
     },
     "exports": {
@@ -8234,8 +8234,8 @@
      "value": -0.74,
      "points": 2
     },
-    "jobs": {
-     "value": 0.14,
+    "hours": {
+     "value": -4.76,
      "points": 2
     },
     "exports": {
@@ -8278,8 +8278,8 @@
      "value": -1.44,
      "points": 2
     },
-    "jobs": {
-     "value": -0.1,
+    "hours": {
+     "value": -7.14,
      "points": 2
     },
     "exports": {
@@ -8322,8 +8322,8 @@
      "value": -1.72,
      "points": 2
     },
-    "jobs": {
-     "value": -0.27,
+    "hours": {
+     "value": -9.3,
      "points": 2
     },
     "exports": {
@@ -8366,8 +8366,8 @@
      "value": -1.96,
      "points": 2
     },
-    "jobs": {
-     "value": -0.4,
+    "hours": {
+     "value": -9.52,
      "points": 2
     },
     "exports": {
@@ -8394,7 +8394,7 @@
   },
   {
    "date": "2008-08",
-   "score": 19,
+   "score": 18,
    "light": "yellow-blue",
    "recession": true,
    "indicators": {
@@ -8410,9 +8410,9 @@
      "value": -3.68,
      "points": 1
     },
-    "jobs": {
-     "value": -0.58,
-     "points": 2
+    "hours": {
+     "value": -11.9,
+     "points": 1
     },
     "exports": {
      "value": 15.39,
@@ -8454,8 +8454,8 @@
      "value": -8.13,
      "points": 1
     },
-    "jobs": {
-     "value": -0.97,
+    "hours": {
+     "value": -16.67,
      "points": 1
     },
     "exports": {
@@ -8498,8 +8498,8 @@
      "value": -6.95,
      "points": 1
     },
-    "jobs": {
-     "value": -1.36,
+    "hours": {
+     "value": -17.07,
      "points": 1
     },
     "exports": {
@@ -8542,8 +8542,8 @@
      "value": -8.67,
      "points": 1
     },
-    "jobs": {
-     "value": -1.99,
+    "hours": {
+     "value": -23.81,
      "points": 1
     },
     "exports": {
@@ -8586,8 +8586,8 @@
      "value": -11.28,
      "points": 1
     },
-    "jobs": {
-     "value": -2.56,
+    "hours": {
+     "value": -27.5,
      "points": 1
     },
     "exports": {
@@ -8630,8 +8630,8 @@
      "value": -13.37,
      "points": 1
     },
-    "jobs": {
-     "value": -3.12,
+    "hours": {
+     "value": -29.27,
      "points": 1
     },
     "exports": {
@@ -8674,8 +8674,8 @@
      "value": -13.56,
      "points": 1
     },
-    "jobs": {
-     "value": -3.62,
+    "hours": {
+     "value": -32.5,
      "points": 1
     },
     "exports": {
@@ -8718,8 +8718,8 @@
      "value": -14.66,
      "points": 1
     },
-    "jobs": {
-     "value": -4.17,
+    "hours": {
+     "value": -36.59,
      "points": 1
     },
     "exports": {
@@ -8762,8 +8762,8 @@
      "value": -14.81,
      "points": 1
     },
-    "jobs": {
-     "value": -4.5,
+    "hours": {
+     "value": -27.5,
      "points": 1
     },
     "exports": {
@@ -8806,8 +8806,8 @@
      "value": -15.16,
      "points": 1
     },
-    "jobs": {
-     "value": -4.63,
+    "hours": {
+     "value": -28.21,
      "points": 1
     },
     "exports": {
@@ -8850,8 +8850,8 @@
      "value": -15.28,
      "points": 1
     },
-    "jobs": {
-     "value": -4.86,
+    "hours": {
+     "value": -28.21,
      "points": 1
     },
     "exports": {
@@ -8894,8 +8894,8 @@
      "value": -14.02,
      "points": 1
     },
-    "jobs": {
-     "value": -4.97,
+    "hours": {
+     "value": -21.05,
      "points": 1
     },
     "exports": {
@@ -8938,8 +8938,8 @@
      "value": -11.69,
      "points": 1
     },
-    "jobs": {
-     "value": -4.91,
+    "hours": {
+     "value": -18.92,
      "points": 1
     },
     "exports": {
@@ -8982,8 +8982,8 @@
      "value": -6.81,
      "points": 1
     },
-    "jobs": {
-     "value": -4.76,
+    "hours": {
+     "value": -11.43,
      "points": 1
     },
     "exports": {
@@ -9010,8 +9010,8 @@
   },
   {
    "date": "2009-10",
-   "score": 15,
-   "light": "blue",
+   "score": 17,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -9026,9 +9026,9 @@
      "value": -7.47,
      "points": 1
     },
-    "jobs": {
-     "value": -4.57,
-     "points": 1
+    "hours": {
+     "value": -2.94,
+     "points": 3
     },
     "exports": {
      "value": -7.14,
@@ -9054,7 +9054,7 @@
   },
   {
    "date": "2009-11",
-   "score": 17,
+   "score": 20,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -9070,9 +9070,9 @@
      "value": -5.83,
      "points": 1
     },
-    "jobs": {
-     "value": -4.05,
-     "points": 1
+    "hours": {
+     "value": 6.25,
+     "points": 4
     },
     "exports": {
      "value": -0.67,
@@ -9098,7 +9098,7 @@
   },
   {
    "date": "2009-12",
-   "score": 23,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -9114,9 +9114,9 @@
      "value": -2.7,
      "points": 1
     },
-    "jobs": {
-     "value": -3.74,
-     "points": 1
+    "hours": {
+     "value": 20.69,
+     "points": 5
     },
     "exports": {
      "value": 9.83,
@@ -9142,7 +9142,7 @@
   },
   {
    "date": "2010-01",
-   "score": 26,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -9158,9 +9158,9 @@
      "value": 0.87,
      "points": 2
     },
-    "jobs": {
-     "value": -3.19,
-     "points": 1
+    "hours": {
+     "value": 24.14,
+     "points": 5
     },
     "exports": {
      "value": 15.74,
@@ -9186,7 +9186,7 @@
   },
   {
    "date": "2010-02",
-   "score": 26,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -9202,9 +9202,9 @@
      "value": 1.87,
      "points": 3
     },
-    "jobs": {
-     "value": -2.71,
-     "points": 1
+    "hours": {
+     "value": 25.93,
+     "points": 5
     },
     "exports": {
      "value": 14.78,
@@ -9230,7 +9230,7 @@
   },
   {
    "date": "2010-03",
-   "score": 32,
+   "score": 36,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9246,9 +9246,9 @@
      "value": 4.2,
      "points": 4
     },
-    "jobs": {
-     "value": -1.98,
-     "points": 1
+    "hours": {
+     "value": 38.46,
+     "points": 5
     },
     "exports": {
      "value": 19.38,
@@ -9274,7 +9274,7 @@
   },
   {
    "date": "2010-04",
-   "score": 33,
+   "score": 37,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9290,9 +9290,9 @@
      "value": 5.43,
      "points": 4
     },
-    "jobs": {
-     "value": -1.29,
-     "points": 1
+    "hours": {
+     "value": 31.03,
+     "points": 5
     },
     "exports": {
      "value": 19.71,
@@ -9318,7 +9318,7 @@
   },
   {
    "date": "2010-05",
-   "score": 34,
+   "score": 37,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9334,9 +9334,9 @@
      "value": 7.94,
      "points": 5
     },
-    "jobs": {
-     "value": -0.63,
-     "points": 2
+    "hours": {
+     "value": 42.86,
+     "points": 5
     },
     "exports": {
      "value": 20.77,
@@ -9362,7 +9362,7 @@
   },
   {
    "date": "2010-06",
-   "score": 32,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9378,9 +9378,9 @@
      "value": 8.55,
      "points": 5
     },
-    "jobs": {
-     "value": -0.38,
-     "points": 2
+    "hours": {
+     "value": 35.71,
+     "points": 5
     },
     "exports": {
      "value": 18.11,
@@ -9406,7 +9406,7 @@
   },
   {
    "date": "2010-07",
-   "score": 32,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9422,9 +9422,9 @@
      "value": 7.75,
      "points": 5
     },
-    "jobs": {
-     "value": -0.19,
-     "points": 2
+    "hours": {
+     "value": 26.67,
+     "points": 5
     },
     "exports": {
      "value": 18.89,
@@ -9450,8 +9450,8 @@
   },
   {
    "date": "2010-08",
-   "score": 31,
-   "light": "green",
+   "score": 34,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -9466,9 +9466,9 @@
      "value": 6.97,
      "points": 5
     },
-    "jobs": {
-     "value": -0.04,
-     "points": 2
+    "hours": {
+     "value": 30.0,
+     "points": 5
     },
     "exports": {
      "value": 19.04,
@@ -9494,7 +9494,7 @@
   },
   {
    "date": "2010-09",
-   "score": 34,
+   "score": 37,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9510,9 +9510,9 @@
      "value": 6.35,
      "points": 5
     },
-    "jobs": {
-     "value": 0.07,
-     "points": 2
+    "hours": {
+     "value": 29.03,
+     "points": 5
     },
     "exports": {
      "value": 15.76,
@@ -9538,8 +9538,8 @@
   },
   {
    "date": "2010-10",
-   "score": 30,
-   "light": "green",
+   "score": 33,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -9554,9 +9554,9 @@
      "value": 5.76,
      "points": 4
     },
-    "jobs": {
-     "value": 0.43,
-     "points": 2
+    "hours": {
+     "value": 21.21,
+     "points": 5
     },
     "exports": {
      "value": 16.45,
@@ -9582,7 +9582,7 @@
   },
   {
    "date": "2010-11",
-   "score": 33,
+   "score": 36,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9598,9 +9598,9 @@
      "value": 5.4,
      "points": 4
     },
-    "jobs": {
-     "value": 0.53,
-     "points": 2
+    "hours": {
+     "value": 17.65,
+     "points": 5
     },
     "exports": {
      "value": 16.6,
@@ -9626,7 +9626,7 @@
   },
   {
    "date": "2010-12",
-   "score": 34,
+   "score": 37,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9642,9 +9642,9 @@
      "value": 6.0,
      "points": 5
     },
-    "jobs": {
-     "value": 0.79,
-     "points": 2
+    "hours": {
+     "value": 14.29,
+     "points": 5
     },
     "exports": {
      "value": 15.83,
@@ -9670,7 +9670,7 @@
   },
   {
    "date": "2011-01",
-   "score": 34,
+   "score": 36,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9686,9 +9686,9 @@
      "value": 4.63,
      "points": 4
     },
-    "jobs": {
-     "value": 0.8,
-     "points": 2
+    "hours": {
+     "value": 11.11,
+     "points": 4
     },
     "exports": {
      "value": 16.62,
@@ -9714,7 +9714,7 @@
   },
   {
    "date": "2011-02",
-   "score": 34,
+   "score": 37,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9730,9 +9730,9 @@
      "value": 3.83,
      "points": 4
     },
-    "jobs": {
-     "value": 1.04,
-     "points": 2
+    "hours": {
+     "value": 23.53,
+     "points": 5
     },
     "exports": {
      "value": 14.91,
@@ -9758,8 +9758,8 @@
   },
   {
    "date": "2011-03",
-   "score": 35,
-   "light": "yellow-red",
+   "score": 38,
+   "light": "red",
    "recession": false,
    "indicators": {
     "money": {
@@ -9774,9 +9774,9 @@
      "value": 4.19,
      "points": 4
     },
-    "jobs": {
-     "value": 1.09,
-     "points": 2
+    "hours": {
+     "value": 16.67,
+     "points": 5
     },
     "exports": {
      "value": 17.05,
@@ -9802,7 +9802,7 @@
   },
   {
    "date": "2011-04",
-   "score": 32,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9818,9 +9818,9 @@
      "value": 3.51,
      "points": 3
     },
-    "jobs": {
-     "value": 1.14,
-     "points": 2
+    "hours": {
+     "value": 7.89,
+     "points": 4
     },
     "exports": {
      "value": 19.16,
@@ -9846,8 +9846,8 @@
   },
   {
    "date": "2011-05",
-   "score": 31,
-   "light": "green",
+   "score": 33,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -9862,9 +9862,9 @@
      "value": 2.25,
      "points": 3
     },
-    "jobs": {
-     "value": 0.81,
-     "points": 2
+    "hours": {
+     "value": 5.0,
+     "points": 4
     },
     "exports": {
      "value": 16.3,
@@ -9890,8 +9890,8 @@
   },
   {
    "date": "2011-06",
-   "score": 30,
-   "light": "green",
+   "score": 32,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -9906,9 +9906,9 @@
      "value": 2.37,
      "points": 3
     },
-    "jobs": {
-     "value": 1.09,
-     "points": 2
+    "hours": {
+     "value": 5.26,
+     "points": 4
     },
     "exports": {
      "value": 15.39,
@@ -9934,7 +9934,7 @@
   },
   {
    "date": "2011-07",
-   "score": 35,
+   "score": 37,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9950,9 +9950,9 @@
      "value": 2.48,
      "points": 3
     },
-    "jobs": {
-     "value": 1.21,
-     "points": 2
+    "hours": {
+     "value": 7.89,
+     "points": 4
     },
     "exports": {
      "value": 15.78,
@@ -9978,7 +9978,7 @@
   },
   {
    "date": "2011-08",
-   "score": 32,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -9994,9 +9994,9 @@
      "value": 2.8,
      "points": 3
     },
-    "jobs": {
-     "value": 1.31,
-     "points": 3
+    "hours": {
+     "value": 5.13,
+     "points": 4
     },
     "exports": {
      "value": 15.69,
@@ -10038,8 +10038,8 @@
      "value": 2.41,
      "points": 3
     },
-    "jobs": {
-     "value": 1.54,
+    "hours": {
+     "value": 2.5,
      "points": 3
     },
     "exports": {
@@ -10082,8 +10082,8 @@
      "value": 3.42,
      "points": 3
     },
-    "jobs": {
-     "value": 1.48,
+    "hours": {
+     "value": 2.5,
      "points": 3
     },
     "exports": {
@@ -10126,8 +10126,8 @@
      "value": 3.32,
      "points": 3
     },
-    "jobs": {
-     "value": 1.48,
+    "hours": {
+     "value": 2.5,
      "points": 3
     },
     "exports": {
@@ -10170,8 +10170,8 @@
      "value": 2.86,
      "points": 3
     },
-    "jobs": {
-     "value": 1.57,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -10214,8 +10214,8 @@
      "value": 3.69,
      "points": 3
     },
-    "jobs": {
-     "value": 1.84,
+    "hours": {
+     "value": 2.5,
      "points": 3
     },
     "exports": {
@@ -10258,8 +10258,8 @@
      "value": 4.44,
      "points": 4
     },
-    "jobs": {
-     "value": 1.87,
+    "hours": {
+     "value": -2.38,
      "points": 3
     },
     "exports": {
@@ -10302,8 +10302,8 @@
      "value": 2.83,
      "points": 3
     },
-    "jobs": {
-     "value": 1.88,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -10346,8 +10346,8 @@
      "value": 3.9,
      "points": 4
     },
-    "jobs": {
-     "value": 1.69,
+    "hours": {
+     "value": 2.44,
      "points": 3
     },
     "exports": {
@@ -10390,8 +10390,8 @@
      "value": 4.02,
      "points": 4
     },
-    "jobs": {
-     "value": 1.69,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -10418,7 +10418,7 @@
   },
   {
    "date": "2012-06",
-   "score": 26,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -10434,9 +10434,9 @@
      "value": 3.71,
      "points": 3
     },
-    "jobs": {
-     "value": 1.58,
-     "points": 3
+    "hours": {
+     "value": 5.0,
+     "points": 4
     },
     "exports": {
      "value": 5.91,
@@ -10478,8 +10478,8 @@
      "value": 3.42,
      "points": 3
     },
-    "jobs": {
-     "value": 1.64,
+    "hours": {
+     "value": 2.44,
      "points": 3
     },
     "exports": {
@@ -10522,8 +10522,8 @@
      "value": 2.29,
      "points": 3
     },
-    "jobs": {
-     "value": 1.68,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -10566,8 +10566,8 @@
      "value": 2.3,
      "points": 3
     },
-    "jobs": {
-     "value": 1.64,
+    "hours": {
+     "value": 2.44,
      "points": 3
     },
     "exports": {
@@ -10610,8 +10610,8 @@
      "value": 1.94,
      "points": 3
     },
-    "jobs": {
-     "value": 1.6,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -10654,8 +10654,8 @@
      "value": 2.33,
      "points": 3
     },
-    "jobs": {
-     "value": 1.61,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -10682,7 +10682,7 @@
   },
   {
    "date": "2012-12",
-   "score": 26,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -10698,9 +10698,9 @@
      "value": 2.03,
      "points": 3
     },
-    "jobs": {
-     "value": 1.64,
-     "points": 3
+    "hours": {
+     "value": 5.0,
+     "points": 4
     },
     "exports": {
      "value": 5.46,
@@ -10742,8 +10742,8 @@
      "value": 1.45,
      "points": 2
     },
-    "jobs": {
-     "value": 1.51,
+    "hours": {
+     "value": 2.44,
      "points": 3
     },
     "exports": {
@@ -10770,7 +10770,7 @@
   },
   {
    "date": "2013-02",
-   "score": 26,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -10786,9 +10786,9 @@
      "value": 1.59,
      "points": 3
     },
-    "jobs": {
-     "value": 1.53,
-     "points": 3
+    "hours": {
+     "value": 4.88,
+     "points": 4
     },
     "exports": {
      "value": 3.98,
@@ -10830,8 +10830,8 @@
      "value": 2.53,
      "points": 3
     },
-    "jobs": {
-     "value": 1.45,
+    "hours": {
+     "value": 2.38,
      "points": 3
     },
     "exports": {
@@ -10858,7 +10858,7 @@
   },
   {
    "date": "2013-04",
-   "score": 25,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -10874,9 +10874,9 @@
      "value": 1.71,
      "points": 3
     },
-    "jobs": {
-     "value": 1.53,
-     "points": 3
+    "hours": {
+     "value": 4.76,
+     "points": 4
     },
     "exports": {
      "value": 1.93,
@@ -10918,8 +10918,8 @@
      "value": 1.56,
      "points": 3
     },
-    "jobs": {
-     "value": 1.62,
+    "hours": {
+     "value": 2.38,
      "points": 3
     },
     "exports": {
@@ -10962,8 +10962,8 @@
      "value": 1.76,
      "points": 3
     },
-    "jobs": {
-     "value": 1.69,
+    "hours": {
+     "value": 2.38,
      "points": 3
     },
     "exports": {
@@ -11006,8 +11006,8 @@
      "value": 1.24,
      "points": 2
     },
-    "jobs": {
-     "value": 1.67,
+    "hours": {
+     "value": 2.38,
      "points": 3
     },
     "exports": {
@@ -11034,7 +11034,7 @@
   },
   {
    "date": "2013-08",
-   "score": 27,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11050,9 +11050,9 @@
      "value": 2.26,
      "points": 3
     },
-    "jobs": {
-     "value": 1.72,
-     "points": 3
+    "hours": {
+     "value": 7.32,
+     "points": 4
     },
     "exports": {
      "value": 4.05,
@@ -11094,8 +11094,8 @@
      "value": 2.85,
      "points": 3
     },
-    "jobs": {
-     "value": 1.71,
+    "hours": {
+     "value": 2.38,
      "points": 3
     },
     "exports": {
@@ -11122,7 +11122,7 @@
   },
   {
    "date": "2013-10",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11138,9 +11138,9 @@
      "value": 2.42,
      "points": 3
     },
-    "jobs": {
-     "value": 1.76,
-     "points": 3
+    "hours": {
+     "value": 4.88,
+     "points": 4
     },
     "exports": {
      "value": 5.57,
@@ -11166,7 +11166,7 @@
   },
   {
    "date": "2013-11",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11182,9 +11182,9 @@
      "value": 2.28,
      "points": 3
     },
-    "jobs": {
-     "value": 1.85,
-     "points": 3
+    "hours": {
+     "value": 7.32,
+     "points": 4
     },
     "exports": {
      "value": 4.67,
@@ -11210,7 +11210,7 @@
   },
   {
    "date": "2013-12",
-   "score": 26,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11226,9 +11226,9 @@
      "value": 2.25,
      "points": 3
     },
-    "jobs": {
-     "value": 1.7,
-     "points": 3
+    "hours": {
+     "value": 7.14,
+     "points": 4
     },
     "exports": {
      "value": 2.14,
@@ -11254,7 +11254,7 @@
   },
   {
    "date": "2014-01",
-   "score": 26,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11270,9 +11270,9 @@
      "value": 1.86,
      "points": 3
     },
-    "jobs": {
-     "value": 1.7,
-     "points": 3
+    "hours": {
+     "value": 4.76,
+     "points": 4
     },
     "exports": {
      "value": 2.9,
@@ -11314,8 +11314,8 @@
      "value": 2.15,
      "points": 3
     },
-    "jobs": {
-     "value": 1.6,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -11342,7 +11342,7 @@
   },
   {
    "date": "2014-03",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11358,9 +11358,9 @@
      "value": 2.72,
      "points": 3
     },
-    "jobs": {
-     "value": 1.69,
-     "points": 3
+    "hours": {
+     "value": 4.65,
+     "points": 4
     },
     "exports": {
      "value": 5.18,
@@ -11402,8 +11402,8 @@
      "value": 2.91,
      "points": 3
     },
-    "jobs": {
-     "value": 1.78,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -11430,7 +11430,7 @@
   },
   {
    "date": "2014-05",
-   "score": 27,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11446,9 +11446,9 @@
      "value": 3.23,
      "points": 3
     },
-    "jobs": {
-     "value": 1.78,
-     "points": 3
+    "hours": {
+     "value": 6.98,
+     "points": 4
     },
     "exports": {
      "value": 6.08,
@@ -11474,7 +11474,7 @@
   },
   {
    "date": "2014-06",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11490,9 +11490,9 @@
      "value": 3.37,
      "points": 3
     },
-    "jobs": {
-     "value": 1.89,
-     "points": 3
+    "hours": {
+     "value": 4.65,
+     "points": 4
     },
     "exports": {
      "value": 3.91,
@@ -11534,8 +11534,8 @@
      "value": 3.92,
      "points": 4
     },
-    "jobs": {
-     "value": 1.97,
+    "hours": {
+     "value": 2.33,
      "points": 3
     },
     "exports": {
@@ -11578,8 +11578,8 @@
      "value": 3.13,
      "points": 3
     },
-    "jobs": {
-     "value": 1.92,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -11622,8 +11622,8 @@
      "value": 2.9,
      "points": 3
     },
-    "jobs": {
-     "value": 2.0,
+    "hours": {
+     "value": 4.65,
      "points": 4
     },
     "exports": {
@@ -11650,7 +11650,7 @@
   },
   {
    "date": "2014-10",
-   "score": 29,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11666,9 +11666,9 @@
      "value": 2.99,
      "points": 3
     },
-    "jobs": {
-     "value": 2.01,
-     "points": 4
+    "hours": {
+     "value": 2.33,
+     "points": 3
     },
     "exports": {
      "value": 2.48,
@@ -11694,7 +11694,7 @@
   },
   {
    "date": "2014-11",
-   "score": 27,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11710,9 +11710,9 @@
      "value": 3.39,
      "points": 3
     },
-    "jobs": {
-     "value": 2.02,
-     "points": 4
+    "hours": {
+     "value": 2.27,
+     "points": 3
     },
     "exports": {
      "value": 0.81,
@@ -11738,7 +11738,7 @@
   },
   {
    "date": "2014-12",
-   "score": 26,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11754,9 +11754,9 @@
      "value": 3.17,
      "points": 3
     },
-    "jobs": {
-     "value": 2.18,
-     "points": 4
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 1.05,
@@ -11782,7 +11782,7 @@
   },
   {
    "date": "2015-01",
-   "score": 25,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11798,9 +11798,9 @@
      "value": 2.73,
      "points": 3
     },
-    "jobs": {
-     "value": 2.19,
-     "points": 4
+    "hours": {
+     "value": 2.27,
+     "points": 3
     },
     "exports": {
      "value": -0.78,
@@ -11826,8 +11826,8 @@
   },
   {
    "date": "2015-02",
-   "score": 23,
-   "light": "green",
+   "score": 22,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -11842,9 +11842,9 @@
      "value": 1.3,
      "points": 2
     },
-    "jobs": {
-     "value": 2.26,
-     "points": 4
+    "hours": {
+     "value": 2.33,
+     "points": 3
     },
     "exports": {
      "value": -1.6,
@@ -11870,8 +11870,8 @@
   },
   {
    "date": "2015-03",
-   "score": 24,
-   "light": "green",
+   "score": 22,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -11886,9 +11886,9 @@
      "value": -0.0,
      "points": 2
     },
-    "jobs": {
-     "value": 2.13,
-     "points": 4
+    "hours": {
+     "value": -4.44,
+     "points": 2
     },
     "exports": {
      "value": -3.71,
@@ -11914,7 +11914,7 @@
   },
   {
    "date": "2015-04",
-   "score": 24,
+   "score": 23,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -11930,9 +11930,9 @@
      "value": -0.64,
      "points": 2
     },
-    "jobs": {
-     "value": 2.1,
-     "points": 4
+    "hours": {
+     "value": -2.27,
+     "points": 3
     },
     "exports": {
      "value": -2.92,
@@ -11958,7 +11958,7 @@
   },
   {
    "date": "2015-05",
-   "score": 22,
+   "score": 20,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -11974,9 +11974,9 @@
      "value": -1.46,
      "points": 2
     },
-    "jobs": {
-     "value": 2.18,
-     "points": 4
+    "hours": {
+     "value": -6.52,
+     "points": 2
     },
     "exports": {
      "value": -4.65,
@@ -12002,7 +12002,7 @@
   },
   {
    "date": "2015-06",
-   "score": 22,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -12018,9 +12018,9 @@
      "value": -2.11,
      "points": 2
     },
-    "jobs": {
-     "value": 2.06,
-     "points": 4
+    "hours": {
+     "value": -2.22,
+     "points": 3
     },
     "exports": {
      "value": -4.46,
@@ -12046,7 +12046,7 @@
   },
   {
    "date": "2015-07",
-   "score": 22,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -12062,9 +12062,9 @@
      "value": -1.69,
      "points": 2
     },
-    "jobs": {
-     "value": 2.1,
-     "points": 4
+    "hours": {
+     "value": -2.27,
+     "points": 3
     },
     "exports": {
      "value": -4.9,
@@ -12090,7 +12090,7 @@
   },
   {
    "date": "2015-08",
-   "score": 21,
+   "score": 20,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -12106,9 +12106,9 @@
      "value": -1.69,
      "points": 2
     },
-    "jobs": {
-     "value": 2.05,
-     "points": 4
+    "hours": {
+     "value": -2.27,
+     "points": 3
     },
     "exports": {
      "value": -6.95,
@@ -12134,7 +12134,7 @@
   },
   {
    "date": "2015-09",
-   "score": 18,
+   "score": 17,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -12150,9 +12150,9 @@
      "value": -2.24,
      "points": 2
     },
-    "jobs": {
-     "value": 1.94,
-     "points": 3
+    "hours": {
+     "value": -6.67,
+     "points": 2
     },
     "exports": {
      "value": -5.2,
@@ -12194,8 +12194,8 @@
      "value": -2.73,
      "points": 1
     },
-    "jobs": {
-     "value": 1.99,
+    "hours": {
+     "value": -2.27,
      "points": 3
     },
     "exports": {
@@ -12222,7 +12222,7 @@
   },
   {
    "date": "2015-11",
-   "score": 18,
+   "score": 17,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -12238,9 +12238,9 @@
      "value": -4.03,
      "points": 1
     },
-    "jobs": {
-     "value": 1.94,
-     "points": 3
+    "hours": {
+     "value": -6.67,
+     "points": 2
     },
     "exports": {
      "value": -6.74,
@@ -12266,7 +12266,7 @@
   },
   {
    "date": "2015-12",
-   "score": 18,
+   "score": 17,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -12282,9 +12282,9 @@
      "value": -4.5,
      "points": 1
     },
-    "jobs": {
-     "value": 1.93,
-     "points": 3
+    "hours": {
+     "value": -6.67,
+     "points": 2
     },
     "exports": {
      "value": -6.98,
@@ -12310,7 +12310,7 @@
   },
   {
    "date": "2016-01",
-   "score": 18,
+   "score": 17,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -12326,9 +12326,9 @@
      "value": -3.24,
      "points": 1
     },
-    "jobs": {
-     "value": 1.88,
-     "points": 3
+    "hours": {
+     "value": -4.44,
+     "points": 2
     },
     "exports": {
      "value": -6.85,
@@ -12370,8 +12370,8 @@
      "value": -3.12,
      "points": 1
     },
-    "jobs": {
-     "value": 1.83,
+    "hours": {
+     "value": -2.27,
      "points": 3
     },
     "exports": {
@@ -12414,8 +12414,8 @@
      "value": -3.52,
      "points": 1
     },
-    "jobs": {
-     "value": 1.94,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -12458,8 +12458,8 @@
      "value": -2.66,
      "points": 2
     },
-    "jobs": {
-     "value": 1.88,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -12502,8 +12502,8 @@
      "value": -2.45,
      "points": 2
     },
-    "jobs": {
-     "value": 1.67,
+    "hours": {
+     "value": -2.33,
      "points": 3
     },
     "exports": {
@@ -12546,8 +12546,8 @@
      "value": -1.68,
      "points": 2
     },
-    "jobs": {
-     "value": 1.72,
+    "hours": {
+     "value": -2.27,
      "points": 3
     },
     "exports": {
@@ -12590,8 +12590,8 @@
      "value": -2.2,
      "points": 2
     },
-    "jobs": {
-     "value": 1.78,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -12634,8 +12634,8 @@
      "value": -2.16,
      "points": 2
     },
-    "jobs": {
-     "value": 1.78,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -12678,8 +12678,8 @@
      "value": -1.99,
      "points": 2
     },
-    "jobs": {
-     "value": 1.89,
+    "hours": {
+     "value": 2.38,
      "points": 3
     },
     "exports": {
@@ -12722,8 +12722,8 @@
      "value": -1.5,
      "points": 2
     },
-    "jobs": {
-     "value": 1.74,
+    "hours": {
+     "value": 2.33,
      "points": 3
     },
     "exports": {
@@ -12766,8 +12766,8 @@
      "value": -1.19,
      "points": 2
     },
-    "jobs": {
-     "value": 1.66,
+    "hours": {
+     "value": 2.38,
      "points": 3
     },
     "exports": {
@@ -12810,8 +12810,8 @@
      "value": -0.02,
      "points": 2
     },
-    "jobs": {
-     "value": 1.63,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -12838,7 +12838,7 @@
   },
   {
    "date": "2017-01",
-   "score": 25,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -12854,9 +12854,9 @@
      "value": -0.8,
      "points": 2
     },
-    "jobs": {
-     "value": 1.69,
-     "points": 3
+    "hours": {
+     "value": -4.65,
+     "points": 2
     },
     "exports": {
      "value": 8.12,
@@ -12898,8 +12898,8 @@
      "value": -0.69,
      "points": 2
     },
-    "jobs": {
-     "value": 1.7,
+    "hours": {
+     "value": -2.33,
      "points": 3
     },
     "exports": {
@@ -12942,8 +12942,8 @@
      "value": 0.72,
      "points": 2
     },
-    "jobs": {
-     "value": 1.61,
+    "hours": {
+     "value": -2.33,
      "points": 3
     },
     "exports": {
@@ -12986,8 +12986,8 @@
      "value": 1.4,
      "points": 2
     },
-    "jobs": {
-     "value": 1.61,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -13014,7 +13014,7 @@
   },
   {
    "date": "2017-05",
-   "score": 30,
+   "score": 31,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -13030,9 +13030,9 @@
      "value": 1.75,
      "points": 3
     },
-    "jobs": {
-     "value": 1.72,
-     "points": 3
+    "hours": {
+     "value": 4.76,
+     "points": 4
     },
     "exports": {
      "value": 5.65,
@@ -13074,8 +13074,8 @@
      "value": 1.48,
      "points": 2
     },
-    "jobs": {
-     "value": 1.69,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -13118,8 +13118,8 @@
      "value": 1.12,
      "points": 2
     },
-    "jobs": {
-     "value": 1.56,
+    "hours": {
+     "value": 2.33,
      "points": 3
     },
     "exports": {
@@ -13162,8 +13162,8 @@
      "value": 0.85,
      "points": 2
     },
-    "jobs": {
-     "value": 1.56,
+    "hours": {
+     "value": 2.33,
      "points": 3
     },
     "exports": {
@@ -13206,8 +13206,8 @@
      "value": 1.06,
      "points": 2
     },
-    "jobs": {
-     "value": 1.41,
+    "hours": {
+     "value": 2.33,
      "points": 3
     },
     "exports": {
@@ -13250,8 +13250,8 @@
      "value": 2.29,
      "points": 3
     },
-    "jobs": {
-     "value": 1.44,
+    "hours": {
+     "value": 2.27,
      "points": 3
     },
     "exports": {
@@ -13278,7 +13278,7 @@
   },
   {
    "date": "2017-11",
-   "score": 29,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -13294,9 +13294,9 @@
      "value": 2.97,
      "points": 3
     },
-    "jobs": {
-     "value": 1.51,
-     "points": 3
+    "hours": {
+     "value": 4.65,
+     "points": 4
     },
     "exports": {
      "value": 10.24,
@@ -13322,7 +13322,7 @@
   },
   {
    "date": "2017-12",
-   "score": 29,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -13338,9 +13338,9 @@
      "value": 2.47,
      "points": 3
     },
-    "jobs": {
-     "value": 1.45,
-     "points": 3
+    "hours": {
+     "value": 4.76,
+     "points": 4
     },
     "exports": {
      "value": 8.88,
@@ -13366,7 +13366,7 @@
   },
   {
    "date": "2018-01",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -13382,9 +13382,9 @@
      "value": 2.74,
      "points": 3
     },
-    "jobs": {
-     "value": 1.4,
-     "points": 3
+    "hours": {
+     "value": 9.76,
+     "points": 4
     },
     "exports": {
      "value": 5.95,
@@ -13410,8 +13410,8 @@
   },
   {
    "date": "2018-02",
-   "score": 30,
-   "light": "green",
+   "score": 32,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -13426,9 +13426,9 @@
      "value": 3.4,
      "points": 3
     },
-    "jobs": {
-     "value": 1.51,
-     "points": 3
+    "hours": {
+     "value": 11.9,
+     "points": 5
     },
     "exports": {
      "value": 7.16,
@@ -13454,7 +13454,7 @@
   },
   {
    "date": "2018-03",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -13470,9 +13470,9 @@
      "value": 3.22,
      "points": 3
     },
-    "jobs": {
-     "value": 1.58,
-     "points": 3
+    "hours": {
+     "value": 9.52,
+     "points": 4
     },
     "exports": {
      "value": 8.65,
@@ -13498,7 +13498,7 @@
   },
   {
    "date": "2018-04",
-   "score": 28,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -13514,9 +13514,9 @@
      "value": 3.31,
      "points": 3
     },
-    "jobs": {
-     "value": 1.54,
-     "points": 3
+    "hours": {
+     "value": 11.63,
+     "points": 4
     },
     "exports": {
      "value": 8.21,
@@ -13558,8 +13558,8 @@
      "value": 2.26,
      "points": 3
     },
-    "jobs": {
-     "value": 1.61,
+    "hours": {
+     "value": 2.27,
      "points": 3
     },
     "exports": {
@@ -13586,7 +13586,7 @@
   },
   {
    "date": "2018-06",
-   "score": 29,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -13602,9 +13602,9 @@
      "value": 2.84,
      "points": 3
     },
-    "jobs": {
-     "value": 1.62,
-     "points": 3
+    "hours": {
+     "value": 4.65,
+     "points": 4
     },
     "exports": {
      "value": 7.77,
@@ -13646,8 +13646,8 @@
      "value": 3.25,
      "points": 3
     },
-    "jobs": {
-     "value": 1.53,
+    "hours": {
+     "value": 2.27,
      "points": 3
     },
     "exports": {
@@ -13690,8 +13690,8 @@
      "value": 4.35,
      "points": 4
     },
-    "jobs": {
-     "value": 1.6,
+    "hours": {
+     "value": 2.27,
      "points": 3
     },
     "exports": {
@@ -13734,8 +13734,8 @@
      "value": 4.31,
      "points": 4
     },
-    "jobs": {
-     "value": 1.6,
+    "hours": {
+     "value": 2.27,
      "points": 3
     },
     "exports": {
@@ -13778,8 +13778,8 @@
      "value": 2.93,
      "points": 3
     },
-    "jobs": {
-     "value": 1.62,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -13822,8 +13822,8 @@
      "value": 2.77,
      "points": 3
     },
-    "jobs": {
-     "value": 1.52,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -13866,8 +13866,8 @@
      "value": 2.59,
      "points": 3
     },
-    "jobs": {
-     "value": 1.55,
+    "hours": {
+     "value": 2.27,
      "points": 3
     },
     "exports": {
@@ -13910,8 +13910,8 @@
      "value": 1.91,
      "points": 3
     },
-    "jobs": {
-     "value": 1.63,
+    "hours": {
+     "value": -2.22,
      "points": 3
     },
     "exports": {
@@ -13938,7 +13938,7 @@
   },
   {
    "date": "2019-02",
-   "score": 20,
+   "score": 19,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -13954,9 +13954,9 @@
      "value": 1.11,
      "points": 2
     },
-    "jobs": {
-     "value": 1.36,
-     "points": 3
+    "hours": {
+     "value": -6.38,
+     "points": 2
     },
     "exports": {
      "value": 1.32,
@@ -13982,7 +13982,7 @@
   },
   {
    "date": "2019-03",
-   "score": 21,
+   "score": 20,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -13998,9 +13998,9 @@
      "value": 0.65,
      "points": 2
     },
-    "jobs": {
-     "value": 1.36,
-     "points": 3
+    "hours": {
+     "value": -4.35,
+     "points": 2
     },
     "exports": {
      "value": 0.73,
@@ -14026,7 +14026,7 @@
   },
   {
    "date": "2019-04",
-   "score": 22,
+   "score": 20,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -14042,9 +14042,9 @@
      "value": -1.02,
      "points": 2
     },
-    "jobs": {
-     "value": 1.46,
-     "points": 3
+    "hours": {
+     "value": -10.42,
+     "points": 1
     },
     "exports": {
      "value": -0.43,
@@ -14086,8 +14086,8 @@
      "value": -0.01,
      "points": 2
     },
-    "jobs": {
-     "value": 1.26,
+    "hours": {
+     "value": -6.67,
      "points": 2
     },
     "exports": {
@@ -14130,8 +14130,8 @@
      "value": -0.74,
      "points": 2
     },
-    "jobs": {
-     "value": 1.26,
+    "hours": {
+     "value": -6.67,
      "points": 2
     },
     "exports": {
@@ -14158,8 +14158,8 @@
   },
   {
    "date": "2019-07",
-   "score": 23,
-   "light": "green",
+   "score": 22,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -14174,9 +14174,9 @@
      "value": -1.38,
      "points": 2
     },
-    "jobs": {
-     "value": 1.29,
-     "points": 3
+    "hours": {
+     "value": -6.67,
+     "points": 2
     },
     "exports": {
      "value": 0.72,
@@ -14218,8 +14218,8 @@
      "value": -1.34,
      "points": 2
     },
-    "jobs": {
-     "value": 1.27,
+    "hours": {
+     "value": -6.67,
      "points": 2
     },
     "exports": {
@@ -14246,7 +14246,7 @@
   },
   {
    "date": "2019-09",
-   "score": 22,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -14262,9 +14262,9 @@
      "value": -1.74,
      "points": 2
     },
-    "jobs": {
-     "value": 1.34,
-     "points": 3
+    "hours": {
+     "value": -6.67,
+     "points": 2
     },
     "exports": {
      "value": -0.95,
@@ -14290,7 +14290,7 @@
   },
   {
    "date": "2019-10",
-   "score": 22,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -14306,9 +14306,9 @@
      "value": -2.46,
      "points": 2
     },
-    "jobs": {
-     "value": 1.29,
-     "points": 3
+    "hours": {
+     "value": -8.89,
+     "points": 2
     },
     "exports": {
      "value": -0.91,
@@ -14334,7 +14334,7 @@
   },
   {
    "date": "2019-11",
-   "score": 22,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -14350,9 +14350,9 @@
      "value": -2.05,
      "points": 2
     },
-    "jobs": {
-     "value": 1.37,
-     "points": 3
+    "hours": {
+     "value": -8.89,
+     "points": 2
     },
     "exports": {
      "value": 0.5,
@@ -14378,8 +14378,8 @@
   },
   {
    "date": "2019-12",
-   "score": 23,
-   "light": "green",
+   "score": 22,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -14394,9 +14394,9 @@
      "value": -2.3,
      "points": 2
     },
-    "jobs": {
-     "value": 1.33,
-     "points": 3
+    "hours": {
+     "value": -8.89,
+     "points": 2
     },
     "exports": {
      "value": 1.97,
@@ -14422,8 +14422,8 @@
   },
   {
    "date": "2020-01",
-   "score": 24,
-   "light": "green",
+   "score": 22,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -14438,9 +14438,9 @@
      "value": -2.29,
      "points": 2
     },
-    "jobs": {
-     "value": 1.31,
-     "points": 3
+    "hours": {
+     "value": -11.36,
+     "points": 1
     },
     "exports": {
      "value": -0.99,
@@ -14466,7 +14466,7 @@
   },
   {
    "date": "2020-02",
-   "score": 25,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -14482,9 +14482,9 @@
      "value": -1.42,
      "points": 2
     },
-    "jobs": {
-     "value": 1.48,
-     "points": 3
+    "hours": {
+     "value": -9.09,
+     "points": 2
     },
     "exports": {
      "value": -1.73,
@@ -14510,7 +14510,7 @@
   },
   {
    "date": "2020-03",
-   "score": 15,
+   "score": 14,
    "light": "blue",
    "recession": true,
    "indicators": {
@@ -14526,9 +14526,9 @@
      "value": -5.32,
      "points": 1
     },
-    "jobs": {
-     "value": 0.4,
-     "points": 2
+    "hours": {
+     "value": -11.36,
+     "points": 1
     },
     "exports": {
      "value": -11.51,
@@ -14570,8 +14570,8 @@
      "value": -17.32,
      "points": 1
     },
-    "jobs": {
-     "value": -13.39,
+    "hours": {
+     "value": -37.21,
      "points": 1
     },
     "exports": {
@@ -14614,8 +14614,8 @@
      "value": -16.05,
      "points": 1
     },
-    "jobs": {
-     "value": -11.67,
+    "hours": {
+     "value": -26.19,
      "points": 1
     },
     "exports": {
@@ -14658,8 +14658,8 @@
      "value": -10.59,
      "points": 1
     },
-    "jobs": {
-     "value": -8.73,
+    "hours": {
+     "value": -21.43,
      "points": 1
     },
     "exports": {
@@ -14702,8 +14702,8 @@
      "value": -6.78,
      "points": 1
     },
-    "jobs": {
-     "value": -7.74,
+    "hours": {
+     "value": -11.9,
      "points": 1
     },
     "exports": {
@@ -14746,8 +14746,8 @@
      "value": -6.51,
      "points": 1
     },
-    "jobs": {
-     "value": -6.85,
+    "hours": {
+     "value": -11.9,
      "points": 1
     },
     "exports": {
@@ -14774,7 +14774,7 @@
   },
   {
    "date": "2020-09",
-   "score": 23,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -14790,9 +14790,9 @@
      "value": -6.18,
      "points": 1
     },
-    "jobs": {
-     "value": -6.34,
-     "points": 1
+    "hours": {
+     "value": -7.14,
+     "points": 2
     },
     "exports": {
      "value": -13.74,
@@ -14818,7 +14818,7 @@
   },
   {
    "date": "2020-10",
-   "score": 25,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -14834,9 +14834,9 @@
      "value": -4.62,
      "points": 1
     },
-    "jobs": {
-     "value": -5.94,
-     "points": 1
+    "hours": {
+     "value": -2.44,
+     "points": 3
     },
     "exports": {
      "value": -12.39,
@@ -14862,7 +14862,7 @@
   },
   {
    "date": "2020-11",
-   "score": 24,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -14878,9 +14878,9 @@
      "value": -4.76,
      "points": 1
     },
-    "jobs": {
-     "value": -5.89,
-     "points": 1
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": -10.61,
@@ -14906,7 +14906,7 @@
   },
   {
    "date": "2020-12",
-   "score": 25,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -14922,9 +14922,9 @@
      "value": -3.28,
      "points": 1
     },
-    "jobs": {
-     "value": -6.09,
-     "points": 1
+    "hours": {
+     "value": 2.44,
+     "points": 3
     },
     "exports": {
      "value": -7.97,
@@ -14950,8 +14950,8 @@
   },
   {
    "date": "2021-01",
-   "score": 31,
-   "light": "green",
+   "score": 34,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -14966,9 +14966,9 @@
      "value": -2.13,
      "points": 2
     },
-    "jobs": {
-     "value": -6.03,
-     "points": 1
+    "hours": {
+     "value": 7.69,
+     "points": 4
     },
     "exports": {
      "value": -4.7,
@@ -14994,7 +14994,7 @@
   },
   {
    "date": "2021-02",
-   "score": 27,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -15010,9 +15010,9 @@
      "value": -5.68,
      "points": 1
     },
-    "jobs": {
-     "value": -5.85,
-     "points": 1
+    "hours": {
+     "value": 2.5,
+     "points": 3
     },
     "exports": {
      "value": -6.49,
@@ -15038,7 +15038,7 @@
   },
   {
    "date": "2021-03",
-   "score": 34,
+   "score": 37,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -15054,9 +15054,9 @@
      "value": 1.0,
      "points": 2
     },
-    "jobs": {
-     "value": -4.42,
-     "points": 1
+    "hours": {
+     "value": 5.13,
+     "points": 4
     },
     "exports": {
      "value": 10.17,
@@ -15098,8 +15098,8 @@
      "value": 16.55,
      "points": 5
     },
-    "jobs": {
-     "value": 10.86,
+    "hours": {
+     "value": 51.85,
      "points": 5
     },
     "exports": {
@@ -15142,8 +15142,8 @@
      "value": 15.67,
      "points": 5
     },
-    "jobs": {
-     "value": 9.04,
+    "hours": {
+     "value": 32.26,
      "points": 5
     },
     "exports": {
@@ -15186,8 +15186,8 @@
      "value": 8.96,
      "points": 5
     },
-    "jobs": {
-     "value": 5.92,
+    "hours": {
+     "value": 24.24,
      "points": 5
     },
     "exports": {
@@ -15214,7 +15214,7 @@
   },
   {
    "date": "2021-07",
-   "score": 42,
+   "score": 41,
    "light": "red",
    "recession": false,
    "indicators": {
@@ -15230,9 +15230,9 @@
      "value": 5.5,
      "points": 4
     },
-    "jobs": {
-     "value": 5.39,
-     "points": 5
+    "hours": {
+     "value": 8.11,
+     "points": 4
     },
     "exports": {
      "value": 25.35,
@@ -15258,7 +15258,7 @@
   },
   {
    "date": "2021-08",
-   "score": 40,
+   "score": 39,
    "light": "red",
    "recession": false,
    "indicators": {
@@ -15274,9 +15274,9 @@
      "value": 4.26,
      "points": 4
     },
-    "jobs": {
-     "value": 4.61,
-     "points": 5
+    "hours": {
+     "value": 10.81,
+     "points": 4
     },
     "exports": {
      "value": 23.34,
@@ -15302,7 +15302,7 @@
   },
   {
    "date": "2021-09",
-   "score": 39,
+   "score": 38,
    "light": "red",
    "recession": false,
    "indicators": {
@@ -15318,9 +15318,9 @@
      "value": 3.01,
      "points": 3
     },
-    "jobs": {
-     "value": 4.23,
-     "points": 5
+    "hours": {
+     "value": 5.13,
+     "points": 4
     },
     "exports": {
      "value": 17.24,
@@ -15346,8 +15346,8 @@
   },
   {
    "date": "2021-10",
-   "score": 38,
-   "light": "red",
+   "score": 36,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -15362,9 +15362,9 @@
      "value": 3.56,
      "points": 3
     },
-    "jobs": {
-     "value": 4.29,
-     "points": 5
+    "hours": {
+     "value": 2.5,
+     "points": 3
     },
     "exports": {
      "value": 23.02,
@@ -15390,7 +15390,7 @@
   },
   {
    "date": "2021-11",
-   "score": 40,
+   "score": 38,
    "light": "red",
    "recession": false,
    "indicators": {
@@ -15406,9 +15406,9 @@
      "value": 3.9,
      "points": 4
     },
-    "jobs": {
-     "value": 4.55,
-     "points": 5
+    "hours": {
+     "value": 2.44,
+     "points": 3
     },
     "exports": {
      "value": 21.5,
@@ -15434,7 +15434,7 @@
   },
   {
    "date": "2021-12",
-   "score": 37,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -15450,9 +15450,9 @@
      "value": 2.25,
      "points": 3
     },
-    "jobs": {
-     "value": 5.1,
-     "points": 5
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 20.35,
@@ -15478,7 +15478,7 @@
   },
   {
    "date": "2022-01",
-   "score": 35,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -15494,9 +15494,9 @@
      "value": 1.32,
      "points": 2
     },
-    "jobs": {
-     "value": 5.0,
-     "points": 5
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 16.68,
@@ -15522,7 +15522,7 @@
   },
   {
    "date": "2022-02",
-   "score": 36,
+   "score": 35,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -15538,9 +15538,9 @@
      "value": 5.43,
      "points": 4
     },
-    "jobs": {
-     "value": 5.19,
-     "points": 5
+    "hours": {
+     "value": 7.32,
+     "points": 4
     },
     "exports": {
      "value": 20.92,
@@ -15566,7 +15566,7 @@
   },
   {
    "date": "2022-03",
-   "score": 36,
+   "score": 34,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -15582,9 +15582,9 @@
      "value": 3.05,
      "points": 3
     },
-    "jobs": {
-     "value": 4.91,
-     "points": 5
+    "hours": {
+     "value": 2.44,
+     "points": 3
     },
     "exports": {
      "value": 18.87,
@@ -15610,8 +15610,8 @@
   },
   {
    "date": "2022-04",
-   "score": 33,
-   "light": "yellow-red",
+   "score": 31,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -15626,9 +15626,9 @@
      "value": 2.92,
      "points": 3
     },
-    "jobs": {
-     "value": 4.87,
-     "points": 5
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 22.76,
@@ -15654,8 +15654,8 @@
   },
   {
    "date": "2022-05",
-   "score": 32,
-   "light": "yellow-red",
+   "score": 30,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -15670,9 +15670,9 @@
      "value": 1.91,
      "points": 3
     },
-    "jobs": {
-     "value": 4.73,
-     "points": 5
+    "hours": {
+     "value": -2.44,
+     "points": 3
     },
     "exports": {
      "value": 22.46,
@@ -15698,7 +15698,7 @@
   },
   {
    "date": "2022-06",
-   "score": 30,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -15714,9 +15714,9 @@
      "value": 1.22,
      "points": 2
     },
-    "jobs": {
-     "value": 4.48,
-     "points": 5
+    "hours": {
+     "value": -2.44,
+     "points": 3
     },
     "exports": {
      "value": 22.63,
@@ -15742,7 +15742,7 @@
   },
   {
    "date": "2022-07",
-   "score": 29,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -15758,9 +15758,9 @@
      "value": 0.97,
      "points": 2
     },
-    "jobs": {
-     "value": 4.3,
-     "points": 5
+    "hours": {
+     "value": -2.5,
+     "points": 3
     },
     "exports": {
      "value": 22.48,
@@ -15786,7 +15786,7 @@
   },
   {
    "date": "2022-08",
-   "score": 30,
+   "score": 27,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -15802,9 +15802,9 @@
      "value": 1.05,
      "points": 2
     },
-    "jobs": {
-     "value": 4.11,
-     "points": 5
+    "hours": {
+     "value": -7.32,
+     "points": 2
     },
     "exports": {
      "value": 21.77,
@@ -15830,7 +15830,7 @@
   },
   {
    "date": "2022-09",
-   "score": 29,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -15846,9 +15846,9 @@
      "value": 2.46,
      "points": 3
     },
-    "jobs": {
-     "value": 3.93,
-     "points": 5
+    "hours": {
+     "value": -7.32,
+     "points": 2
     },
     "exports": {
      "value": 22.55,
@@ -15874,8 +15874,8 @@
   },
   {
    "date": "2022-10",
-   "score": 23,
-   "light": "green",
+   "score": 21,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -15890,9 +15890,9 @@
      "value": 1.06,
      "points": 2
     },
-    "jobs": {
-     "value": 3.61,
-     "points": 5
+    "hours": {
+     "value": -2.44,
+     "points": 3
     },
     "exports": {
      "value": 13.65,
@@ -15918,7 +15918,7 @@
   },
   {
    "date": "2022-11",
-   "score": 21,
+   "score": 18,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -15934,9 +15934,9 @@
      "value": 0.09,
      "points": 2
     },
-    "jobs": {
-     "value": 3.36,
-     "points": 5
+    "hours": {
+     "value": -9.52,
+     "points": 2
     },
     "exports": {
      "value": 10.7,
@@ -15962,7 +15962,7 @@
   },
   {
    "date": "2022-12",
-   "score": 21,
+   "score": 17,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -15978,9 +15978,9 @@
      "value": -0.8,
      "points": 2
     },
-    "jobs": {
-     "value": 3.02,
-     "points": 5
+    "hours": {
+     "value": -11.9,
+     "points": 1
     },
     "exports": {
      "value": 7.27,
@@ -16006,8 +16006,8 @@
   },
   {
    "date": "2023-01",
-   "score": 24,
-   "light": "green",
+   "score": 21,
+   "light": "yellow-blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -16022,9 +16022,9 @@
      "value": 0.32,
      "points": 2
     },
-    "jobs": {
-     "value": 3.18,
-     "points": 5
+    "hours": {
+     "value": -7.14,
+     "points": 2
     },
     "exports": {
      "value": 11.7,
@@ -16050,7 +16050,7 @@
   },
   {
    "date": "2023-02",
-   "score": 21,
+   "score": 17,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16066,9 +16066,9 @@
      "value": -0.16,
      "points": 2
     },
-    "jobs": {
-     "value": 2.81,
-     "points": 5
+    "hours": {
+     "value": -18.18,
+     "points": 1
     },
     "exports": {
      "value": 7.24,
@@ -16094,8 +16094,8 @@
   },
   {
    "date": "2023-03",
-   "score": 18,
-   "light": "yellow-blue",
+   "score": 15,
+   "light": "blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -16110,9 +16110,9 @@
      "value": -0.37,
      "points": 2
     },
-    "jobs": {
-     "value": 2.52,
-     "points": 4
+    "hours": {
+     "value": -14.29,
+     "points": 1
     },
     "exports": {
      "value": 4.4,
@@ -16138,8 +16138,8 @@
   },
   {
    "date": "2023-04",
-   "score": 17,
-   "light": "yellow-blue",
+   "score": 14,
+   "light": "blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -16154,9 +16154,9 @@
      "value": -0.18,
      "points": 2
     },
-    "jobs": {
-     "value": 2.47,
-     "points": 4
+    "hours": {
+     "value": -12.2,
+     "points": 1
     },
     "exports": {
      "value": -1.14,
@@ -16182,7 +16182,7 @@
   },
   {
    "date": "2023-05",
-   "score": 20,
+   "score": 18,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16198,9 +16198,9 @@
      "value": -0.4,
      "points": 2
     },
-    "jobs": {
-     "value": 2.46,
-     "points": 4
+    "hours": {
+     "value": -10.0,
+     "points": 2
     },
     "exports": {
      "value": -2.3,
@@ -16226,7 +16226,7 @@
   },
   {
    "date": "2023-06",
-   "score": 20,
+   "score": 18,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16242,9 +16242,9 @@
      "value": -0.89,
      "points": 2
     },
-    "jobs": {
-     "value": 2.31,
-     "points": 4
+    "hours": {
+     "value": -10.0,
+     "points": 2
     },
     "exports": {
      "value": -3.89,
@@ -16270,7 +16270,7 @@
   },
   {
    "date": "2023-07",
-   "score": 19,
+   "score": 18,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16286,9 +16286,9 @@
      "value": -0.31,
      "points": 2
     },
-    "jobs": {
-     "value": 1.94,
-     "points": 3
+    "hours": {
+     "value": -7.69,
+     "points": 2
     },
     "exports": {
      "value": -3.4,
@@ -16314,7 +16314,7 @@
   },
   {
    "date": "2023-08",
-   "score": 20,
+   "score": 19,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16330,9 +16330,9 @@
      "value": -0.25,
      "points": 2
     },
-    "jobs": {
-     "value": 1.89,
-     "points": 3
+    "hours": {
+     "value": -5.26,
+     "points": 2
     },
     "exports": {
      "value": -1.64,
@@ -16358,7 +16358,7 @@
   },
   {
    "date": "2023-09",
-   "score": 18,
+   "score": 17,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16374,9 +16374,9 @@
      "value": -0.27,
      "points": 2
     },
-    "jobs": {
-     "value": 1.85,
-     "points": 3
+    "hours": {
+     "value": -5.26,
+     "points": 2
     },
     "exports": {
      "value": 0.62,
@@ -16402,8 +16402,8 @@
   },
   {
    "date": "2023-10",
-   "score": 18,
-   "light": "yellow-blue",
+   "score": 16,
+   "light": "blue",
    "recession": false,
    "indicators": {
     "money": {
@@ -16418,9 +16418,9 @@
      "value": -0.77,
      "points": 2
     },
-    "jobs": {
-     "value": 1.71,
-     "points": 3
+    "hours": {
+     "value": -12.5,
+     "points": 1
     },
     "exports": {
      "value": 1.32,
@@ -16446,7 +16446,7 @@
   },
   {
    "date": "2023-11",
-   "score": 20,
+   "score": 19,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16462,9 +16462,9 @@
      "value": -0.09,
      "points": 2
     },
-    "jobs": {
-     "value": 1.6,
-     "points": 3
+    "hours": {
+     "value": -7.89,
+     "points": 2
     },
     "exports": {
      "value": 0.77,
@@ -16490,7 +16490,7 @@
   },
   {
    "date": "2023-12",
-   "score": 22,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16506,9 +16506,9 @@
      "value": 0.84,
      "points": 2
     },
-    "jobs": {
-     "value": 1.63,
-     "points": 3
+    "hours": {
+     "value": -5.41,
+     "points": 2
     },
     "exports": {
      "value": 3.61,
@@ -16534,7 +16534,7 @@
   },
   {
    "date": "2024-01",
-   "score": 19,
+   "score": 18,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16550,9 +16550,9 @@
      "value": -1.28,
      "points": 2
     },
-    "jobs": {
-     "value": 1.46,
-     "points": 3
+    "hours": {
+     "value": -10.26,
+     "points": 2
     },
     "exports": {
      "value": 0.82,
@@ -16594,8 +16594,8 @@
      "value": -0.35,
      "points": 2
     },
-    "jobs": {
-     "value": 1.4,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -16638,8 +16638,8 @@
      "value": -0.56,
      "points": 2
     },
-    "jobs": {
-     "value": 1.5,
+    "hours": {
+     "value": -2.78,
      "points": 3
     },
     "exports": {
@@ -16682,8 +16682,8 @@
      "value": -1.0,
      "points": 2
     },
-    "jobs": {
-     "value": 1.39,
+    "hours": {
+     "value": 0.0,
      "points": 3
     },
     "exports": {
@@ -16710,7 +16710,7 @@
   },
   {
    "date": "2024-05",
-   "score": 21,
+   "score": 22,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16726,9 +16726,9 @@
      "value": -0.06,
      "points": 2
     },
-    "jobs": {
-     "value": 1.25,
-     "points": 2
+    "hours": {
+     "value": 2.78,
+     "points": 3
     },
     "exports": {
      "value": 5.18,
@@ -16754,7 +16754,7 @@
   },
   {
    "date": "2024-06",
-   "score": 20,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16770,9 +16770,9 @@
      "value": 0.77,
      "points": 2
     },
-    "jobs": {
-     "value": 1.16,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 6.7,
@@ -16798,7 +16798,7 @@
   },
   {
    "date": "2024-07",
-   "score": 21,
+   "score": 22,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16814,9 +16814,9 @@
      "value": -0.92,
      "points": 2
     },
-    "jobs": {
-     "value": 1.09,
-     "points": 2
+    "hours": {
+     "value": 2.78,
+     "points": 3
     },
     "exports": {
      "value": 5.92,
@@ -16842,7 +16842,7 @@
   },
   {
    "date": "2024-08",
-   "score": 20,
+   "score": 21,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -16858,9 +16858,9 @@
      "value": -0.41,
      "points": 2
     },
-    "jobs": {
-     "value": 0.96,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 5.6,
@@ -16886,8 +16886,8 @@
   },
   {
    "date": "2024-09",
-   "score": 22,
-   "light": "yellow-blue",
+   "score": 23,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -16902,9 +16902,9 @@
      "value": -1.2,
      "points": 2
     },
-    "jobs": {
-     "value": 0.96,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 3.52,
@@ -16930,7 +16930,7 @@
   },
   {
    "date": "2024-10",
-   "score": 23,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -16946,9 +16946,9 @@
      "value": -0.99,
      "points": 2
     },
-    "jobs": {
-     "value": 0.87,
-     "points": 2
+    "hours": {
+     "value": 2.86,
+     "points": 3
     },
     "exports": {
      "value": 2.41,
@@ -16974,7 +16974,7 @@
   },
   {
    "date": "2024-11",
-   "score": 23,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -16990,9 +16990,9 @@
      "value": -1.56,
      "points": 2
     },
-    "jobs": {
-     "value": 0.88,
-     "points": 2
+    "hours": {
+     "value": 2.86,
+     "points": 3
     },
     "exports": {
      "value": 7.28,
@@ -17018,7 +17018,7 @@
   },
   {
    "date": "2024-12",
-   "score": 23,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17034,9 +17034,9 @@
      "value": -0.27,
      "points": 2
     },
-    "jobs": {
-     "value": 0.93,
-     "points": 2
+    "hours": {
+     "value": 2.86,
+     "points": 3
     },
     "exports": {
      "value": 3.01,
@@ -17062,7 +17062,7 @@
   },
   {
    "date": "2025-01",
-   "score": 27,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17078,9 +17078,9 @@
      "value": 0.85,
      "points": 2
     },
-    "jobs": {
-     "value": 0.79,
-     "points": 2
+    "hours": {
+     "value": 2.86,
+     "points": 3
     },
     "exports": {
      "value": 5.05,
@@ -17106,7 +17106,7 @@
   },
   {
    "date": "2025-02",
-   "score": 24,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17122,9 +17122,9 @@
      "value": 0.81,
      "points": 2
     },
-    "jobs": {
-     "value": 0.68,
-     "points": 2
+    "hours": {
+     "value": 2.78,
+     "points": 3
     },
     "exports": {
      "value": 4.49,
@@ -17150,7 +17150,7 @@
   },
   {
    "date": "2025-03",
-   "score": 24,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17166,9 +17166,9 @@
      "value": 0.58,
      "points": 2
     },
-    "jobs": {
-     "value": 0.58,
-     "points": 2
+    "hours": {
+     "value": 5.71,
+     "points": 4
     },
     "exports": {
      "value": 6.74,
@@ -17194,8 +17194,8 @@
   },
   {
    "date": "2025-04",
-   "score": 22,
-   "light": "yellow-blue",
+   "score": 23,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -17210,9 +17210,9 @@
      "value": 0.88,
      "points": 2
     },
-    "jobs": {
-     "value": 0.61,
-     "points": 2
+    "hours": {
+     "value": 2.78,
+     "points": 3
     },
     "exports": {
      "value": 8.59,
@@ -17238,8 +17238,8 @@
   },
   {
    "date": "2025-05",
-   "score": 22,
-   "light": "yellow-blue",
+   "score": 23,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -17254,9 +17254,9 @@
      "value": 0.1,
      "points": 2
     },
-    "jobs": {
-     "value": 0.56,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 5.92,
@@ -17282,7 +17282,7 @@
   },
   {
    "date": "2025-06",
-   "score": 23,
+   "score": 24,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17298,9 +17298,9 @@
      "value": 0.58,
      "points": 2
     },
-    "jobs": {
-     "value": 0.5,
-     "points": 2
+    "hours": {
+     "value": 2.78,
+     "points": 3
     },
     "exports": {
      "value": 4.37,
@@ -17326,7 +17326,7 @@
   },
   {
    "date": "2025-07",
-   "score": 25,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17342,9 +17342,9 @@
      "value": 1.92,
      "points": 3
     },
-    "jobs": {
-     "value": 0.5,
-     "points": 2
+    "hours": {
+     "value": 0.0,
+     "points": 3
     },
     "exports": {
      "value": 4.75,
@@ -17370,7 +17370,7 @@
   },
   {
    "date": "2025-08",
-   "score": 24,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17386,9 +17386,9 @@
      "value": 1.19,
      "points": 2
     },
-    "jobs": {
-     "value": 0.45,
-     "points": 2
+    "hours": {
+     "value": 2.78,
+     "points": 3
     },
     "exports": {
      "value": 3.24,
@@ -17414,7 +17414,7 @@
   },
   {
    "date": "2025-09",
-   "score": 26,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17430,9 +17430,9 @@
      "value": 1.86,
      "points": 3
     },
-    "jobs": {
-     "value": 0.4,
-     "points": 2
+    "hours": {
+     "value": 5.56,
+     "points": 4
     },
     "exports": {
      "value": 6.97,
@@ -17458,7 +17458,7 @@
   },
   {
    "date": "2025-10",
-   "score": 25,
+   "score": 26,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17474,9 +17474,9 @@
      "value": 1.76,
      "points": 3
     },
-    "jobs": {
-     "value": 0.29,
-     "points": 2
+    "hours": {
+     "value": 2.78,
+     "points": 3
     },
     "exports": {
      "value": 11.62,
@@ -17502,8 +17502,8 @@
   },
   {
    "date": "2025-11",
-   "score": 22,
-   "light": "yellow-blue",
+   "score": 24,
+   "light": "green",
    "recession": false,
    "indicators": {
     "money": {
@@ -17518,9 +17518,9 @@
      "value": 1.75,
      "points": 3
     },
-    "jobs": {
-     "value": 0.23,
-     "points": 2
+    "hours": {
+     "value": 8.33,
+     "points": 4
     },
     "exports": {
      "value": 4.64,
@@ -17546,7 +17546,7 @@
   },
   {
    "date": "2025-12",
-   "score": 21,
+   "score": 22,
    "light": "yellow-blue",
    "recession": false,
    "indicators": {
@@ -17562,9 +17562,9 @@
      "value": 1.16,
      "points": 2
     },
-    "jobs": {
-     "value": 0.07,
-     "points": 2
+    "hours": {
+     "value": 2.78,
+     "points": 3
     },
     "exports": {
      "value": 5.42,
@@ -17590,7 +17590,7 @@
   },
   {
    "date": "2026-01",
-   "score": 23,
+   "score": 25,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17606,9 +17606,9 @@
      "value": 0.97,
      "points": 2
     },
-    "jobs": {
-     "value": 0.2,
-     "points": 2
+    "hours": {
+     "value": 8.33,
+     "points": 4
     },
     "exports": {
      "value": 9.62,
@@ -17634,7 +17634,7 @@
   },
   {
    "date": "2026-02",
-   "score": 26,
+   "score": 28,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17650,9 +17650,9 @@
      "value": 0.8,
      "points": 2
     },
-    "jobs": {
-     "value": 0.08,
-     "points": 2
+    "hours": {
+     "value": 5.41,
+     "points": 4
     },
     "exports": {
      "value": 11.8,
@@ -17678,7 +17678,7 @@
   },
   {
    "date": "2026-03",
-   "score": 27,
+   "score": 29,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17694,9 +17694,9 @@
      "value": 0.69,
      "points": 2
     },
-    "jobs": {
-     "value": 0.17,
-     "points": 2
+    "hours": {
+     "value": 5.41,
+     "points": 4
     },
     "exports": {
      "value": 13.34,
@@ -17722,7 +17722,7 @@
   },
   {
    "date": "2026-04",
-   "score": 29,
+   "score": 31,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17738,9 +17738,9 @@
      "value": 1.43,
      "points": 2
     },
-    "jobs": {
-     "value": 0.2,
-     "points": 2
+    "hours": {
+     "value": 8.11,
+     "points": 4
     },
     "exports": {
      "value": 13.52,
@@ -17766,7 +17766,7 @@
   },
   {
    "date": "2026-05",
-   "score": 29,
+   "score": 31,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17782,9 +17782,9 @@
      "value": 1.74,
      "points": 3
     },
-    "jobs": {
-     "value": 0.23,
-     "points": 2
+    "hours": {
+     "value": 8.11,
+     "points": 4
     },
     "exports": {
      "value": 13.38,
@@ -17810,7 +17810,7 @@
   },
   {
    "date": "2026-06",
-   "score": 28,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17826,9 +17826,9 @@
      "value": 1.46,
      "points": 2
     },
-    "jobs": {
-     "value": 0.26,
-     "points": 2
+    "hours": {
+     "value": 10.81,
+     "points": 4
     },
     "exports": {
      "value": 12.91,
@@ -17854,7 +17854,7 @@
   },
   {
    "date": "2026-07",
-   "score": 28,
+   "score": 30,
    "light": "green",
    "recession": false,
    "indicators": {
@@ -17870,9 +17870,9 @@
      "value": 1.28,
      "points": 2
     },
-    "jobs": {
-     "value": 0.21,
-     "points": 2
+    "hours": {
+     "value": 10.81,
+     "points": 4
     },
     "exports": {
      "value": 9.34,
@@ -17898,8 +17898,8 @@
   },
   {
    "date": "2026-08",
-   "score": 30,
-   "light": "green",
+   "score": 32,
+   "light": "yellow-red",
    "recession": false,
    "indicators": {
     "money": {
@@ -17914,9 +17914,9 @@
      "value": 1.62,
      "points": 3
     },
-    "jobs": {
-     "value": 0.34,
-     "points": 2
+    "hours": {
+     "value": 10.81,
+     "points": 4
     },
     "exports": {
      "value": 10.69,
