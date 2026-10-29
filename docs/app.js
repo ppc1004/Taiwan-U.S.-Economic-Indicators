@@ -104,14 +104,81 @@ function lineChart(box, o) {
     hit.addEventListener("pointermove", move);
     hit.addEventListener("pointerdown", move);
     hit.addEventListener("pointerleave", () => { hair.setAttribute("opacity", 0); dots.forEach((d) => d.setAttribute("opacity", 0)); hideTip(); });
+    animateIn(box);
   };
   draw();
   let t;
-  new ResizeObserver(() => { clearTimeout(t); t = setTimeout(draw, 120); }).observe(box);
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
+  box._ro?.disconnect();
+  box._ro = new ResizeObserver(() => { clearTimeout(t); t = setTimeout(draw, 120); });
+  box._ro.observe(box);
 }
 
 const tipRow = (color, name, val) => `<div class="row"><span><i class="sw" style="background:${color}"></i>${name}</span><span>${val}</span></div>`;
+
+
+/* ---------- Loading, theme and motion ---------- */
+const cache = {};
+const getJSON = (url) => (cache[url] ||= fetch(url, { cache: "no-cache" }).then((r) => (r.ok ? r.json() : null)).catch(() => null));
+const renders = [];
+function register(fn) { renders.push(fn); try { fn(); } catch (e) { console.error(e); } }
+function load(url, fn) { return getJSON(url).then((d) => d && register(() => fn(d))); }
+
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const seen = new IntersectionObserver((entries) => entries.forEach((e) => {
+  if (!e.isIntersecting) return;
+  e.target.classList.add("in");
+  if (e.target._draw) e.target._draw();
+  seen.unobserve(e.target);
+}), { threshold: 0.15 });
+
+function animateIn(box) {          // lines "draw" themselves the first time a chart scrolls into view
+  if (reduceMotion || box._done) return;
+  const paths = [...box.querySelectorAll("svg path")].filter((p) => +p.getAttribute("stroke-width") >= 1.8);
+  paths.forEach((p) => { const L = p.getTotalLength(); p.style.strokeDasharray = L; p.style.strokeDashoffset = L; });
+  box._draw = () => {
+    box._done = true;
+    requestAnimationFrame(() => paths.forEach((p) => { p.classList.add("draw"); p.style.strokeDashoffset = 0; }));
+    setTimeout(() => paths.forEach((p) => { p.style.strokeDasharray = ""; p.style.strokeDashoffset = ""; p.classList.remove("draw"); }), 1800);
+  };
+  seen.observe(box);
+}
+
+document.querySelectorAll(".finding, .card, .now-pair, .chap, .kpis, .cols").forEach((el) => { el.classList.add("reveal"); seen.observe(el); });
+
+document.getElementById("theme-btn")?.addEventListener("click", () => {
+  const root = document.documentElement, light = root.dataset.theme !== "light";
+  if (light) root.dataset.theme = "light"; else delete root.dataset.theme;
+  try { localStorage.setItem("theme", light ? "light" : "dark"); } catch (e) {}
+  renders.forEach((fn) => { try { fn(); } catch (e) { console.error(e); } });
+});
+
+// highlight the chapter you are reading in the top bar
+const links = [...document.querySelectorAll("#toc a")];
+const spy = new IntersectionObserver((entries) => entries.forEach((e) => {
+  if (!e.isIntersecting) return;
+  links.forEach((a) => a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id));
+}), { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll("main section[id]").forEach((sec) => spy.observe(sec));
+
+/* ---------- Hero numbers ---------- */
+function countUp(el, to, dec = 0, prefix = "", suffix = "") {
+  if (reduceMotion) { el.textContent = prefix + to.toFixed(dec) + suffix; return; }
+  const t0 = performance.now(), dur = 1400;
+  const step = (t) => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+    el.textContent = prefix + (to * e).toFixed(dec) + suffix; if (k < 1) requestAnimationFrame(step); };
+  requestAnimationFrame(step);
+}
+Promise.all(["data/taiwan_light.json", "data/us_light.json", "data/taiwan_trade.json", "data/taiwan_investment.json"].map(getJSON)).then(([tw, us, trade, inv]) => {
+  const box = document.getElementById("kpis"); if (!box) return;
+  const items = [];
+  if (tw) items.push({ label: "Taiwan light", v: tw.latest.score, sub: `${LIGHT[tw.latest.light].label} · ${fmtMonth(tw.latest.date)} · out of 45`, c: LIGHT[tw.latest.light].c });
+  if (us) items.push({ label: "U.S. light", v: us.latest.score, sub: `${LIGHT[us.latest.light].label} · ${fmtMonth(us.latest.date)} · out of 45`, c: LIGHT[us.latest.light].c });
+  if (trade) { const a = trade.annual.at(-1); items.push({ label: "U.S. share of exports", v: a.us_share, dec: 1, suf: "%", sub: `Taiwan, ${a.year}, up from ${trade.annual.find((x) => x.year === 2020)?.us_share ?? "–"}% in 2020` }); }
+  if (inv) { const i = inv.years.length - 1; items.push({ label: "Investment in the U.S.", v: inv.us[i], dec: 1, pre: "$", suf: "B", sub: `Approved, ${inv.years[i]}, up from $${inv.us[inv.years.indexOf(2021)]?.toFixed(1)}B in 2021` }); }
+  box.innerHTML = items.map((it, k) => `<div class="kpi"><div class="k-label">${it.label}</div><div class="k-value">${it.c ? `<i style="color:${css(it.c)}"></i>` : ""}<span data-k="${k}">0</span></div><div class="k-sub">${it.sub}</div></div>`).join("");
+  items.forEach((it, k) => countUp(box.querySelector(`[data-k="${k}"]`), it.v, it.dec || 0, it.pre || "", it.suf || ""));
+  if (tw && us) document.getElementById("live-pill").textContent = `Live data · Taiwan through ${fmtMonth(tw.latest.date)} · U.S. through ${fmtMonth(us.latest.date)}`;
+});
 
 /* ---------- 1. U.S. light ---------- */
 function renderLight(d) {
@@ -223,7 +290,7 @@ function renderWall(us, tw) {
     const w = tilt.querySelector(".wall-row")?.clientWidth || 300;
     const gap = w < 420 ? 1 : 2, n = years.length;
     const bs = Math.max(4, Math.min(16, Math.floor((w - gap * (n - 1)) / n)));
-    tilt.style.setProperty("--bs", bs + "px"); tilt.style.setProperty("--bg", gap + "px");
+    tilt.style.setProperty("--bs", bs + "px"); tilt.style.setProperty("--bgap", gap + "px");
   };
   size(); new ResizeObserver(size).observe(tilt);
   document.getElementById("wall-key").innerHTML = ["blue", "yellow-blue", "green", "yellow-red", "red"]
@@ -285,16 +352,13 @@ function renderTaiwan(tw, us) {
   });
 }
 
-Promise.all([
-  fetch("data/us_light.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => null),
-  fetch("data/taiwan_light.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => null),
-]).then(([us, tw]) => {
+Promise.all([getJSON("data/us_light.json"), getJSON("data/taiwan_light.json")]).then(([us, tw]) => {
   if (us || tw) renderWall(us, tw);
-  if (us) renderLight(us);
-  if (tw) renderTaiwan(tw, us);
+  if (us) register(() => renderLight(us));
+  if (tw) register(() => renderTaiwan(tw, us));
   else document.getElementById("now-tw").style.display = "none";
 });
-fetch("data/taiwan_trade.json", { cache: "no-cache" }).then((r) => r.json()).then(renderTrade).catch((e) => console.error("Trade:", e));
+load("data/taiwan_trade.json", renderTrade);
 
 /* ---------- 3. Products ---------- */
 function renderProducts(d) {
@@ -329,7 +393,7 @@ function renderProducts(d) {
     tip: (i) => `<b>${Y[i]}</b>Optical and precision instruments:${tipRow(CN, "To mainland China", B(ce[O][i]))}`,
   });
 }
-fetch("data/taiwan_products.json", { cache: "no-cache" }).then((r) => r.json()).then(renderProducts).catch((e) => console.error("Products:", e));
+load("data/taiwan_products.json", renderProducts);
 
 /* ---------- 4. Export orders ---------- */
 function renderOrders(d) {
@@ -383,8 +447,8 @@ function renderInvestment(d) {
     tip: (i) => `<b>${Y[i]}</b>Mainland China:${tipRow(CN, "Approved projects", d.china_projects[i].toLocaleString())}${tipRow(CN, "Approved amount", B(d.china[i]))}`,
   });
 }
-fetch("data/taiwan_orders.json", { cache: "no-cache" }).then((r) => r.json()).then(renderOrders).catch((e) => console.error("Orders:", e));
-fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvestment).catch((e) => console.error("Investment:", e));
+load("data/taiwan_orders.json", renderOrders);
+load("data/taiwan_investment.json", renderInvestment);
 
 /* ---------- 6. Industry ---------- */
 function renderIndustry(d) {
@@ -433,7 +497,7 @@ function renderIndustry(d) {
     el.addEventListener("pointerleave", hideTip);
   });
 }
-fetch("data/taiwan_industry.json", { cache: "no-cache" }).then((r) => r.json()).then(renderIndustry).catch((e) => console.error("Industry:", e));
+load("data/taiwan_industry.json", renderIndustry);
 
 /* ---------- 3b. Product ranking (detailed groups) ---------- */
 function renderProductBars(d) {
@@ -458,7 +522,7 @@ function renderProductBars(d) {
     el.addEventListener("pointerleave", hideTip);
   });
 }
-fetch("data/taiwan_products.json", { cache: "no-cache" }).then((r) => r.json()).then(renderProductBars).catch((e) => console.error("Product bars:", e));
+load("data/taiwan_products.json", renderProductBars);
 
 /* ---------- 5b. Investment going out vs coming in ---------- */
 function renderInvFlow(d) {
@@ -477,7 +541,7 @@ function renderInvFlow(d) {
     tip: (i) => `<b>${Y[i]}</b>${tipRow(OUTc, "Going out", B(out[i]))}<div class="row"><span>&nbsp;&nbsp;to mainland China</span><span>${B(d.china[i])}</span></div>${tipRow(INc, "Coming in", B(inn[i]))}<div class="row"><span>&nbsp;&nbsp;from mainland China</span><span>${B(d.china_into_taiwan?.[i])}</span></div>`,
   });
 }
-fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvFlow).catch((e) => console.error("Investment flow:", e));
+load("data/taiwan_investment.json", renderInvFlow);
 
 /* ---------- 3c. Imports by product ---------- */
 function renderImportBars(d) {
@@ -500,7 +564,7 @@ function renderImportBars(d) {
     el.addEventListener("pointerleave", hideTip);
   });
 }
-fetch("data/taiwan_products.json", { cache: "no-cache" }).then((r) => r.json()).then(renderImportBars).catch((e) => console.error("Import bars:", e));
+load("data/taiwan_products.json", renderImportBars);
 
 /* ---------- 5c. Investment by region ---------- */
 function renderInvRegions(d) {
@@ -523,4 +587,4 @@ function renderInvRegions(d) {
     },
   });
 }
-fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvRegions).catch((e) => console.error("Investment regions:", e));
+load("data/taiwan_investment.json", renderInvRegions);
