@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taiwan &amp; U.S. Economic Indicators</title>
+<meta name="description" content="Business cycle lights for the U.S., built with Taiwan's official method, and Taiwan's trade with the U.S. and mainland China.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Taiwan &amp; U.S. Economic Indicators</p>
+    <h1>Where are the U.S. and Taiwan economies right now?</h1>
+    <p class="lede">Taiwan's government sums up its economy every month with one of five colored lights.
+      The U.S. has no official version, so this site builds one with the same method, using free public data.</p>
+    <nav class="toc">
+      <a href="#light">1. U.S. business cycle light</a>
+      <a href="#trade">2. Trade</a>
+      <a href="#method">How it works</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="light">
+  <h2><span class="num">1</span> U.S. business cycle light</h2>
+  <div class="now" id="now"></div>
+  <div class="legend-lights" id="legend-lights"></div>
+
+  <div class="card">
+    <h3>Every month since 1993</h3>
+    <p class="sub">Total score out of 45. Gray bands are official U.S. recessions. Move your mouse over the chart to see each month.</p>
+    <div class="chart" id="chart-light"></div>
+  </div>
+
+  <div class="card">
+    <h3>The 9 indicators behind the latest light</h3>
+    <p class="sub">Each indicator gets 1 to 5 points by comparing it with its own history. The 9 points add up to the total score.</p>
+    <div class="table-wrap"><table id="ind-table"></table></div>
+  </div>
+</section>
+
+<section id="trade">
+  <h2><span class="num">2</span> Trade: Taiwan, the U.S. and mainland China</h2>
+  <p class="lede-sm">Taiwan's exports, imports and trade surplus with its two biggest partners, 2004 to 2024. All values in billions of U.S. dollars.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>The U.S. passed mainland China (not counting Hong Kong) as Taiwan's top export market in 2024.</h3>
+    <p>Taiwan sold <b>$111B</b> to the U.S. and <b>$97B</b> to mainland China. Exports to the U.S. jumped <b>46%</b> in 2024.
+      The U.S. first came out ahead in December 2023, the first time since at least 2004.</p>
+    <div class="chart" id="chart-exports"></div>
+    <p class="note">Thin lines are monthly exports. Thick lines are the long-term trend, with seasonal ups and downs removed.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>Mainland China's share of Taiwan's exports fell from a peak of 29.7% in 2020 to 20.4% in 2024.</h3>
+    <p>In the same years, the U.S. share rose from <b>14.6%</b> to <b>23.4%</b>. Dollar sales to mainland China peaked in 2021 at <b>$126B</b>.</p>
+    <div class="chart" id="chart-share"></div>
+    <p class="note">Share of Taiwan's total exports, by year.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 3</span>
+    <h3>Taiwan's trade surplus with the U.S. grew tenfold, from $6B in 2004 to $65B in 2024.</h3>
+    <p>Its surplus with mainland China shrank from <b>$42B</b> in 2021 to <b>$16B</b> in 2024.
+      Imports from mainland China grew <b>4.2 times</b> over 20 years, faster than exports to mainland China (<b>2.6 times</b>).</p>
+    <div class="chart" id="chart-surplus"></div>
+    <p class="note">Trade surplus = exports minus imports, by year.</p>
+  </div>
+</section>
+
+<section id="method">
+  <h2>How it works</h2>
+  <div class="cols">
+    <div>
+      <h3>The U.S. light</h3>
+      <p>Taiwan's National Development Council scores 9 indicators every month and adds them up.
+        This site uses 9 matching U.S. indicators from FRED (Federal Reserve Bank of St. Louis).</p>
+      <ol>
+        <li>Each indicator is measured as its change from the same month a year earlier. The factory survey is used as is.</li>
+        <li>Each indicator gets 1 to 5 points. Its bottom 10% of months from 1993 to 2019 score 1 point (blue) and its top 10% score 5 points (red).</li>
+        <li>The 9 points are added up (9 to 45) and turned into a light using Taiwan's official bands.</li>
+      </ol>
+      <p class="small">The color bands are Taiwan's. The cutoffs for each indicator are set by this project, because Taiwan does not publish its exact formula.
+        So this is <i>adapted from</i> Taiwan's method, not an official U.S. light. Unlike private recession dashboards, it uses a public government method and free public data.</p>
+    </div>
+    <div>
+      <h3>The data</h3>
+      <ul>
+        <li><b>U.S. light:</b> FRED, updated automatically every week.</li>
+        <li><b>Trade:</b> Taiwan Ministry of Economic Affairs, January 2004 to December 2024. "China" means mainland China only. Hong Kong is not included.</li>
+      </ul>
+      <p class="small">All code and data are on <a href="https://github.com/ppc1004/Taiwan-U.S.-Economic-Indicators">GitHub</a>.</p>
+      <p class="small" id="updated"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <p>Built by Pay-Chern Liu · <a href="https://github.com/ppc1004">GitHub</a> · <a href="https://www.linkedin.com/in/pay-chern-liu-8033b033a">LinkedIn</a></p>
+</footer>
+
+<div class="tip" id="tip" role="tooltip"></div>
+<script src="app.js"></script>
+</body>
+</html>
