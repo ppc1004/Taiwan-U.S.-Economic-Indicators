@@ -2,12 +2,13 @@
 
 const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const LIGHT = {
-  "blue":        { label: "Blue",        meaning: "Slump",        c: "--blue" },
+  "blue":        { label: "Blue",        meaning: "Weak",         c: "--blue" },
   "yellow-blue": { label: "Yellow-blue", meaning: "Cooling down", c: "--yblue" },
   "green":       { label: "Green",       meaning: "Stable",       c: "--green" },
   "yellow-red":  { label: "Yellow-red",  meaning: "Warming up",   c: "--yred" },
-  "red":         { label: "Red",         meaning: "Overheating",  c: "--red" },
+  "red":         { label: "Red",         meaning: "Hot",          c: "--red" },
 };
+const lightName = (k) => `${LIGHT[k].meaning} (${LIGHT[k].label.toLowerCase()})`;   // e.g. "Hot (red)"
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const fmtMonth = (d) => `${MONTHS[+d.slice(5, 7) - 1]} ${d.slice(0, 4)}`;
 const NS = "http://www.w3.org/2000/svg";
@@ -172,8 +173,7 @@ function countUp(el, to, dec = 0, prefix = "", suffix = "") {
 Promise.all(["data/taiwan_light.json", "data/us_light.json", "data/taiwan_trade.json", "data/taiwan_investment.json"].map(getJSON)).then(([tw, us, trade, inv]) => {
   const box = document.getElementById("kpis"); if (!box) return;
   const items = [];
-  const plain = { red: "Hot", "yellow-red": "Warming up", green: "Stable", "yellow-blue": "Cooling down", blue: "Weak" };
-  const lightSub = (d) => `${plain[d.latest.light]} (${LIGHT[d.latest.light].label.toLowerCase()}) · ${fmtMonth(d.latest.date)}`;
+  const lightSub = (d) => `${lightName(d.latest.light)} · ${fmtMonth(d.latest.date)}`;
   if (tw) items.push({ label: "Taiwan today", v: tw.latest.score, of: "/ 45", sub: lightSub(tw), c: LIGHT[tw.latest.light].c });
   if (us) items.push({ label: "U.S. today (my version)", v: us.latest.score, of: "/ 45", sub: lightSub(us), c: LIGHT[us.latest.light].c });
   if (trade) { const a = trade.annual.at(-1); items.push({ label: "Taiwan's exports to the U.S.", v: a.us_share, dec: 1, suf: "%", sub: `Of all exports in ${a.year} · up from ${trade.annual.find((x) => x.year === 2020)?.us_share ?? "–"}% in 2020` }); }
@@ -189,13 +189,13 @@ function renderLight(d) {
   document.getElementById("now").innerHTML = `
     <div class="bulb" style="color:${css(info.c)}"></div>
     <div>
-      <p class="who">United States <span class="tw">(built with Taiwan's method)</span></p>
-      <p class="big">${info.label}: ${info.meaning}</p>
+      <p class="who">United States <span class="tw">(my version)</span></p>
+      <p class="big">${lightName(L.light)}</p>
       <p class="meta">${fmtMonth(L.date)} · score ${L.score} out of 45${L.recession ? " · in an official recession" : ""}</p>
     </div>`;
   document.getElementById("legend-lights").innerHTML = d.method.lights.slice().reverse().map((l, k, arr) => {
     const hi = k === arr.length - 1 ? 45 : arr[k + 1].min - 1;
-    return `<span><i style="background:${css(LIGHT[l.light].c)}"></i>${l.label} (${l.min}–${hi}): ${l.meaning}</span>`;
+    return `<span><i style="background:${css(LIGHT[l.light].c)}"></i>${lightName(l.light)} ${l.min}–${hi}</span>`;
   }).join("");
 
   const M = d.months;
@@ -209,13 +209,13 @@ function renderLight(d) {
     strip: M.map((m) => css(LIGHT[m.light].c)),
     series: [{ name: "Score", color: css("--ink"), values: M.map((m) => m.score), width: 1.8 }],
     tip: (i) => { const m = M[i], li = LIGHT[m.light];
-      return `<b>${fmtMonth(m.date)}</b>${tipRow(css(li.c), li.label, m.score + " / 45")}${m.recession ? '<div class="small" style="margin:2px 0 0">Official recession</div>' : ""}`; },
+      return `<b>${fmtMonth(m.date)}</b>${tipRow(css(li.c), lightName(m.light), m.score + " / 45")}${m.recession ? '<div class="small" style="margin:2px 0 0">Official recession</div>' : ""}`; },
   });
 
   const pts = (p, color) => `<span class="dots" aria-label="${p} of 5 points">${[1,2,3,4,5].map((k) => `<i style="${k <= p ? `background:${color}` : ""}"></i>`).join("")}</span>`;
   const pointColor = { 1: "--blue", 2: "--yblue", 3: "--green", 4: "--yred", 5: "--red" };
   document.getElementById("ind-table").innerHTML = `
-    <thead><tr><th>Indicator</th><th class="n">Latest</th><th>Points</th><th class="hide-sm">Replaces Taiwan's</th></tr></thead>
+    <thead><tr><th>Indicator</th><th class="n">Latest</th><th>Points</th><th class="hide-sm">Taiwan's version</th></tr></thead>
     <tbody>${d.indicators.map((ind) => {
       const v = L.indicators[ind.key];
       const val = ind.transform === "yoy" ? `${v.value > 0 ? "+" : ""}${v.value.toFixed(1)}% <span class="tw hide-sm">vs. a year ago</span>` : `${v.value.toFixed(1)} <span class="tw">index</span>`;
@@ -271,7 +271,7 @@ function renderWall(us, tw) {
   const STEP = 5;                 // ms between months
   const rows = [
     { name: "Taiwan", sub: "official", d: tw },
-    { name: "United States", sub: "this site", d: us },
+    { name: "United States", sub: "my version", d: us },
   ].filter((r) => r.d);
   const html = rows.map((r) => {
     const by = Object.fromEntries(r.d.months.map((m) => [m.date, m]));
@@ -297,7 +297,7 @@ function renderWall(us, tw) {
   };
   size(); new ResizeObserver(size).observe(tilt);
   document.getElementById("wall-key").innerHTML = ["blue", "yellow-blue", "green", "yellow-red", "red"]
-    .map((l) => `<span><i style="background:${css(LIGHT[l].c)};box-shadow:0 0 6px ${css(LIGHT[l].c)}"></i>${LIGHT[l].label}: ${LIGHT[l].meaning}</span>`).join("");
+    .map((l) => `<span><i style="background:${css(LIGHT[l].c)};box-shadow:0 0 6px ${css(LIGHT[l].c)}"></i>${lightName(l)}</span>`).join("");
 
   // year counter that follows the lights
   const yearEl = document.getElementById("wall-year");
@@ -317,7 +317,7 @@ function renderWall(us, tw) {
   tilt.addEventListener("pointermove", (ev) => {
     const b = ev.target.closest(".b[data-k]"); if (!b) return hideTip();
     const li = LIGHT[b.dataset.l];
-    showTip(`<b>${b.dataset.w} · ${fmtMonth(b.dataset.k)}</b>${tipRow(css(li.c), li.label, b.dataset.s + " / 45")}`, ev);
+    showTip(`<b>${b.dataset.w} · ${fmtMonth(b.dataset.k)}</b>${tipRow(css(li.c), lightName(b.dataset.l), b.dataset.s + " / 45")}`, ev);
   });
   tilt.addEventListener("pointerleave", hideTip);
 }
@@ -329,7 +329,7 @@ function renderTaiwan(tw, us) {
     <div class="bulb" style="color:${css(info.c)}"></div>
     <div>
       <p class="who">Taiwan <span class="tw">(official)</span></p>
-      <p class="big">${info.label}: ${info.meaning}</p>
+      <p class="big">${lightName(L.light)}</p>
       <p class="meta">${fmtMonth(L.date)} · score ${L.score} out of 45</p>
     </div>`;
   if (!us) return;
@@ -346,10 +346,10 @@ function renderTaiwan(tw, us) {
     xTick: (i, small) => { const y = +D[i].slice(0, 4); return D[i].endsWith("-01") && y % (small ? 8 : 4) === 0 ? y : null; },
     series: [
       { name: "Taiwan (official)", short: "Taiwan", color: TWc, values: tws, width: 1.8, label: true },
-      { name: "U.S. (this site)", short: "U.S.", color: USc, values: uss, width: 1.8, label: true },
+      { name: "U.S. (my version)", short: "U.S.", color: USc, values: uss, width: 1.8, label: true },
     ],
     tip: (i) => {
-      const row = (c, name, m) => tipRow(c, name, m ? `${m.score} · ${LIGHT[m.light].label}` : "not out yet");
+      const row = (c, name, m) => tipRow(c, name, m ? `${m.score} · ${lightName(m.light)}` : "not out yet");
       return `<b>${fmtMonth(D[i])}</b>${row(TWc, "Taiwan", twBy[D[i]])}${row(USc, "U.S.", usBy[D[i]])}`;
     },
   });

@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=13">
+<link rel="stylesheet" href="style.css?v=14">
 <script>try { if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}</script>
 </head>
 <body>
@@ -68,12 +68,12 @@
       But the U.S. doesn't have one.</p>
     <p>So I made my own. Taiwan's light is built from nine numbers, like exports, stock prices and factory output. I found the nine closest U.S. numbers,
       scored them the same way Taiwan does, and added them up. Then I tested it: in every U.S. recession since 1993, my light turned blue.</p>
-    <p>I also had 20 years of trade data on Taiwan, the U.S. and China from an earlier project. Putting it all together tells a bigger story: </b>Taiwan's economy is slowly moving its center from China to the U.S.</b></p>
+    <p>I also had 20 years of trade data on Taiwan, the U.S. and China from an earlier project. Putting it all together tells a bigger story: <b>Taiwan's economy is slowly moving its center from China to the U.S.</b></p>
   </div>
 </section>
 
 <section id="light">
-  <div class="chap"><span class="chap-num">Chapter 01</span><h2>Business cycle lights: Taiwan and the U.S.</h2></div>
+  <div class="chap"><span class="chap-num">Chapter 01</span><h2>How hot is each economy? Taiwan vs. the U.S.</h2></div>
   <div class="now-pair">
     <div class="now" id="now-tw"></div>
     <div class="now" id="now"></div>
@@ -82,27 +82,28 @@
 
   <div class="card">
     <h3>Taiwan and the U.S., side by side</h3>
-    <p class="sub">Total score out of 45 for both economies. Taiwan's line is the official light. The U.S. line is this site's version built with Taiwan's method.</p>
+    <p class="sub">Higher score = hotter economy. Taiwan's line is the official score; the U.S. line is my version. Both dropped sharply in 2001 and 2008–09.</p>
     <div class="chart" id="chart-compare"></div>
   </div>
 
   <div class="card">
-    <h3>The U.S. light, every month since 1993</h3>
-    <p class="sub">Total score out of 45. Gray bands are official U.S. recessions. Move your mouse over the chart to see each month.
-      The light turned blue for 3 months in 2023 without a recession: U.S. factories slowed down that year, but the overall economy kept growing.</p>
+    <h3>My U.S. light, every month since 1993</h3>
+    <p class="sub">Higher score = hotter economy. The colored strip shows the light for each month. Gray bands are official U.S. recessions, and my light turned blue in all three.
+      It also turned blue for 3 months in 2023 without a recession: U.S. factories slowed down that year, but the overall economy kept growing.</p>
     <div class="chart" id="chart-light"></div>
   </div>
 
   <div class="card">
-    <h3>The 9 indicators behind the latest light</h3>
-    <p class="sub">Each indicator gets 1 to 5 points by comparing it with its own history. The 9 points add up to the total score.</p>
+    <h3>The 9 numbers behind my latest U.S. light</h3>
+    <p class="sub">Each number gets 1 to 5 points: 5 if it's growing much faster than usual, 1 if it's much weaker than usual. The 9 points add up to the score out of 45.
+      The factory survey is a score where anything above 0 means more factories say business is getting better.</p>
     <div class="table-wrap"><table id="ind-table"></table></div>
   </div>
-  <div class="insight"><span class="insight-tag">What this means</span><p>Taiwan's light is red right now, so its economy looks great. But when I dug into the details (Chapter 06), almost all of that heat comes from one industry: electronics. That's like a team winning because of one star player. It works, until that player gets hurt.</p></div>
+  <div class="insight"><span class="insight-tag">What this means</span><p>Taiwan's light is red right now, so its economy looks great. But when I dug into the details (Chapter 06), most of that heat comes from one industry: electronics. That's like a team winning because of one star player. It works, until that player gets hurt.</p></div>
 </section>
 
 <section id="trade">
-  <div class="chap"><span class="chap-num">Chapter 02</span><h2>Trade: Taiwan, the U.S. and China</h2></div>
+  <div class="chap"><span class="chap-num">Chapter 02</span><h2>Trade: Taiwan, the U.S. and mainland China</h2></div>
   <p class="lede-sm">Taiwan's exports, imports and trade surplus with its two biggest partners, 2004 to 2024. All values in billions of U.S. dollars.</p>
 
   <div class="finding">
@@ -322,6 +323,6 @@
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
-<script src="app.js?v=14"></script>
+<script src="app.js?v=17"></script>
 </body>
 </html>
