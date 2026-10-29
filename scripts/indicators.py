@@ -5,7 +5,7 @@ INDICATORS = [
     {"key": "money",    "fred": "M2SL",               "transform": "yoy",   "name": "Money supply (M2)",                     "taiwan": "Money supply (M1B)"},
     {"key": "stocks",   "fred": "NASDAQCOM",          "transform": "yoy",   "name": "Stock prices (Nasdaq)",                 "taiwan": "Stock price index (TAIEX)"},
     {"key": "industry", "fred": "INDPRO",             "transform": "yoy",   "name": "Industrial production",                 "taiwan": "Industrial production"},
-    {"key": "jobs",     "fred": "PAYEMS",             "transform": "yoy",   "name": "Non-farm jobs",                         "taiwan": "Non-farm employment"},
+    {"key": "hours",    "fred": "AWOTMAN",            "transform": "yoy",   "name": "Factory overtime hours",                "taiwan": "Overtime hours (industry and services)"},
     {"key": "exports",  "fred": "BOPTEXP",            "transform": "yoy",   "name": "Exports of goods",                      "taiwan": "Customs exports"},
     {"key": "equipment","fred": "NEWORDER",           "transform": "yoy",   "name": "New orders for business equipment",     "taiwan": "Imports of machinery and electrical equipment"},
     {"key": "factory",  "fred": "AMTMVS/PCUOMFGOMFG", "transform": "yoy",   "name": "Factory sales, after price changes",    "taiwan": "Manufacturing sales volume"},
@@ -14,7 +14,7 @@ INDICATORS = [
 ]
 
 # Every FRED series we need to download (USREC = official U.S. recession months, for the chart only)
-FRED_SERIES = ["M2SL", "NASDAQCOM", "INDPRO", "PAYEMS", "BOPTEXP", "NEWORDER",
+FRED_SERIES = ["M2SL", "NASDAQCOM", "INDPRO", "AWOTMAN", "BOPTEXP", "NEWORDER",
                "AMTMVS", "PCUOMFGOMFG", "RSAFS", "GACDFSA066MSFRBPHI", "USREC"]
 
 # Taiwan's official total-score bands (9 indicators x 1-5 points = 9 to 45)
