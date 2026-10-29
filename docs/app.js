@@ -221,14 +221,14 @@ function renderTaiwan(tw, us) {
 }
 
 Promise.all([
-  fetch("data/us_light.json").then((r) => r.json()).catch(() => null),
-  fetch("data/taiwan_light.json").then((r) => r.json()).catch(() => null),
+  fetch("data/us_light.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => null),
+  fetch("data/taiwan_light.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => null),
 ]).then(([us, tw]) => {
   if (us) renderLight(us);
   if (tw) renderTaiwan(tw, us);
   else document.getElementById("now-tw").style.display = "none";
 });
-fetch("data/taiwan_trade.json").then((r) => r.json()).then(renderTrade).catch((e) => console.error("Trade:", e));
+fetch("data/taiwan_trade.json", { cache: "no-cache" }).then((r) => r.json()).then(renderTrade).catch((e) => console.error("Trade:", e));
 
 /* ---------- 3. Products ---------- */
 function renderProducts(d) {
@@ -263,7 +263,7 @@ function renderProducts(d) {
     tip: (i) => `<b>${Y[i]}</b>Optical and precision instruments:${tipRow(CN, "To mainland China", B(ce[O][i]))}`,
   });
 }
-fetch("data/taiwan_products.json").then((r) => r.json()).then(renderProducts).catch((e) => console.error("Products:", e));
+fetch("data/taiwan_products.json", { cache: "no-cache" }).then((r) => r.json()).then(renderProducts).catch((e) => console.error("Products:", e));
 
 /* ---------- 4. Export orders ---------- */
 function renderOrders(d) {
@@ -317,5 +317,5 @@ function renderInvestment(d) {
     tip: (i) => `<b>${Y[i]}</b>Mainland China:${tipRow(CN, "Approved projects", d.china_projects[i].toLocaleString())}${tipRow(CN, "Approved amount", B(d.china[i]))}`,
   });
 }
-fetch("data/taiwan_orders.json").then((r) => r.json()).then(renderOrders).catch((e) => console.error("Orders:", e));
-fetch("data/taiwan_investment.json").then((r) => r.json()).then(renderInvestment).catch((e) => console.error("Investment:", e));
+fetch("data/taiwan_orders.json", { cache: "no-cache" }).then((r) => r.json()).then(renderOrders).catch((e) => console.error("Orders:", e));
+fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvestment).catch((e) => console.error("Investment:", e));
