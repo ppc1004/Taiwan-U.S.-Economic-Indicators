@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taiwan &amp; U.S. Economic Indicators</title>
 <meta name="description" content="Business cycle lights for the U.S., built with Taiwan's official method, and Taiwan's trade with the U.S. and mainland China.">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <header class="top">
@@ -18,6 +18,8 @@
       <a href="#light">1. U.S. business cycle light</a>
       <a href="#trade">2. Trade</a>
       <a href="#products">3. Products</a>
+      <a href="#orders">4. Export orders</a>
+      <a href="#investment">5. Investment</a>
       <a href="#method">How it works</a>
     </nav>
   </div>
@@ -105,6 +107,59 @@
   </div>
 </section>
 
+<section id="orders">
+  <h2><span class="num">4</span> Export orders: who is buying</h2>
+  <p class="lede-sm">Export orders are orders that foreign buyers place with Taiwan companies, 2003 to 2024. Some of these products are made in factories outside Taiwan, so orders are bigger than exports.
+    In this chapter "China" includes Hong Kong. All values in billions of U.S. dollars.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>U.S. buyers placed $194B of orders with Taiwan companies in 2024, a third of the total.</h3>
+    <p>The U.S. has been the top source of orders every year since 2014. Mainland China and Hong Kong together placed <b>$127B</b> (21.5%).
+      From 2007 to 2013, they were ahead of the U.S.</p>
+    <div class="chart" id="chart-orders"></div>
+    <p class="note">Export orders by where the buyer is, by year.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>Orders from Southeast Asia grew 21 times, from $4.7B in 2003 to $98B in 2024, and passed Europe for the first time in 2024.</h3>
+    <p>In 2023, when total orders fell <b>16%</b>, orders from Southeast Asia rose <b>15%</b>. Southeast Asia's share of all orders went from <b>2.8%</b> to <b>16.7%</b>.</p>
+    <div class="chart" id="chart-asean"></div>
+    <p class="note">Export orders from Southeast Asia (ASEAN) and Europe, by year.</p>
+  </div>
+</section>
+
+<section id="investment">
+  <h2><span class="num">5</span> Investment: where Taiwan companies build</h2>
+  <p class="lede-sm">Overseas investment approved by Taiwan's government, 2003 to 2024. Approved amounts can differ from money actually spent.
+    Taiwan counts investment in mainland China separately from the rest of the world. All values in billions of U.S. dollars.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>In 2010, 84% of the overseas investment Taiwan approved went to mainland China. In 2024, it was 7.5%.</h3>
+    <p>Approved investment in all other countries grew from <b>$2.8B</b> in 2010 to <b>$44.9B</b> in 2024. It nearly doubled in 2024 alone, from $23.6B.</p>
+    <div class="chart" id="chart-inv"></div>
+    <p class="note">Approved overseas investment, by year.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>The U.S. was the top destination for Taiwan's overseas investment in 2023 and 2024, with $14.1B approved in 2024.</h3>
+    <p>That is up from <b>$0.5B</b> in 2021. In 2024, the U.S. received nearly four times as much approved investment as mainland China (<b>$3.7B</b>).</p>
+    <div class="chart" id="chart-inv-us"></div>
+    <p class="note">Approved investment in the U.S. and in mainland China, 2016 to 2024.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 3</span>
+    <h3>Approved investment in mainland China fell 75%, from a peak of $14.6B in 2010 to $3.7B in 2024.</h3>
+    <p>The number of approved projects fell from <b>3,875</b> in 2003 to <b>310</b> in 2024.</p>
+    <div class="chart" id="chart-inv-cn"></div>
+    <p class="note">Number of approved investment projects in mainland China, by year.</p>
+  </div>
+</section>
+
 <section id="method">
   <h2>How it works</h2>
   <div class="cols">
@@ -125,6 +180,7 @@
       <ul>
         <li><b>U.S. light:</b> FRED, updated automatically every week.</li>
         <li><b>Trade and products:</b> Taiwan Ministry of Economic Affairs, January 2004 to December 2024. "China" means mainland China only. Hong Kong is not included.</li>
+        <li><b>Export orders and investment:</b> Taiwan Ministry of Economic Affairs, 2003 to 2024. For export orders, "China" includes Hong Kong.</li>
       </ul>
       <p class="small">All code and data are on <a href="https://github.com/ppc1004/Taiwan-U.S.-Economic-Indicators">GitHub</a>.</p>
       <p class="small" id="updated"></p>
@@ -139,6 +195,6 @@
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
-<script src="app.js?v=3"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 :root {
   --bg: #fbfaf7; --card: #ffffff; --ink: #1d1f23; --ink2: #4a4f57; --muted: #80868f;
   --line: #e6e3dc; --grid: #ece9e2; --accent: #1d4ed8;
-  --us: #2563eb; --cn: #c2410c; --rec: rgba(120,120,120,.16);
+  --us: #2563eb; --cn: #c2410c; --c3: #0f8a6c; --c4: #7c3aed; --c5: #a16207; --rec: rgba(120,120,120,.16);
   --blue: #2f6db5; --yblue: #8fb8de; --green: #3f9b5a; --yred: #f0b43c; --red: #d64541;
 }
 @media (prefers-color-scheme: dark) {
   :root { --bg: #15171a; --card: #1d2024; --ink: #eceae6; --ink2: #b9bcc2; --muted: #8b9098;
-    --line: #2d3137; --grid: #2a2e33; --accent: #7aa2ff; --us: #6c9dff; --cn: #f08a4b; --rec: rgba(200,200,200,.10); }
+    --line: #2d3137; --grid: #2a2e33; --accent: #7aa2ff; --us: #5b8ef0; --cn: #d86c30; --c3: #2aa883; --c4: #9d78ee; --c5: #b8852a; --rec: rgba(200,200,200,.10); }
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif; }
@@ -43,7 +43,7 @@ h3 { font-size: 18px; margin: 0 0 4px; line-height: 1.35; }
 .chart .grid { stroke: var(--grid); stroke-width: 1; }
 .chart .lbl { font-size: 12px; font-weight: 600; }
 .chart .hair { stroke: var(--ink2); stroke-width: 1; stroke-dasharray: 3 3; }
-.chart-legend { display: flex; gap: 16px; font-size: 13px; color: var(--ink2); margin: 0 0 6px; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 13px; color: var(--ink2); margin: 0 0 6px; }
 .chart-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .chart-legend i { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
 
