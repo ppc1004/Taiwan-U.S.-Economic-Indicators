@@ -35,6 +35,8 @@ jobs:
         run: python scripts/build_taiwan_products.py
       - name: Build orders and investment chapters
         run: python scripts/build_taiwan_orders_investment.py
+      - name: Build industry chapter
+        run: python scripts/build_taiwan_industry.py
       - name: Save new data
         run: |
           git config user.name "github-actions[bot]"
