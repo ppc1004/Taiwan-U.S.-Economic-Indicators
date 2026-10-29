@@ -30,6 +30,7 @@ function showTip(html, ev) {
   tip.style.left = x + "px"; tip.style.top = y + "px";
 }
 const hideTip = () => (tip.style.opacity = 0);
+addEventListener("scroll", hideTip, { passive: true });
 
 /* A line chart with one y-axis, a crosshair and a tooltip.
    o = { n, height, yMin, yMax, yTicks, yFmt, xTick(i) -> label|null,
