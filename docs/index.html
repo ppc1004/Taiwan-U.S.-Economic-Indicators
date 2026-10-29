@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taiwan &amp; U.S. Economic Indicators</title>
 <meta name="description" content="Business cycle lights for the U.S., built with Taiwan's official method, and Taiwan's trade with the U.S. and mainland China.">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 <header class="top">
@@ -14,6 +14,15 @@
     <h1>Where are the U.S. and Taiwan economies right now?</h1>
     <p class="lede">Taiwan's government sums up its economy every month with one of five colored lights.
       The U.S. has no official version, so this site builds one with the same method, using free public data.</p>
+    <div class="wall-band" id="wall" aria-label="Business cycle light for every month since 1993, Taiwan and the U.S.">
+      <div class="wall-head">
+        <span class="wall-year" id="wall-year">1993</span>
+        <span class="wall-cap">Every month since 1993. One light = one month. Each column is a year, January at the top.</span>
+        <button class="wall-replay" id="wall-replay" type="button">Replay</button>
+      </div>
+      <div class="wall-stage"><div class="wall-tilt" id="wall-tilt"></div></div>
+      <div class="wall-key" id="wall-key"></div>
+    </div>
     <nav class="toc">
       <a href="#light">1. Business cycle lights</a>
       <a href="#trade">2. Trade</a>
@@ -271,6 +280,6 @@
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
-<script src="app.js?v=10"></script>
+<script src="app.js?v=11"></script>
 </body>
 </html>

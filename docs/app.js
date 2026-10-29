@@ -192,6 +192,66 @@ function renderTrade(d) {
   });
 }
 
+
+/* ---------- Hero: light wall ---------- */
+function renderWall(us, tw) {
+  const tilt = document.getElementById("wall-tilt"); if (!tilt) return;
+  const start = 1993, endY = +[us?.latest.date, tw?.latest.date].filter(Boolean).sort().at(-1).slice(0, 4);
+  const years = []; for (let y = start; y <= endY; y++) years.push(y);
+  const STEP = 5;                 // ms between months
+  const rows = [
+    { name: "Taiwan", sub: "official", d: tw },
+    { name: "United States", sub: "this site", d: us },
+  ].filter((r) => r.d);
+  const html = rows.map((r) => {
+    const by = Object.fromEntries(r.d.months.map((m) => [m.date, m]));
+    let cells = "";
+    years.forEach((y, yi) => { for (let mo = 1; mo <= 12; mo++) {
+      const key = `${y}-${String(mo).padStart(2, "0")}`, m = by[key];
+      const delay = (yi * 12 + mo - 1) * STEP;
+      cells += m
+        ? `<i class="b on${key === r.d.latest.date ? " live" : ""}" style="--c:${css(LIGHT[m.light].c)};--d:${delay}ms" data-w="${r.name}" data-k="${key}" data-s="${m.score}" data-l="${m.light}"></i>`
+        : `<i class="b"></i>`;
+    } });
+    const ticks = years.map((y) => `<span>${y % 5 === 0 ? y : ""}</span>`).join("");
+    const cols = `grid-template-columns:repeat(${years.length},var(--bs, 10px))`;
+    return `<div class="wall-row"><div class="wall-name">${r.name} <small>${r.sub}</small></div>
+      <div class="wall-grid" style="${cols}">${cells}</div><div class="wall-years" style="${cols}">${ticks}</div></div>`;
+  }).join("");
+  tilt.innerHTML = html;
+  const size = () => {     // one light's size, from the space available
+    const w = tilt.querySelector(".wall-row")?.clientWidth || 300;
+    const gap = w < 420 ? 1 : 2, n = years.length;
+    const bs = Math.max(4, Math.min(16, Math.floor((w - gap * (n - 1)) / n)));
+    tilt.style.setProperty("--bs", bs + "px"); tilt.style.setProperty("--bg", gap + "px");
+  };
+  size(); new ResizeObserver(size).observe(tilt);
+  document.getElementById("wall-key").innerHTML = ["blue", "yellow-blue", "green", "yellow-red", "red"]
+    .map((l) => `<span><i style="background:${css(LIGHT[l].c)};box-shadow:0 0 6px ${css(LIGHT[l].c)}"></i>${LIGHT[l].label}: ${LIGHT[l].meaning}</span>`).join("");
+
+  // year counter that follows the lights
+  const yearEl = document.getElementById("wall-year");
+  let timer;
+  const play = () => {
+    clearInterval(timer);
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { yearEl.textContent = endY; return; }
+    let i = 0; yearEl.textContent = years[0];
+    timer = setInterval(() => { i++; if (i >= years.length) { clearInterval(timer); yearEl.textContent = endY; return; } yearEl.textContent = years[i]; }, STEP * 12);
+  };
+  play();
+  document.getElementById("wall-replay").onclick = () => {
+    tilt.querySelectorAll(".b.on").forEach((b) => { b.style.animation = "none"; void b.offsetWidth; b.style.animation = ""; });
+    play();
+  };
+  tilt.addEventListener("pointermove", (ev) => {
+    const b = ev.target.closest(".b[data-k]"); if (!b) return hideTip();
+    const li = LIGHT[b.dataset.l];
+    showTip(`<b>${b.dataset.w} · ${fmtMonth(b.dataset.k)}</b>${tipRow(css(li.c), li.label, b.dataset.s + " / 45")}`, ev);
+  });
+  tilt.addEventListener("pointerleave", hideTip);
+}
+
 /* ---------- 1b. Taiwan light and comparison ---------- */
 function renderTaiwan(tw, us) {
   const L = tw.latest, info = LIGHT[L.light];
@@ -229,6 +289,7 @@ Promise.all([
   fetch("data/us_light.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => null),
   fetch("data/taiwan_light.json", { cache: "no-cache" }).then((r) => r.json()).catch(() => null),
 ]).then(([us, tw]) => {
+  if (us || tw) renderWall(us, tw);
   if (us) renderLight(us);
   if (tw) renderTaiwan(tw, us);
   else document.getElementById("now-tw").style.display = "none";
