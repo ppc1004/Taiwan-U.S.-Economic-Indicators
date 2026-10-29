@@ -144,7 +144,7 @@ function animateIn(box) {          // lines "draw" themselves the first time a c
   seen.observe(box);
 }
 
-document.querySelectorAll(".finding, .card, .now-pair, .chap, .kpis, .cols").forEach((el) => { el.classList.add("reveal"); seen.observe(el); });
+document.querySelectorAll(".finding, .card, .now-pair, .chap, .kpis, .cols, .story, .insight").forEach((el) => { el.classList.add("reveal"); seen.observe(el); });
 
 document.getElementById("theme-btn")?.addEventListener("click", () => {
   const root = document.documentElement, light = root.dataset.theme !== "light";

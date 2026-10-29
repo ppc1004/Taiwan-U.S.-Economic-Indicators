@@ -171,3 +171,14 @@ td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowra
 .wall-key i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
 @media (max-width: 760px) { .wall-tilt { transform: none; } .wall-year { font-size: 26px; } .wall-tilt { grid-template-columns: 1fr; gap: 16px; } .wall-band { padding: 14px 12px 12px; } }
 @media (prefers-reduced-motion: reduce) { .b.on, .b.live { animation: bulb-on .01s 0s both; } }
+
+/* ---------- Story and insights ---------- */
+.story { max-width: 760px; font-size: 18px; line-height: 1.7; color: var(--ink2); }
+.story p { margin: 0 0 16px; }
+.story b { color: var(--ink); }
+.insight { position: relative; margin: 4px 0 18px; padding: 22px 24px 20px 26px; border-radius: 18px; border: 1px solid var(--line);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--yred) 10%, transparent), color-mix(in srgb, var(--us) 8%, transparent)); }
+.insight::before { content: ""; position: absolute; left: 0; top: 18px; bottom: 18px; width: 3px; border-radius: 3px; background: var(--grad); }
+.insight-tag { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.insight p { margin: 6px 0 0; font-size: 17px; line-height: 1.65; color: var(--ink); }
+@media (max-width: 560px) { .story { font-size: 16px; } .insight p { font-size: 16px; } .insight { padding: 18px 18px 16px 20px; } }

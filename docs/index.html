@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=12">
+<link rel="stylesheet" href="style.css?v=13">
 <script>try { if (localStorage.getItem("theme") === "light") document.documentElement.dataset.theme = "light"; } catch (e) {}</script>
 </head>
 <body>
@@ -19,6 +19,7 @@
       <span class="brand-text">Taiwan &amp; U.S. Indicators</span>
     </a>
     <nav class="toc" id="toc">
+      <a href="#why">Story</a>
       <a href="#light">Lights</a>
       <a href="#trade">Trade</a>
       <a href="#products">Products</a>
@@ -59,6 +60,20 @@
 
 <main class="wrap">
 
+<section id="why">
+  <div class="chap"><span class="chap-num">The story</span><h2>Why I built this</h2></div>
+  <div class="story">
+    <p>Every month, Taiwan's government gives its economy a "traffic light." Blue means the economy is weak. Red means it's running hot. Green is in the middle.
+      It's a simple way to see how things are going without reading a pile of reports.</p>
+    <p>I studied economics in Taiwan, so I grew up with this light. When I moved to Seattle for grad school, I wanted the same simple way to check the U.S. economy.
+      But the U.S. doesn't have one.</p>
+    <p><b>So I made my own.</b> Taiwan's light is built from nine numbers, like exports, stock prices and factory output. I found the nine closest U.S. numbers,
+      scored them the same way Taiwan does, and added them up. Then I tested it: in every U.S. recession since 1993, my light turned blue.</p>
+    <p>I also had 20 years of trade data on Taiwan, the U.S. and China from an earlier project. Putting it all together tells a bigger story:
+      <b>Taiwan's economy is slowly moving its center from China to the U.S.</b></p>
+  </div>
+</section>
+
 <section id="light">
   <div class="chap"><span class="chap-num">Chapter 01</span><h2>Business cycle lights: Taiwan and the U.S.</h2></div>
   <div class="now-pair">
@@ -85,6 +100,7 @@
     <p class="sub">Each indicator gets 1 to 5 points by comparing it with its own history. The 9 points add up to the total score.</p>
     <div class="table-wrap"><table id="ind-table"></table></div>
   </div>
+  <div class="insight"><span class="insight-tag">What this means</span><p>Taiwan's light is red right now, so its economy looks great. But when I dug into the details (Chapter 06), almost all of that heat comes from one industry: electronics. That's like a team winning because of one star player. It works, until that player gets hurt.</p></div>
 </section>
 
 <section id="trade">
@@ -116,6 +132,7 @@
     <div class="chart" id="chart-surplus"></div>
     <p class="note">Trade surplus = exports minus imports, by year.</p>
   </div>
+  <div class="insight"><span class="insight-tag">What this means</span><p>For most of the last 20 years, China was Taiwan's biggest customer. Now it's the U.S. That means what happens in America, like how much companies spend on tech or new trade rules, matters more to Taiwan than ever before.</p></div>
 </section>
 
 <section id="products">
@@ -165,6 +182,7 @@
     <div id="bars-imp" class="bars"></div>
     <p class="note">Imports by product group in 2024. Some imports, $11.5B from the U.S. and $10.5B from mainland China, are in groups outside these 10.</p>
   </div>
+  <div class="insight"><span class="insight-tag">What this means</span><p>Almost 4 out of every 5 dollars Taiwan makes from selling to the U.S. come from one type of product: computers, chips and servers. When the world is buying tech, that's great. When it stops, Taiwan feels it fast. In 2023, orders dropped 16% in one year.</p></div>
 </section>
 
 <section id="orders">
@@ -188,6 +206,7 @@
     <div class="chart" id="chart-asean"></div>
     <p class="note">Export orders from Southeast Asia (ASEAN) and Europe, by year.</p>
   </div>
+  <div class="insight"><span class="insight-tag">What this means</span><p>An "export order" is when a foreign company asks a Taiwan company to make something. Orders from Southeast Asia (places like Vietnam and Thailand) grew 21 times in 20 years. My guess is that more products are now being built there instead of in China, and Taiwan companies are following.</p></div>
 </section>
 
 <section id="investment">
@@ -233,6 +252,7 @@
     <div class="chart" id="chart-inv-reg"></div>
     <p class="note">Approved investment outside mainland China by region, by year. Oceania and Africa are small and left out.</p>
   </div>
+  <div class="insight"><span class="insight-tag">What this means</span><p>This is the change that surprised me most. In 2010, more than 8 out of 10 dollars Taiwan companies invested abroad went to China. In 2024, it was less than 1 in 10. The money went to the U.S. instead. Companies are building factories closer to their customers.</p></div>
 </section>
 
 <section id="industry">
@@ -262,6 +282,7 @@
     <div class="chart" id="chart-ind-old"></div>
     <p class="note">Production index (2021 = 100), yearly average.</p>
   </div>
+  <div class="insight"><span class="insight-tag">What this means</span><p>Taiwan has a two-speed economy. Electronics is booming. Clothing, textiles and leather have been shrinking for 20 years. So "Taiwan's economy is red hot" is true on average, but if you work outside tech, you might not feel it at all.</p></div>
 </section>
 
 <section id="method">
@@ -303,6 +324,6 @@
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
-<script src="app.js?v=13"></script>
+<script src="app.js?v=14"></script>
 </body>
 </html>
