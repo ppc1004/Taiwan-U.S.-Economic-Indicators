@@ -21,6 +21,9 @@ jobs:
         run: python scripts/fetch_fred.py
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      - name: Download Taiwan's official light (NDC)
+        run: python scripts/fetch_taiwan_light.py
+        continue-on-error: true
       - name: Calculate U.S. light
         run: python scripts/build_us_light.py
       - name: Build trade chapter
