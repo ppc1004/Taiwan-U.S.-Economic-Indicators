@@ -81,3 +81,9 @@ td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowra
 .bar-zero { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--muted); }
 .bar-val { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink2); }
 @media (max-width: 560px) { .bar-row { grid-template-columns: 38% 1fr 48px; gap: 6px; font-size: 12px; } }
+
+.bar-row.pair { align-items: center; padding: 4px 0; }
+.bar-stack { display: grid; gap: 3px; }
+.bar-row.pair .bar-track, .bar-row.pair .bar { height: 9px; }
+.bar-row.pair .bar-val { font-size: 12px; line-height: 1.25; }
+.bar-row.pair .bar-name { white-space: normal; line-height: 1.25; }

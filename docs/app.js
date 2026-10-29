@@ -373,3 +373,47 @@ function renderIndustry(d) {
   });
 }
 fetch("data/taiwan_industry.json", { cache: "no-cache" }).then((r) => r.json()).then(renderIndustry).catch((e) => console.error("Industry:", e));
+
+/* ---------- 3b. Product ranking (detailed groups) ---------- */
+function renderProductBars(d) {
+  const det = d.detailed_exports; if (!det) return;
+  const US = css("--us"), CN = css("--cn"), k = det.us.years.length - 1, year = det.us.years[k];
+  const skip = new Set(["years", "Machinery and Electrical Equipment"]);
+  const cats = Object.keys(det.us).filter((c) => !skip.has(c) && det.cn[c])
+    .map((c) => ({ c, us: det.us[c][k], cn: det.cn[c][k] }))
+    .sort((a, b) => b.us + b.cn - (a.us + a.cn)).slice(0, 10);
+  const max = Math.max(...cats.flatMap((r) => [r.us, r.cn]));
+  const r1 = (v) => (Math.round(v * 10) / 10).toFixed(1);
+  document.getElementById("legend-prod").innerHTML = `<span><i style="background:${US}"></i>To the U.S.</span><span><i style="background:${CN}"></i>To mainland China</span>`;
+  const box = document.getElementById("bars-prod");
+  box.innerHTML = cats.map((r) => `<div class="bar-row pair" data-c="${r.c}" data-u="${r.us}" data-n="${r.cn}">
+      <span class="bar-name">${r.c}</span>
+      <span class="bar-stack"><span class="bar-track"><i class="bar" style="left:0;width:${(r.us / max) * 100}%;background:${US}"></i></span>
+      <span class="bar-track"><i class="bar" style="left:0;width:${(r.cn / max) * 100}%;background:${CN}"></i></span></span>
+      <span class="bar-val">$${r1(r.us)}B<br>$${r1(r.cn)}B</span></div>`).join("");
+  box.querySelectorAll(".bar-row").forEach((el) => {
+    const show = (ev) => showTip(`<b>${el.dataset.c}, ${year}</b>${tipRow(US, "To the U.S.", "$" + (+el.dataset.u).toFixed(2) + "B")}${tipRow(CN, "To mainland China", "$" + (+el.dataset.n).toFixed(2) + "B")}`, ev);
+    el.addEventListener("pointermove", show);
+    el.addEventListener("pointerleave", hideTip);
+  });
+}
+fetch("data/taiwan_products.json", { cache: "no-cache" }).then((r) => r.json()).then(renderProductBars).catch((e) => console.error("Product bars:", e));
+
+/* ---------- 5b. Investment going out vs coming in ---------- */
+function renderInvFlow(d) {
+  if (!d.into_taiwan) return;
+  const Y = d.years, OUTc = css("--c3"), INc = css("--c4");
+  const out = Y.map((_, i) => d.china[i] + d.other_countries[i]);
+  const inn = Y.map((_, i) => d.into_taiwan[i] + (d.china_into_taiwan?.[i] || 0));
+  const B = (v) => (v == null ? "n/a" : "$" + v.toFixed(1) + "B");
+  lineChart(document.getElementById("chart-inv-flow"), {
+    n: Y.length, yMin: 0, yMax: 50, yTicks: [0, 10, 20, 30, 40, 50], yFmt: (t) => "$" + t + "B",
+    xTick: (i, small) => (Y[i] % (small ? 5 : 3) === 0 ? Y[i] : null),
+    series: [
+      { name: "Going out of Taiwan", short: "Out", color: OUTc, values: out, markers: true, label: true },
+      { name: "Coming into Taiwan", short: "In", color: INc, values: inn, markers: true, label: true },
+    ],
+    tip: (i) => `<b>${Y[i]}</b>${tipRow(OUTc, "Going out", B(out[i]))}<div class="row"><span>&nbsp;&nbsp;to mainland China</span><span>${B(d.china[i])}</span></div>${tipRow(INc, "Coming in", B(inn[i]))}<div class="row"><span>&nbsp;&nbsp;from mainland China</span><span>${B(d.china_into_taiwan?.[i])}</span></div>`,
+  });
+}
+fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvFlow).catch((e) => console.error("Investment flow:", e));

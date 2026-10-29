@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taiwan &amp; U.S. Economic Indicators</title>
 <meta name="description" content="Business cycle lights for the U.S., built with Taiwan's official method, and Taiwan's trade with the U.S. and mainland China.">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <header class="top">
@@ -116,6 +116,15 @@
     <div class="chart" id="chart-optical"></div>
     <p class="note">Exports of optical and precision instruments to mainland China, by year.</p>
   </div>
+  <div class="finding">
+    <span class="tag">Finding 4</span>
+    <h3>Beyond machinery, Taiwan sells different things to each market: more metals and transportation equipment to the U.S., more chemicals and plastics to mainland China.</h3>
+    <p>After machinery and electrical equipment, Taiwan's biggest exports to the U.S. in 2024 were base metals (<b>$7.1B</b>), transportation equipment (<b>$3.7B</b>) and plastics and rubber (<b>$3.2B</b>).
+      To mainland China, they were chemicals (<b>$5.8B</b>), plastics and rubber (<b>$5.1B</b>) and base metals (<b>$4.5B</b>).</p>
+    <div class="chart-legend" id="legend-prod"></div>
+    <div id="bars-prod" class="bars"></div>
+    <p class="note">Exports by product group in 2024. Machinery and electrical equipment ($88.0B to the U.S., $72.8B to mainland China) is left out so the smaller groups can be seen.</p>
+  </div>
 </section>
 
 <section id="orders">
@@ -168,6 +177,13 @@
     <p>The number of approved projects fell from <b>3,875</b> in 2003 to <b>310</b> in 2024.</p>
     <div class="chart" id="chart-inv-cn"></div>
     <p class="note">Number of approved investment projects in mainland China, by year.</p>
+  </div>
+  <div class="finding">
+    <span class="tag">Finding 4</span>
+    <h3>In 2024, Taiwan approved about six times more investment going out ($48.6B) than coming in ($8.2B).</h3>
+    <p>Of the investment coming into Taiwan, <b>$7.9B</b> came from foreign investors and <b>$0.3B</b> from mainland China.</p>
+    <div class="chart" id="chart-inv-flow"></div>
+    <p class="note">Approved investment going out of Taiwan and coming in, by year. Investment from mainland China into Taiwan is counted from 2015, when the data starts.</p>
   </div>
 </section>
 
@@ -238,6 +254,6 @@
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
-<script src="app.js?v=7"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>
