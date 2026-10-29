@@ -31,6 +31,10 @@ h3 { font-size: 18px; margin: 0 0 4px; line-height: 1.35; }
 
 .now { display: flex; align-items: center; gap: 20px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 12px; flex-wrap: wrap; }
 .bulb { width: 72px; height: 72px; border-radius: 50%; flex: none; box-shadow: 0 0 0 6px color-mix(in srgb, currentColor 18%, transparent); background: currentColor; }
+.now-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.now-pair .now { margin-bottom: 0; }
+.now .who { margin: 0 0 2px; font-size: 13px; font-weight: 600; color: var(--ink2); text-transform: uppercase; letter-spacing: .04em; }
+@media (max-width: 760px) { .now-pair { grid-template-columns: 1fr; } }
 .now .big { font-size: 28px; font-weight: 700; margin: 0; }
 .now .meta { color: var(--ink2); margin: 2px 0 0; }
 .legend-lights { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--ink2); margin: 0 0 20px; }

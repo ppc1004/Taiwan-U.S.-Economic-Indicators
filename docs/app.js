@@ -75,7 +75,8 @@ function lineChart(box, o) {
       el("path", { d, fill: "none", stroke: s.color, "stroke-width": s.width || 2, opacity: s.opacity ?? 1, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
       if (s.markers) s.values.forEach((v, i) => v != null && el("circle", { cx: x(i), cy: y(v), r: 3, fill: s.color, stroke: css("--card"), "stroke-width": 1.5 }, svg));
       if (s.label && !small) {
-        const last = s.values.length - 1;
+        let last = s.values.length - 1;
+        while (last > 0 && s.values[last] == null) last--;
         el("text", { x: x(last) + 8, y: y(s.values[last]) + 4, class: "lbl", fill: s.color, style: `fill:${s.color}` }, svg).textContent = s.short || s.name;
       }
     });
@@ -113,6 +114,7 @@ function renderLight(d) {
   document.getElementById("now").innerHTML = `
     <div class="bulb" style="color:${css(info.c)}"></div>
     <div>
+      <p class="who">United States <span class="tw">(built with Taiwan's method)</span></p>
       <p class="big">${info.label}: ${info.meaning}</p>
       <p class="meta">${fmtMonth(L.date)} · score ${L.score} out of 45${L.recession ? " · in an official recession" : ""}</p>
     </div>`;
@@ -185,7 +187,47 @@ function renderTrade(d) {
   });
 }
 
-fetch("data/us_light.json").then((r) => r.json()).then(renderLight).catch((e) => console.error("U.S. light:", e));
+/* ---------- 1b. Taiwan light and comparison ---------- */
+function renderTaiwan(tw, us) {
+  const L = tw.latest, info = LIGHT[L.light];
+  document.getElementById("now-tw").innerHTML = `
+    <div class="bulb" style="color:${css(info.c)}"></div>
+    <div>
+      <p class="who">Taiwan <span class="tw">(official)</span></p>
+      <p class="big">${info.label}: ${info.meaning}</p>
+      <p class="meta">${fmtMonth(L.date)} · score ${L.score} out of 45</p>
+    </div>`;
+  if (!us) return;
+  const twBy = Object.fromEntries(tw.months.map((m) => [m.date, m]));
+  const usBy = Object.fromEntries(us.months.map((m) => [m.date, m]));
+  const start = us.months[0].date, end = [tw.latest.date, us.latest.date].sort().at(-1);
+  const D = [];
+  for (let y = +start.slice(0, 4), mo = +start.slice(5); `${y}-${String(mo).padStart(2, "0")}` <= end; mo === 12 ? (y++, (mo = 1)) : mo++) D.push(`${y}-${String(mo).padStart(2, "0")}`);
+  const TWc = css("--cn"), USc = css("--us");
+  const tws = D.map((d) => twBy[d]?.score ?? null), uss = D.map((d) => usBy[d]?.score ?? null);
+  const bands = us.method.lights.map((l, k, arr) => ({ y0: l.min - 0.5, y1: k === 0 ? 45 : arr[k - 1].min - 0.5, color: css(LIGHT[l.light].c), opacity: 0.1 }));
+  lineChart(document.getElementById("chart-compare"), {
+    n: D.length, yMin: 9, yMax: 45, yTicks: [9, 16, 22, 31, 37, 45], bands,
+    xTick: (i, small) => { const y = +D[i].slice(0, 4); return D[i].endsWith("-01") && y % (small ? 8 : 4) === 0 ? y : null; },
+    series: [
+      { name: "Taiwan (official)", short: "Taiwan", color: TWc, values: tws, width: 1.8, label: true },
+      { name: "U.S. (this site)", short: "U.S.", color: USc, values: uss, width: 1.8, label: true },
+    ],
+    tip: (i) => {
+      const row = (c, name, m) => tipRow(c, name, m ? `${m.score} · ${LIGHT[m.light].label}` : "not out yet");
+      return `<b>${fmtMonth(D[i])}</b>${row(TWc, "Taiwan", twBy[D[i]])}${row(USc, "U.S.", usBy[D[i]])}`;
+    },
+  });
+}
+
+Promise.all([
+  fetch("data/us_light.json").then((r) => r.json()).catch(() => null),
+  fetch("data/taiwan_light.json").then((r) => r.json()).catch(() => null),
+]).then(([us, tw]) => {
+  if (us) renderLight(us);
+  if (tw) renderTaiwan(tw, us);
+  else document.getElementById("now-tw").style.display = "none";
+});
 fetch("data/taiwan_trade.json").then((r) => r.json()).then(renderTrade).catch((e) => console.error("Trade:", e));
 
 /* ---------- 3. Products ---------- */

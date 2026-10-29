@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taiwan &amp; U.S. Economic Indicators</title>
 <meta name="description" content="Business cycle lights for the U.S., built with Taiwan's official method, and Taiwan's trade with the U.S. and mainland China.">
-<link rel="stylesheet" href="style.css?v=4">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 <header class="top">
@@ -15,7 +15,7 @@
     <p class="lede">Taiwan's government sums up its economy every month with one of five colored lights.
       The U.S. has no official version, so this site builds one with the same method, using free public data.</p>
     <nav class="toc">
-      <a href="#light">1. U.S. business cycle light</a>
+      <a href="#light">1. Business cycle lights</a>
       <a href="#trade">2. Trade</a>
       <a href="#products">3. Products</a>
       <a href="#orders">4. Export orders</a>
@@ -28,12 +28,21 @@
 <main class="wrap">
 
 <section id="light">
-  <h2><span class="num">1</span> U.S. business cycle light</h2>
-  <div class="now" id="now"></div>
+  <h2><span class="num">1</span> Business cycle lights: Taiwan and the U.S.</h2>
+  <div class="now-pair">
+    <div class="now" id="now-tw"></div>
+    <div class="now" id="now"></div>
+  </div>
   <div class="legend-lights" id="legend-lights"></div>
 
   <div class="card">
-    <h3>Every month since 1993</h3>
+    <h3>Taiwan and the U.S., side by side</h3>
+    <p class="sub">Total score out of 45 for both economies. Taiwan's line is the official light. The U.S. line is this site's version built with Taiwan's method.</p>
+    <div class="chart" id="chart-compare"></div>
+  </div>
+
+  <div class="card">
+    <h3>The U.S. light, every month since 1993</h3>
     <p class="sub">Total score out of 45. Gray bands are official U.S. recessions. Move your mouse over the chart to see each month.</p>
     <div class="chart" id="chart-light"></div>
   </div>
@@ -178,6 +187,7 @@
     <div>
       <h3>The data</h3>
       <ul>
+        <li><b>Taiwan light:</b> the official monthly light from Taiwan's National Development Council (open data), updated automatically every week.</li>
         <li><b>U.S. light:</b> FRED, updated automatically every week.</li>
         <li><b>Trade and products:</b> Taiwan Ministry of Economic Affairs, January 2004 to December 2024. "China" means mainland China only. Hong Kong is not included.</li>
         <li><b>Export orders and investment:</b> Taiwan Ministry of Economic Affairs, 2003 to 2024. For export orders, "China" includes Hong Kong.</li>
@@ -195,6 +205,6 @@
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
