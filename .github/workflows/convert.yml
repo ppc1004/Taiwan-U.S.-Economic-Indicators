@@ -1,0 +1,38 @@
+name: One-time convert Excel to CSV
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pandas openpyxl xlrd
+      - name: Save every sheet as CSV so the data is easy to read
+        run: |
+          python - <<'PY'
+          import pandas as pd, re
+          from pathlib import Path
+          files = ["export_orders.xlsx", "export_orders_by_country.xls", "outward_investment_by_region.xlsx",
+                   "foreign_investment_in_taiwan.xls", "taiwan_investment_in_china.xls", "china_investment_in_taiwan.xls"]
+          out = Path("data/original/csv"); out.mkdir(exist_ok=True)
+          for f in files:
+              sheets = pd.read_excel(Path("data/original") / f, sheet_name=None, header=None)
+              for i, (name, df) in enumerate(sheets.items()):
+                  stem = Path(f).stem + (f"_{i+1}" if len(sheets) > 1 else "")
+                  df.to_csv(out / f"{stem}.csv", index=False, header=False)
+                  print(stem, name, df.shape)
+          PY
+          git rm -q .github/workflows/convert.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/original/csv
+          git commit -m "Save original Excel sheets as CSV"
+          git push
