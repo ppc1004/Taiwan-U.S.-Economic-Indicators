@@ -417,3 +417,45 @@ function renderInvFlow(d) {
   });
 }
 fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvFlow).catch((e) => console.error("Investment flow:", e));
+
+/* ---------- 3c. Imports by product ---------- */
+function renderImportBars(d) {
+  const ui = d.data.us_imports, ci = d.data.cn_imports; if (!ui || !ci) return;
+  const US = css("--us"), CN = css("--cn"), k = ui.years.length - 1, year = ui.years[k];
+  const cats = Object.keys(ui).filter((c) => c !== "years" && c !== "total" && ci[c])
+    .map((c) => ({ c, us: ui[c][k], cn: ci[c][k] })).sort((a, b) => b.us + b.cn - (a.us + a.cn));
+  const max = Math.max(...cats.flatMap((r) => [r.us, r.cn]));
+  const r1 = (v) => (Math.round(v * 10) / 10).toFixed(1);
+  document.getElementById("legend-imp").innerHTML = `<span><i style="background:${US}"></i>From the U.S.</span><span><i style="background:${CN}"></i>From mainland China</span>`;
+  const box = document.getElementById("bars-imp");
+  box.innerHTML = cats.map((r) => `<div class="bar-row pair" data-c="${r.c}" data-u="${r.us}" data-n="${r.cn}">
+      <span class="bar-name">${r.c}</span>
+      <span class="bar-stack"><span class="bar-track"><i class="bar" style="left:0;width:${(r.us / max) * 100}%;background:${US}"></i></span>
+      <span class="bar-track"><i class="bar" style="left:0;width:${(r.cn / max) * 100}%;background:${CN}"></i></span></span>
+      <span class="bar-val">$${r1(r.us)}B<br>$${r1(r.cn)}B</span></div>`).join("");
+  box.querySelectorAll(".bar-row").forEach((el) => {
+    const show = (ev) => showTip(`<b>${el.dataset.c}, ${year}</b>${tipRow(US, "From the U.S.", "$" + (+el.dataset.u).toFixed(2) + "B")}${tipRow(CN, "From mainland China", "$" + (+el.dataset.n).toFixed(2) + "B")}`, ev);
+    el.addEventListener("pointermove", show);
+    el.addEventListener("pointerleave", hideTip);
+  });
+}
+fetch("data/taiwan_products.json", { cache: "no-cache" }).then((r) => r.json()).then(renderImportBars).catch((e) => console.error("Import bars:", e));
+
+/* ---------- 5c. Investment by region ---------- */
+function renderInvRegions(d) {
+  const R = d.regions; if (!R) return;
+  const Y = d.years, B = (v) => (v == null ? "n/a" : "$" + v.toFixed(1) + "B");
+  const S = [
+    { k: "North America", short: "N. America", color: css("--us") },
+    { k: "Asia", name: "Asia (outside mainland China)", color: css("--c3") },
+    { k: "Latin America", short: "Latin Am.", color: css("--c5") },
+    { k: "Europe", color: css("--c4") },
+  ].filter((s) => R[s.k]);
+  lineChart(document.getElementById("chart-inv-reg"), {
+    n: Y.length, yMin: 0, yMax: 20, yTicks: [0, 5, 10, 15, 20], yFmt: (t) => "$" + t + "B",
+    xTick: (i, small) => (Y[i] % (small ? 5 : 3) === 0 ? Y[i] : null),
+    series: S.map((s) => ({ name: s.name || s.k, short: s.short || s.k, color: s.color, values: R[s.k], markers: true, label: true })),
+    tip: (i) => `<b>${Y[i]}</b>Approved investment:${S.map((s) => tipRow(s.color, s.name || s.k, B(R[s.k][i]))).join("")}<div class="row"><span>All outside mainland China</span><span>${B(d.other_countries[i])}</span></div>`,
+  });
+}
+fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvRegions).catch((e) => console.error("Investment regions:", e));

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taiwan &amp; U.S. Economic Indicators</title>
 <meta name="description" content="Business cycle lights for the U.S., built with Taiwan's official method, and Taiwan's trade with the U.S. and mainland China.">
-<link rel="stylesheet" href="style.css?v=8">
+<link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 <header class="top">
@@ -125,6 +125,15 @@
     <div id="bars-prod" class="bars"></div>
     <p class="note">Exports by product group in 2024. Machinery and electrical equipment ($88.0B to the U.S., $72.8B to mainland China) is left out so the smaller groups can be seen.</p>
   </div>
+  <div class="finding">
+    <span class="tag">Finding 5</span>
+    <h3>Taiwan buys mostly machinery from mainland China, but a wider mix from the U.S., including $8.7B of minerals and fuels.</h3>
+    <p>Machinery and electrical equipment made up <b>64%</b> of what Taiwan bought from mainland China in 2024 ($52.0B of $80.6B), up from <b>43%</b> in 2004.
+      From the U.S., machinery was <b>$13.5B</b> (29%) and minerals and fuels, a group that includes oil, gas and coal, were <b>$8.7B</b> (19%), up from $0.2B in 2004.</p>
+    <div class="chart-legend" id="legend-imp"></div>
+    <div id="bars-imp" class="bars"></div>
+    <p class="note">Imports by product group in 2024. Some imports, $11.5B from the U.S. and $10.5B from mainland China, are in groups outside these 10.</p>
+  </div>
 </section>
 
 <section id="orders">
@@ -184,6 +193,14 @@
     <p>Of the investment coming into Taiwan, <b>$7.9B</b> came from foreign investors and <b>$0.3B</b> from mainland China.</p>
     <div class="chart" id="chart-inv-flow"></div>
     <p class="note">Approved investment going out of Taiwan and coming in, by year. Investment from mainland China into Taiwan is counted from 2015, when the data starts.</p>
+  </div>
+  <div class="finding">
+    <span class="tag">Finding 5</span>
+    <h3>North America's share of Taiwan's approved investment outside mainland China rose from 4% in 2021 to 40% in 2024.</h3>
+    <p>North America received <b>$17.8B</b> in 2024, and Asia outside mainland China <b>$14.9B</b> (33%).
+      Most of Latin America's <b>$8.9B</b> went to tax havens such as the British Virgin Islands, so it does not show where factories are built.</p>
+    <div class="chart" id="chart-inv-reg"></div>
+    <p class="note">Approved investment outside mainland China by region, by year. Oceania and Africa are small and left out.</p>
   </div>
 </section>
 
@@ -254,6 +271,6 @@
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
-<script src="app.js?v=8"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>
