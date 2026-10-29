@@ -49,7 +49,8 @@ function lineChart(box, o) {
     const W = Math.max(box.clientWidth, 300), small = W < 560;
     const H = o.height || (small ? 240 : 300);
     const stripH = o.strip ? 14 : 0;
-    const m = { l: 44, r: named.length && !small ? 64 : 14, t: 10, b: 26 + stripH + (stripH ? 6 : 0) };
+    const labelW = Math.max(0, ...named.map((s) => (s.short || s.name).length * 7 + 14));
+    const m = { l: 44, r: named.length && !small ? Math.max(64, labelW) : 14, t: 10, b: 26 + stripH + (stripH ? 6 : 0) };
     const iw = W - m.l - m.r, ih = H - m.t - m.b;
     const x = (i) => m.l + (o.n === 1 ? 0 : (i / (o.n - 1)) * iw);
     const y = (v) => m.t + (1 - (v - o.yMin) / (o.yMax - o.yMin)) * ih;
@@ -74,13 +75,17 @@ function lineChart(box, o) {
       s.values.forEach((v, i) => { if (v == null) return; d += (d && s.values[i - 1] != null ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1); });
       el("path", { d, fill: "none", stroke: s.color, "stroke-width": s.width || 2, opacity: s.opacity ?? 1, "stroke-linejoin": "round", "stroke-linecap": "round" }, svg);
       if (s.markers) s.values.forEach((v, i) => v != null && el("circle", { cx: x(i), cy: y(v), r: 3, fill: s.color, stroke: css("--card"), "stroke-width": 1.5 }, svg));
-      if (s.label && !small) {
-        let last = s.values.length - 1;
-        while (last > 0 && s.values[last] == null) last--;
-        el("text", { x: x(last) + 8, y: y(s.values[last]) + 4, class: "lbl", fill: s.color, style: `fill:${s.color}` }, svg).textContent = s.short || s.name;
-      }
     });
 
+    if (!small) {   // end labels, pushed apart so they never overlap
+      const L = named.map((s) => {
+        let last = s.values.length - 1;
+        while (last > 0 && s.values[last] == null) last--;
+        return { s, x: x(last) + 8, y: y(s.values[last]) + 4 };
+      }).sort((a, b) => a.y - b.y);
+      for (let k = 1; k < L.length; k++) if (L[k].y - L[k - 1].y < 14) L[k].y = L[k - 1].y + 14;
+      L.forEach((l) => (el("text", { x: l.x, y: l.y, class: "lbl", style: `fill:${l.s.color}` }, svg).textContent = l.s.short || l.s.name));
+    }
     const hair = el("line", { y1: m.t, y2: m.t + ih, class: "hair", opacity: 0 }, svg);
     const dots = o.series.filter((s) => s.hover !== false).map((s) => el("circle", { r: 4.5, fill: s.color, stroke: css("--card"), "stroke-width": 2, opacity: 0 }, svg));
     const hit = el("rect", { x: m.l - step / 2, y: 0, width: iw + step, height: H, fill: "transparent" }, svg);
@@ -319,3 +324,52 @@ function renderInvestment(d) {
 }
 fetch("data/taiwan_orders.json", { cache: "no-cache" }).then((r) => r.json()).then(renderOrders).catch((e) => console.error("Orders:", e));
 fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvestment).catch((e) => console.error("Investment:", e));
+
+/* ---------- 6. Industry ---------- */
+function renderIndustry(d) {
+  const Y = d.years, find = (start) => d.industries.find((i) => i.name.startsWith(start));
+  const yearTick = (i, small) => (Y[i] % (small ? 5 : 2) === 0 ? Y[i] : null);
+  const fmt = (v) => (v == null ? "n/a" : v.toFixed(1));
+  const S = [
+    { i: find("Computers"), name: "Computers, electronic and optical products", short: "Computers", color: css("--us") },
+    { i: find("Electronic Components"), name: "Electronic components (incl. chips)", short: "Components", color: css("--c3") },
+    { i: find("Manufacturing"), name: "All manufacturing", short: "All", color: css("--ink2") },
+  ].filter((s) => s.i);
+  lineChart(document.getElementById("chart-ind"), {
+    n: Y.length, yMin: 0, yMax: 160, yTicks: [0, 40, 80, 120, 160], xTick: yearTick,
+    series: S.map((s) => ({ name: s.name, short: s.short, color: s.color, values: s.i.index, markers: true, label: true })),
+    tip: (k) => `<b>${Y[k]}</b>Production index:${S.map((s) => tipRow(s.color, s.name, fmt(s.i.index[k]))).join("")}`,
+  });
+
+  const O = [
+    { i: find("Apparel"), name: "Clothing", color: css("--cn") },
+    { i: find("Textile"), name: "Textiles", color: css("--c4") },
+    { i: find("Leather"), name: "Leather products", short: "Leather", color: css("--c5") },
+  ].filter((s) => s.i);
+  lineChart(document.getElementById("chart-ind-old"), {
+    n: Y.length, yMin: 0, yMax: 450, yTicks: [0, 100, 200, 300, 400], xTick: yearTick,
+    series: O.map((s) => ({ name: s.name, short: s.short, color: s.color, values: s.i.index, markers: true, label: true })),
+    tip: (k) => `<b>${Y[k]}</b>Production index:${O.map((s) => tipRow(s.color, s.name, fmt(s.i.index[k]))).join("")}`,
+  });
+
+  const rows = d.industries.filter((i) => !i.group && i.change_pct != null).sort((a, b) => b.change_pct - a.change_pct);
+  const all = find("Manufacturing");
+  const max = Math.max(...rows.map((r) => r.change_pct)), min = Math.min(-100, ...rows.map((r) => r.change_pct));
+  const zero = (-min / (max - min)) * 100;
+  const box = document.getElementById("bars-ind");
+  const bar = (r, ref) => {
+    const v = r.change_pct, w = (Math.abs(v) / (max - min)) * 100, left = v >= 0 ? zero : zero - w;
+    const color = v >= 0 ? css("--us") : css("--cn");
+    return `<div class="bar-row${ref ? " ref" : ""}" data-n="${r.name}" data-a="${fmt(r.index[0])}" data-b="${fmt(r.index.at(-1))}" data-v="${v}">
+      <span class="bar-name">${ref ? "All manufacturing" : r.name}</span>
+      <span class="bar-track"><i class="bar-zero" style="left:${zero}%"></i><i class="bar" style="left:${left}%;width:${w}%;background:${color}"></i></span>
+      <span class="bar-val">${v > 0 ? "+" : ""}${v.toFixed(0)}%</span></div>`;
+  };
+  box.innerHTML = (all ? bar(all, true) : "") + rows.map((r) => bar(r)).join("");
+  box.querySelectorAll(".bar-row").forEach((el) => {
+    const show = (ev) => showTip(`<b>${el.dataset.n}</b><div class="row"><span>2004 index</span><span>${el.dataset.a}</span></div><div class="row"><span>2024 index</span><span>${el.dataset.b}</span></div><div class="row"><span>Change</span><span>${(+el.dataset.v > 0 ? "+" : "") + el.dataset.v}%</span></div>`, ev);
+    el.addEventListener("pointermove", show);
+    el.addEventListener("pointerleave", hideTip);
+  });
+}
+fetch("data/taiwan_industry.json", { cache: "no-cache" }).then((r) => r.json()).then(renderIndustry).catch((e) => console.error("Industry:", e));

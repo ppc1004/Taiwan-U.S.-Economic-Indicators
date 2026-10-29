@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Taiwan &amp; U.S. Economic Indicators</title>
 <meta name="description" content="Business cycle lights for the U.S., built with Taiwan's official method, and Taiwan's trade with the U.S. and mainland China.">
-<link rel="stylesheet" href="style.css?v=6">
+<link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 <header class="top">
@@ -20,6 +20,7 @@
       <a href="#products">3. Products</a>
       <a href="#orders">4. Export orders</a>
       <a href="#investment">5. Investment</a>
+      <a href="#industry">6. Industry</a>
       <a href="#method">How it works</a>
     </nav>
   </div>
@@ -170,6 +171,35 @@
   </div>
 </section>
 
+<section id="industry">
+  <h2><span class="num">6</span> Industry: what Taiwan's factories make</h2>
+  <p class="lede-sm">How much each manufacturing industry produces, 2004 to 2024. This is a production index (2021 = 100): it measures the amount made, not its dollar value.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>In 2024, Taiwan made 48% more computers, electronic and optical products than in 2021, while total factory output was still 7.5% lower.</h3>
+    <p>Computers, electronic and optical products reached an index of <b>147.8</b> in 2024. All manufacturing together was at <b>92.5</b>. Electronic components, which include chips, were at <b>95.3</b>.</p>
+    <div class="chart" id="chart-ind"></div>
+    <p class="note">Production index (2021 = 100), yearly average.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>Electronic components grew the most of any industry: production in 2024 was 4.7 times the 2004 level.</h3>
+    <p>All manufacturing together grew <b>1.7 times</b>. Clothing, textiles and leather made less in 2024 than in 2004.</p>
+    <div id="bars-ind" class="bars"></div>
+    <p class="note">Change in production from 2004 to 2024, by industry. Move your mouse over a bar to see the numbers.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 3</span>
+    <h3>Taiwan's clothing industry made 71% less in 2024 than in 2004, and textiles 47% less.</h3>
+    <p>Leather products fell the most, by <b>81%</b>. These industries have been shrinking for 20 years, not only in recent years.</p>
+    <div class="chart" id="chart-ind-old"></div>
+    <p class="note">Production index (2021 = 100), yearly average.</p>
+  </div>
+</section>
+
 <section id="method">
   <h2>How it works</h2>
   <div class="cols">
@@ -192,6 +222,7 @@
         <li><b>Taiwan light:</b> the official monthly light from Taiwan's National Development Council (open data), updated automatically every week.</li>
         <li><b>U.S. light:</b> FRED, updated automatically every week.</li>
         <li><b>Trade and products:</b> Taiwan Ministry of Economic Affairs, January 2004 to December 2024. "China" means mainland China only. Hong Kong is not included.</li>
+        <li><b>Industry:</b> Taiwan Ministry of Economic Affairs industrial production index by industry, 2004 to 2024.</li>
         <li><b>Export orders and investment:</b> Taiwan Ministry of Economic Affairs, 2003 to 2024. For export orders, "China" includes Hong Kong.</li>
       </ul>
       <p class="small">All code and data are on <a href="https://github.com/ppc1004/Taiwan-U.S.-Economic-Indicators">GitHub</a>.</p>
@@ -207,6 +238,6 @@
 </footer>
 
 <div class="tip" id="tip" role="tooltip"></div>
-<script src="app.js?v=6"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>

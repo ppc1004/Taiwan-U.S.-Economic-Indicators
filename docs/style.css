@@ -70,3 +70,14 @@ td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowra
 .tip b { display: block; margin-bottom: 2px; }
 .tip .row { display: flex; justify-content: space-between; gap: 14px; }
 .tip .sw { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+
+.bars { display: grid; gap: 4px; margin-top: 6px; }
+.bar-row { display: grid; grid-template-columns: minmax(120px, 34%) 1fr 56px; gap: 10px; align-items: center; font-size: 13px; padding: 2px 0; cursor: default; }
+.bar-row.ref { font-weight: 600; border-bottom: 1px solid var(--line); padding-bottom: 6px; margin-bottom: 4px; }
+.bar-row:hover { background: var(--grid); }
+.bar-name { color: var(--ink2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-track { position: relative; height: 12px; }
+.bar { position: absolute; top: 0; height: 12px; border-radius: 3px; }
+.bar-zero { position: absolute; top: -3px; bottom: -3px; width: 1px; background: var(--muted); }
+.bar-val { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink2); }
+@media (max-width: 560px) { .bar-row { grid-template-columns: 38% 1fr 48px; gap: 6px; font-size: 12px; } }
