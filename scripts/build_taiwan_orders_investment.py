@@ -58,6 +58,11 @@ def investment():
     for _, r in reg.iloc[2:8].iterrows():          # amount rows (the count table comes after)
         regions[r[0].strip()] = dict(zip(years, pd.to_numeric(r[1:]).tolist()))
 
+    projects = {}
+    for _, r in reg.iloc[9:].iterrows():            # the project count table comes after the amounts
+        if str(r[0]).strip() in regions:
+            projects[r[0].strip()] = dict(zip(years, pd.to_numeric(r[1:]).tolist()))
+
     top = read("outward_investment_by_region_2.csv")
     top_years = [int(float(y)) for y in top.iloc[0, 1:]]
     us_row = top[top[0].str.strip() == "美國"].iloc[0]
@@ -73,6 +78,7 @@ def investment():
         "other_countries": [b(other[y]) for y in years],
         "china_share": [round(china[y][0] / (china[y][0] + other[y]) * 100, 1) for y in years],
         "regions": {k: [b(v[y]) for y in years] for k, v in regions.items()},
+        "region_projects": {k: [None if pd.isna(v[y]) else int(v[y]) for y in years] for k, v in projects.items()},
         "us": [b(us.get(y)) if y in us else None for y in years],
         "into_taiwan": [b(into_tw[y][0]) for y in years],
         "china_into_taiwan": [b(china_in[y][0]) if y in china_in else None for y in years],
