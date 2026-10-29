@@ -455,7 +455,11 @@ function renderInvRegions(d) {
     n: Y.length, yMin: 0, yMax: 20, yTicks: [0, 5, 10, 15, 20], yFmt: (t) => "$" + t + "B",
     xTick: (i, small) => (Y[i] % (small ? 5 : 3) === 0 ? Y[i] : null),
     series: S.map((s) => ({ name: s.name || s.k, short: s.short || s.k, color: s.color, values: R[s.k], markers: true, label: true })),
-    tip: (i) => `<b>${Y[i]}</b>Approved investment:${S.map((s) => tipRow(s.color, s.name || s.k, B(R[s.k][i]))).join("")}<div class="row"><span>All outside mainland China</span><span>${B(d.other_countries[i])}</span></div>`,
+    tip: (i) => {
+      const P = d.region_projects || {};
+      const val = (k) => B(R[k][i]) + (P[k]?.[i] != null ? ` · ${P[k][i]} projects` : "");
+      return `<b>${Y[i]}</b>Approved investment:${S.map((s) => tipRow(s.color, s.name || s.k, val(s.k))).join("")}<div class="row"><span>All outside mainland China</span><span>${B(d.other_countries[i])}</span></div>`;
+    },
   });
 }
 fetch("data/taiwan_investment.json", { cache: "no-cache" }).then((r) => r.json()).then(renderInvRegions).catch((e) => console.error("Investment regions:", e));
