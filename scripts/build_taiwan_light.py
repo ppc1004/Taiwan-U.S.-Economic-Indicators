@@ -15,6 +15,7 @@ COLORS = {"紅": "red", "黃紅": "yellow-red", "綠": "green", "黃藍": "yello
 
 def main():
     df = pd.read_csv(SRC, dtype=str)
+    df["景氣對策信號"] = df["景氣對策信號"].str.strip()   # the source file has stray spaces, e.g. "黃藍 "
     df = df[df["景氣對策信號"].isin(COLORS)]
     months = [{
         "date": f"{r.Date[:4]}-{r.Date[4:6]}",
