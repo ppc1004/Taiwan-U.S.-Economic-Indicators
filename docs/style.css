@@ -87,3 +87,31 @@ td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowra
 .bar-row.pair .bar-track, .bar-row.pair .bar { height: 9px; }
 .bar-row.pair .bar-val { font-size: 12px; line-height: 1.25; }
 .bar-row.pair .bar-name { white-space: normal; line-height: 1.25; }
+
+/* ---------- Light wall (hero) ---------- */
+.wall-band { --wb: #0c0e12; --wink: #e9ebef; --wmuted: #8a909a; background: radial-gradient(120% 140% at 50% 0%, #1a1f29 0%, var(--wb) 60%); color: var(--wink);
+  border-radius: 16px; padding: 18px 18px 14px; margin: 6px 0 22px; overflow: hidden; position: relative; }
+.wall-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 8px; }
+.wall-year { font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; min-width: 3.2ch; }
+.wall-cap { color: var(--wmuted); font-size: 13px; flex: 1; }
+.wall-replay { background: rgba(255,255,255,.08); color: var(--wink); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 12px; cursor: pointer; }
+.wall-replay:hover { background: rgba(255,255,255,.16); }
+.wall-stage { perspective: 1100px; }
+.wall-tilt { transform: rotateX(14deg); transform-origin: 50% 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.wall-row { min-width: 0; }
+.wall-name { font-size: 13px; font-weight: 600; color: var(--wink); margin-bottom: 6px; }
+.wall-name small { color: var(--wmuted); font-weight: 400; font-size: 11px; }
+.wall-grid { display: grid; grid-auto-flow: column; grid-template-rows: repeat(12, var(--bs, 10px)); gap: var(--bg, 2px); min-width: 0; justify-content: start; }
+.wall-years { display: grid; column-gap: var(--bg, 2px); font-size: 10px; color: var(--wmuted); margin-top: 4px; }
+.wall-years span { white-space: nowrap; }
+.b { display: block; width: var(--bs, 10px); height: var(--bs, 10px); border-radius: 50%; background: rgba(255,255,255,.07); }
+.b.on { animation: bulb-on .45s var(--d) both; }
+.b.live { animation: bulb-on .45s var(--d) both, bulb-breathe 2.2s calc(var(--d) + .5s) ease-in-out infinite; }
+@keyframes bulb-on { from { background: rgba(255,255,255,.07); box-shadow: none; transform: scale(.6); }
+  60% { transform: scale(1.25); } to { background: var(--c); box-shadow: 0 0 5px var(--c), 0 0 12px color-mix(in srgb, var(--c) 45%, transparent); transform: scale(1); } }
+@keyframes bulb-breathe { 0%, 100% { box-shadow: 0 0 5px var(--c), 0 0 12px var(--c); transform: scale(1); } 50% { box-shadow: 0 0 10px var(--c), 0 0 26px var(--c); transform: scale(1.5); } }
+.b:hover { outline: 2px solid #fff; outline-offset: 1px; }
+.wall-key { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12px; color: var(--wmuted); margin-top: 12px; }
+.wall-key i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+@media (max-width: 760px) { .wall-tilt { transform: none; } .wall-year { font-size: 26px; } .wall-tilt { grid-template-columns: 1fr; gap: 16px; } .wall-band { padding: 14px 12px 12px; } }
+@media (prefers-reduced-motion: reduce) { .b.on, .b.live { animation: bulb-on .01s 0s both; } }
