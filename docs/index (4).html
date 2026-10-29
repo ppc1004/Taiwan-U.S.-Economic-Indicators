@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taiwan &amp; U.S. Economic Indicators</title>
+<meta name="description" content="Business cycle lights for the U.S., built with Taiwan's official method, and Taiwan's trade with the U.S. and mainland China.">
+<link rel="stylesheet" href="style.css?v=11">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">Taiwan &amp; U.S. Economic Indicators</p>
+    <h1>Where are the U.S. and Taiwan economies right now?</h1>
+    <p class="lede">Taiwan's government sums up its economy every month with one of five colored lights.
+      The U.S. has no official version, so this site builds one with the same method, using free public data.</p>
+    <div class="wall-band" id="wall" aria-label="Business cycle light for every month since 1993, Taiwan and the U.S.">
+      <div class="wall-head">
+        <span class="wall-year" id="wall-year">1993</span>
+        <span class="wall-cap">Every month since 1993. One light = one month. Each column is a year, January at the top.</span>
+        <button class="wall-replay" id="wall-replay" type="button">Replay</button>
+      </div>
+      <div class="wall-stage"><div class="wall-tilt" id="wall-tilt"></div></div>
+      <div class="wall-key" id="wall-key"></div>
+    </div>
+    <nav class="toc">
+      <a href="#light">1. Business cycle lights</a>
+      <a href="#trade">2. Trade</a>
+      <a href="#products">3. Products</a>
+      <a href="#orders">4. Export orders</a>
+      <a href="#investment">5. Investment</a>
+      <a href="#industry">6. Industry</a>
+      <a href="#method">How it works</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="light">
+  <h2><span class="num">1</span> Business cycle lights: Taiwan and the U.S.</h2>
+  <div class="now-pair">
+    <div class="now" id="now-tw"></div>
+    <div class="now" id="now"></div>
+  </div>
+  <div class="legend-lights" id="legend-lights"></div>
+
+  <div class="card">
+    <h3>Taiwan and the U.S., side by side</h3>
+    <p class="sub">Total score out of 45 for both economies. Taiwan's line is the official light. The U.S. line is this site's version built with Taiwan's method.</p>
+    <div class="chart" id="chart-compare"></div>
+  </div>
+
+  <div class="card">
+    <h3>The U.S. light, every month since 1993</h3>
+    <p class="sub">Total score out of 45. Gray bands are official U.S. recessions. Move your mouse over the chart to see each month.
+      The light turned blue for 3 months in 2023 without a recession: U.S. factories slowed down that year, but the overall economy kept growing.</p>
+    <div class="chart" id="chart-light"></div>
+  </div>
+
+  <div class="card">
+    <h3>The 9 indicators behind the latest light</h3>
+    <p class="sub">Each indicator gets 1 to 5 points by comparing it with its own history. The 9 points add up to the total score.</p>
+    <div class="table-wrap"><table id="ind-table"></table></div>
+  </div>
+</section>
+
+<section id="trade">
+  <h2><span class="num">2</span> Trade: Taiwan, the U.S. and mainland China</h2>
+  <p class="lede-sm">Taiwan's exports, imports and trade surplus with its two biggest partners, 2004 to 2024. All values in billions of U.S. dollars.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>The U.S. passed mainland China (not counting Hong Kong) as Taiwan's top export market in 2024.</h3>
+    <p>Taiwan sold <b>$111B</b> to the U.S. and <b>$97B</b> to mainland China. Exports to the U.S. jumped <b>46%</b> in 2024.
+      The U.S. first came out ahead in December 2023, the first time since at least 2004.</p>
+    <div class="chart" id="chart-exports"></div>
+    <p class="note">Thin lines are monthly exports. Thick lines are the long-term trend, with seasonal ups and downs removed.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>Mainland China's share of Taiwan's exports fell from a peak of 29.7% in 2020 to 20.4% in 2024.</h3>
+    <p>In the same years, the U.S. share rose from <b>14.6%</b> to <b>23.4%</b>. Dollar sales to mainland China peaked in 2021 at <b>$126B</b>.</p>
+    <div class="chart" id="chart-share"></div>
+    <p class="note">Share of Taiwan's total exports, by year.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 3</span>
+    <h3>Taiwan's trade surplus with the U.S. grew tenfold, from $6B in 2004 to $65B in 2024.</h3>
+    <p>Its surplus with mainland China shrank from <b>$42B</b> in 2021 to <b>$16B</b> in 2024.
+      Imports from mainland China grew <b>4.2 times</b> over 20 years, faster than exports to mainland China (<b>2.6 times</b>).</p>
+    <div class="chart" id="chart-surplus"></div>
+    <p class="note">Trade surplus = exports minus imports, by year.</p>
+  </div>
+</section>
+
+<section id="products">
+  <h2><span class="num">3</span> Products: what Taiwan sells</h2>
+  <p class="lede-sm">Taiwan's exports by product group, 2004 to 2024. "Machinery and electrical equipment" includes computers, servers and chips. All values in billions of U.S. dollars.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>The U.S. passed mainland China as the top buyer of Taiwan's machinery and electrical equipment in 2024.</h3>
+    <p>Taiwan sold <b>$88B</b> of these products to the U.S. and <b>$73B</b> to mainland China. Sales to the U.S. rose <b>68%</b> in one year, from $52B in 2023.
+      The last time the U.S. was ahead was 2004.</p>
+    <div class="chart" id="chart-mach"></div>
+    <p class="note">Exports of machinery and electrical equipment, by year.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>Machinery and electrical equipment made up 79% of Taiwan's exports to the U.S. in 2024, up from 49.5% in 2018.</h3>
+    <p>This one product group explains the whole jump in exports to the U.S. in 2024. Sales of everything else fell slightly, from <b>$23.8B</b> to <b>$23.4B</b>.
+      Exports to mainland China show the same pattern: <b>75%</b> machinery in 2024, up from <b>41%</b> in 2004.</p>
+    <div class="chart" id="chart-mach-share"></div>
+    <p class="note">Machinery and electrical equipment as a share of exports to each market, by year.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 3</span>
+    <h3>Taiwan's sales of optical and precision instruments to mainland China fell 81%, from a peak of $17.7B in 2010 to $3.3B in 2024.</h3>
+    <p>This product group was <b>23%</b> of what Taiwan sold to mainland China in 2010. In 2024 it was about <b>3%</b>.</p>
+    <div class="chart" id="chart-optical"></div>
+    <p class="note">Exports of optical and precision instruments to mainland China, by year.</p>
+  </div>
+  <div class="finding">
+    <span class="tag">Finding 4</span>
+    <h3>Beyond machinery, Taiwan sells different things to each market: more metals and transportation equipment to the U.S., more chemicals and plastics to mainland China.</h3>
+    <p>After machinery and electrical equipment, Taiwan's biggest exports to the U.S. in 2024 were base metals (<b>$7.1B</b>), transportation equipment (<b>$3.7B</b>) and plastics and rubber (<b>$3.2B</b>).
+      To mainland China, they were chemicals (<b>$5.8B</b>), plastics and rubber (<b>$5.1B</b>) and base metals (<b>$4.5B</b>).</p>
+    <div class="chart-legend" id="legend-prod"></div>
+    <div id="bars-prod" class="bars"></div>
+    <p class="note">Exports by product group in 2024. Machinery and electrical equipment ($88.0B to the U.S., $72.8B to mainland China) is left out so the smaller groups can be seen.</p>
+  </div>
+  <div class="finding">
+    <span class="tag">Finding 5</span>
+    <h3>Taiwan buys mostly machinery from mainland China, but a wider mix from the U.S., including $8.7B of minerals and fuels.</h3>
+    <p>Machinery and electrical equipment made up <b>64%</b> of what Taiwan bought from mainland China in 2024 ($52.0B of $80.6B), up from <b>43%</b> in 2004.
+      From the U.S., machinery was <b>$13.5B</b> (29%) and minerals and fuels, a group that includes oil, gas and coal, were <b>$8.7B</b> (19%), up from $0.2B in 2004.</p>
+    <div class="chart-legend" id="legend-imp"></div>
+    <div id="bars-imp" class="bars"></div>
+    <p class="note">Imports by product group in 2024. Some imports, $11.5B from the U.S. and $10.5B from mainland China, are in groups outside these 10.</p>
+  </div>
+</section>
+
+<section id="orders">
+  <h2><span class="num">4</span> Export orders: who is buying</h2>
+  <p class="lede-sm">Export orders are orders that foreign buyers place with Taiwan companies, 2003 to 2024. Some of these products are made in factories outside Taiwan, so orders are bigger than exports.
+    In this chapter "China" includes Hong Kong. All values in billions of U.S. dollars.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>U.S. buyers placed $194B of orders with Taiwan companies in 2024, a third of the total.</h3>
+    <p>The U.S. has been the top source of orders every year since 2014. Mainland China and Hong Kong together placed <b>$127B</b> (21.5%).
+      From 2007 to 2013, they were ahead of the U.S.</p>
+    <div class="chart" id="chart-orders"></div>
+    <p class="note">Export orders by where the buyer is, by year.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>Orders from Southeast Asia grew 21 times, from $4.7B in 2003 to $98B in 2024, and passed Europe for the first time in 2024.</h3>
+    <p>In 2023, when total orders fell <b>16%</b>, orders from Southeast Asia rose <b>15%</b>. Southeast Asia's share of all orders went from <b>2.8%</b> to <b>16.7%</b>.</p>
+    <div class="chart" id="chart-asean"></div>
+    <p class="note">Export orders from Southeast Asia (ASEAN) and Europe, by year.</p>
+  </div>
+</section>
+
+<section id="investment">
+  <h2><span class="num">5</span> Investment: where Taiwan companies build</h2>
+  <p class="lede-sm">Overseas investment approved by Taiwan's government, 2003 to 2024. Approved amounts can differ from money actually spent.
+    Taiwan counts investment in mainland China separately from the rest of the world. All values in billions of U.S. dollars.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>In 2010, 84% of the overseas investment Taiwan approved went to mainland China. In 2024, it was 7.5%.</h3>
+    <p>Approved investment in all other countries grew from <b>$2.8B</b> in 2010 to <b>$44.9B</b> in 2024. It nearly doubled in 2024 alone, from $23.6B.</p>
+    <div class="chart" id="chart-inv"></div>
+    <p class="note">Approved overseas investment, by year.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>The U.S. was the top destination for Taiwan's overseas investment in 2023 and 2024, with $14.1B approved in 2024.</h3>
+    <p>That is up from <b>$0.5B</b> in 2021. In 2024, the U.S. received nearly four times as much approved investment as mainland China (<b>$3.7B</b>).</p>
+    <div class="chart" id="chart-inv-us"></div>
+    <p class="note">Approved investment in the U.S. and in mainland China, 2016 to 2024.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 3</span>
+    <h3>Approved investment in mainland China fell 75%, from a peak of $14.6B in 2010 to $3.7B in 2024.</h3>
+    <p>The number of approved projects fell from <b>3,875</b> in 2003 to <b>310</b> in 2024.</p>
+    <div class="chart" id="chart-inv-cn"></div>
+    <p class="note">Number of approved investment projects in mainland China, by year.</p>
+  </div>
+  <div class="finding">
+    <span class="tag">Finding 4</span>
+    <h3>In 2024, Taiwan approved about six times more investment going out ($48.6B) than coming in ($8.2B).</h3>
+    <p>Of the investment coming into Taiwan, <b>$7.9B</b> came from foreign investors and <b>$0.3B</b> from mainland China.</p>
+    <div class="chart" id="chart-inv-flow"></div>
+    <p class="note">Approved investment going out of Taiwan and coming in, by year. Investment from mainland China into Taiwan is counted from 2015, when the data starts.</p>
+  </div>
+  <div class="finding">
+    <span class="tag">Finding 5</span>
+    <h3>North America's share of Taiwan's approved investment outside mainland China rose from 4% in 2021 to 40% in 2024.</h3>
+    <p>North America received <b>$17.8B</b> in 2024, and Asia outside mainland China <b>$14.9B</b> (33%).
+      Most of Latin America's <b>$8.9B</b> went to tax havens such as the British Virgin Islands, so it does not show where factories are built.</p>
+    <div class="chart" id="chart-inv-reg"></div>
+    <p class="note">Approved investment outside mainland China by region, by year. Oceania and Africa are small and left out.</p>
+  </div>
+</section>
+
+<section id="industry">
+  <h2><span class="num">6</span> Industry: what Taiwan's factories make</h2>
+  <p class="lede-sm">How much each manufacturing industry produces, 2004 to 2024. This is a production index (2021 = 100): it measures the amount made, not its dollar value.</p>
+
+  <div class="finding">
+    <span class="tag">Finding 1</span>
+    <h3>In 2024, Taiwan made 48% more computers, electronic and optical products than in 2021, while total factory output was still 7.5% lower.</h3>
+    <p>Computers, electronic and optical products reached an index of <b>147.8</b> in 2024. All manufacturing together was at <b>92.5</b>. Electronic components, which include chips, were at <b>95.3</b>.</p>
+    <div class="chart" id="chart-ind"></div>
+    <p class="note">Production index (2021 = 100), yearly average.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 2</span>
+    <h3>Electronic components grew the most of any industry: production in 2024 was 4.7 times the 2004 level.</h3>
+    <p>All manufacturing together grew <b>1.7 times</b>. Clothing, textiles and leather made less in 2024 than in 2004.</p>
+    <div id="bars-ind" class="bars"></div>
+    <p class="note">Change in production from 2004 to 2024, by industry. Move your mouse over a bar to see the numbers.</p>
+  </div>
+
+  <div class="finding">
+    <span class="tag">Finding 3</span>
+    <h3>Taiwan's clothing industry made 71% less in 2024 than in 2004, and textiles 47% less.</h3>
+    <p>Leather products fell the most, by <b>81%</b>. These industries have been shrinking for 20 years, not only in recent years.</p>
+    <div class="chart" id="chart-ind-old"></div>
+    <p class="note">Production index (2021 = 100), yearly average.</p>
+  </div>
+</section>
+
+<section id="method">
+  <h2>How it works</h2>
+  <div class="cols">
+    <div>
+      <h3>The U.S. light</h3>
+      <p>Taiwan's National Development Council scores 9 indicators every month and adds them up.
+        This site uses 9 matching U.S. indicators from FRED (Federal Reserve Bank of St. Louis).</p>
+      <ol>
+        <li>Each indicator is the closest U.S. match to one of Taiwan's 9. For example, Taiwan uses overtime hours in industry and services, and the U.S. only publishes overtime hours for factories, so this site uses those.</li>
+        <li>Each indicator is measured as its change from the same month a year earlier. The factory survey is used as is.</li>
+        <li>Each indicator gets 1 to 5 points. Its bottom 10% of months from 1993 to 2019 score 1 point (blue) and its top 10% score 5 points (red).</li>
+        <li>The 9 points are added up (9 to 45) and turned into a light using Taiwan's official bands.</li>
+      </ol>
+      <p class="small">The color bands are Taiwan's. The cutoffs for each indicator are set by this project, because Taiwan does not publish its exact formula.
+        So this is <i>adapted from</i> Taiwan's method, not an official U.S. light. Unlike private recession dashboards, it uses a public government method and free public data.</p>
+    </div>
+    <div>
+      <h3>The data</h3>
+      <ul>
+        <li><b>Taiwan light:</b> the official monthly light from Taiwan's National Development Council (open data), updated automatically every week.</li>
+        <li><b>U.S. light:</b> FRED, updated automatically every week.</li>
+        <li><b>Trade and products:</b> Taiwan Ministry of Economic Affairs, January 2004 to December 2024. "China" means mainland China only. Hong Kong is not included.</li>
+        <li><b>Industry:</b> Taiwan Ministry of Economic Affairs industrial production index by industry, 2004 to 2024.</li>
+        <li><b>Export orders and investment:</b> Taiwan Ministry of Economic Affairs, 2003 to 2024. For export orders, "China" includes Hong Kong.</li>
+      </ul>
+      <p class="small">All code and data are on <a href="https://github.com/ppc1004/Taiwan-U.S.-Economic-Indicators">GitHub</a>.</p>
+      <p class="small" id="updated"></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <p>Built by Pay-Chern Liu · <a href="https://github.com/ppc1004">GitHub</a> · <a href="https://www.linkedin.com/in/pay-chern-liu-8033b033a">LinkedIn</a></p>
+</footer>
+
+<div class="tip" id="tip" role="tooltip"></div>
+<script src="app.js?v=11"></script>
+</body>
+</html>
