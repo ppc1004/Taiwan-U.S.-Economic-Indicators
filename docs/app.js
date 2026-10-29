@@ -172,11 +172,13 @@ function countUp(el, to, dec = 0, prefix = "", suffix = "") {
 Promise.all(["data/taiwan_light.json", "data/us_light.json", "data/taiwan_trade.json", "data/taiwan_investment.json"].map(getJSON)).then(([tw, us, trade, inv]) => {
   const box = document.getElementById("kpis"); if (!box) return;
   const items = [];
-  if (tw) items.push({ label: "Taiwan light", v: tw.latest.score, sub: `${LIGHT[tw.latest.light].label} · ${fmtMonth(tw.latest.date)} · out of 45`, c: LIGHT[tw.latest.light].c });
-  if (us) items.push({ label: "U.S. light", v: us.latest.score, sub: `${LIGHT[us.latest.light].label} · ${fmtMonth(us.latest.date)} · out of 45`, c: LIGHT[us.latest.light].c });
-  if (trade) { const a = trade.annual.at(-1); items.push({ label: "U.S. share of exports", v: a.us_share, dec: 1, suf: "%", sub: `Taiwan, ${a.year}, up from ${trade.annual.find((x) => x.year === 2020)?.us_share ?? "–"}% in 2020` }); }
-  if (inv) { const i = inv.years.length - 1; items.push({ label: "Investment in the U.S.", v: inv.us[i], dec: 1, pre: "$", suf: "B", sub: `Approved, ${inv.years[i]}, up from $${inv.us[inv.years.indexOf(2021)]?.toFixed(1)}B in 2021` }); }
-  box.innerHTML = items.map((it, k) => `<div class="kpi"><div class="k-label">${it.label}</div><div class="k-value">${it.c ? `<i style="color:${css(it.c)}"></i>` : ""}<span data-k="${k}">0</span></div><div class="k-sub">${it.sub}</div></div>`).join("");
+  const plain = { red: "Hot", "yellow-red": "Warming up", green: "Stable", "yellow-blue": "Cooling down", blue: "Weak" };
+  const lightSub = (d) => `${plain[d.latest.light]} (${LIGHT[d.latest.light].label.toLowerCase()}) · ${fmtMonth(d.latest.date)}`;
+  if (tw) items.push({ label: "Taiwan today", v: tw.latest.score, of: "/ 45", sub: lightSub(tw), c: LIGHT[tw.latest.light].c });
+  if (us) items.push({ label: "U.S. today (my version)", v: us.latest.score, of: "/ 45", sub: lightSub(us), c: LIGHT[us.latest.light].c });
+  if (trade) { const a = trade.annual.at(-1); items.push({ label: "Taiwan's exports going to the U.S.", v: a.us_share, dec: 1, suf: "%", sub: `${a.year} · up from ${trade.annual.find((x) => x.year === 2020)?.us_share ?? "–"}% in 2020` }); }
+  if (inv) { const i = inv.years.length - 1; items.push({ label: "Taiwan's investment in the U.S.", v: inv.us[i], dec: 1, pre: "$", suf: "B", sub: `Approved in ${inv.years[i]} · up from $${inv.us[inv.years.indexOf(2021)]?.toFixed(1)}B in 2021` }); }
+  box.innerHTML = items.map((it, k) => `<div class="kpi"><div class="k-label">${it.label}</div><div class="k-value">${it.c ? `<i style="color:${css(it.c)}"></i>` : ""}<span data-k="${k}">0</span>${it.of ? `<small class="k-of">${it.of}</small>` : ""}</div><div class="k-sub">${it.sub}</div></div>`).join("");
   items.forEach((it, k) => countUp(box.querySelector(`[data-k="${k}"]`), it.v, it.dec || 0, it.pre || "", it.suf || ""));
   if (tw && us) document.getElementById("live-pill").textContent = `Live data · Taiwan through ${fmtMonth(tw.latest.date)} · U.S. through ${fmtMonth(us.latest.date)}`;
 });

@@ -182,3 +182,4 @@ td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowra
 .insight-tag { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .insight p { margin: 6px 0 0; font-size: 17px; line-height: 1.65; color: var(--ink); }
 @media (max-width: 560px) { .story { font-size: 16px; } .insight p { font-size: 16px; } .insight { padding: 18px 18px 16px 20px; } }
+.kpi .k-of { font-size: 18px; font-weight: 600; color: var(--muted); margin-left: -4px; }
