@@ -235,11 +235,11 @@ function renderTrade(d) {
     xTick: (i, small) => { const y = +M[i].date.slice(0, 4); return M[i].date.endsWith("-01") && y % (small ? 8 : 4) === 0 ? y : null; },
     series: [
       { name: "U.S. monthly", color: US, values: M.map((m) => m.us_exp), width: 1, opacity: 0.35, hover: false },
-      { name: "Mainland China monthly", color: CN, values: M.map((m) => m.cn_exp), width: 1, opacity: 0.35, hover: false },
+      { name: "China monthly", color: CN, values: M.map((m) => m.cn_exp), width: 1, opacity: 0.35, hover: false },
       { name: "U.S.", color: US, values: d.trend.us_exp, width: 2.5, short: "U.S.", label: true },
-      { name: "Mainland China", short: "China", color: CN, values: d.trend.cn_exp, width: 2.5, label: true },
+      { name: "China", short: "China", color: CN, values: d.trend.cn_exp, width: 2.5, label: true },
     ],
-    tip: (i) => `<b>${fmtMonth(M[i].date)}</b>Exports to:${tipRow(US, "U.S.", B(M[i].us_exp))}${tipRow(CN, "Mainland China", B(M[i].cn_exp))}`,
+    tip: (i) => `<b>${fmtMonth(M[i].date)}</b>Exports to:${tipRow(US, "U.S.", B(M[i].us_exp))}${tipRow(CN, "China", B(M[i].cn_exp))}`,
   });
 
   const yearTick = (i, small) => (A[i].year % (small ? 5 : 2) === 0 ? A[i].year : null);
@@ -247,18 +247,18 @@ function renderTrade(d) {
     n: A.length, yMin: 0, yMax: 35, yTicks: [0, 10, 20, 30], yFmt: (t) => t + "%", xTick: yearTick,
     series: [
       { name: "U.S.", color: US, values: A.map((a) => a.us_share), markers: true, label: true },
-      { name: "Mainland China", color: CN, values: A.map((a) => a.cn_share), markers: true, label: true, short: "China" },
+      { name: "China", color: CN, values: A.map((a) => a.cn_share), markers: true, label: true, short: "China" },
     ],
-    tip: (i) => `<b>${A[i].year}</b>Share of Taiwan's exports:${tipRow(US, "U.S.", A[i].us_share.toFixed(1) + "%")}${tipRow(CN, "Mainland China", A[i].cn_share.toFixed(1) + "%")}`,
+    tip: (i) => `<b>${A[i].year}</b>Share of Taiwan's exports:${tipRow(US, "U.S.", A[i].us_share.toFixed(1) + "%")}${tipRow(CN, "China", A[i].cn_share.toFixed(1) + "%")}`,
   });
 
   lineChart(document.getElementById("chart-surplus"), {
     n: A.length, yMin: 0, yMax: 70, yTicks: [0, 20, 40, 60], yFmt: (t) => "$" + t + "B", xTick: yearTick,
     series: [
       { name: "With the U.S.", color: US, values: A.map((a) => a.us_surplus), markers: true, label: true, short: "U.S." },
-      { name: "With mainland China", color: CN, values: A.map((a) => a.cn_surplus), markers: true, label: true, short: "China" },
+      { name: "With China", color: CN, values: A.map((a) => a.cn_surplus), markers: true, label: true, short: "China" },
     ],
-    tip: (i) => `<b>${A[i].year}</b>Trade surplus:${tipRow(US, "With the U.S.", B(A[i].us_surplus))}${tipRow(CN, "With mainland China", B(A[i].cn_surplus))}`,
+    tip: (i) => `<b>${A[i].year}</b>Trade surplus:${tipRow(US, "With the U.S.", B(A[i].us_surplus))}${tipRow(CN, "With China", B(A[i].cn_surplus))}`,
   });
 }
 
@@ -375,9 +375,9 @@ function renderProducts(d) {
     n: Y.length, yMin: 0, yMax: 100, yTicks: [0, 25, 50, 75, 100], yFmt: (t) => "$" + t + "B", xTick: yearTick,
     series: [
       { name: "To the U.S.", short: "U.S.", color: US, values: ue[M], markers: true, label: true },
-      { name: "To mainland China", short: "China", color: CN, values: ce[M], markers: true, label: true },
+      { name: "To China", short: "China", color: CN, values: ce[M], markers: true, label: true },
     ],
-    tip: (i) => `<b>${Y[i]}</b>Machinery exports:${tipRow(US, "To the U.S.", B(ue[M][i]))}${tipRow(CN, "To mainland China", B(ce[M][i]))}`,
+    tip: (i) => `<b>${Y[i]}</b>Machinery exports:${tipRow(US, "To the U.S.", B(ue[M][i]))}${tipRow(CN, "To China", B(ce[M][i]))}`,
   });
 
   const shU = ue[M].map((v, i) => (v / ue.total[i]) * 100), shC = ce[M].map((v, i) => (v / ce.total[i]) * 100);
@@ -385,15 +385,15 @@ function renderProducts(d) {
     n: Y.length, yMin: 0, yMax: 100, yTicks: [0, 25, 50, 75, 100], yFmt: (t) => t + "%", xTick: yearTick,
     series: [
       { name: "Exports to the U.S.", short: "U.S.", color: US, values: shU, markers: true, label: true },
-      { name: "Exports to mainland China", short: "China", color: CN, values: shC, markers: true, label: true },
+      { name: "Exports to China", short: "China", color: CN, values: shC, markers: true, label: true },
     ],
-    tip: (i) => `<b>${Y[i]}</b>Machinery share of exports:${tipRow(US, "To the U.S.", shU[i].toFixed(0) + "%")}${tipRow(CN, "To mainland China", shC[i].toFixed(0) + "%")}`,
+    tip: (i) => `<b>${Y[i]}</b>Machinery share of exports:${tipRow(US, "To the U.S.", shU[i].toFixed(0) + "%")}${tipRow(CN, "To China", shC[i].toFixed(0) + "%")}`,
   });
 
   lineChart(document.getElementById("chart-optical"), {
     n: Y.length, yMin: 0, yMax: 20, yTicks: [0, 5, 10, 15, 20], yFmt: (t) => "$" + t + "B", xTick: yearTick,
-    series: [{ name: "To mainland China", color: CN, values: ce[O], markers: true }],
-    tip: (i) => `<b>${Y[i]}</b>Optical and precision instruments:${tipRow(CN, "To mainland China", B(ce[O][i]))}`,
+    series: [{ name: "To China", color: CN, values: ce[O], markers: true }],
+    tip: (i) => `<b>${Y[i]}</b>Optical and precision instruments:${tipRow(CN, "To China", B(ce[O][i]))}`,
   });
 }
 load("data/taiwan_products.json", renderProducts);
@@ -431,23 +431,23 @@ function renderInvestment(d) {
     n: Y.length, yMin: 0, yMax: 50, yTicks: [0, 10, 20, 30, 40, 50], yFmt: (t) => "$" + t + "B", xTick: yearTick,
     series: [
       { name: "All other countries", short: "Others", color: OT, values: d.other_countries, markers: true, label: true },
-      { name: "Mainland China", short: "China", color: CN, values: d.china, markers: true, label: true },
+      { name: "China", short: "China", color: CN, values: d.china, markers: true, label: true },
     ],
-    tip: (i) => `<b>${Y[i]}</b>Approved investment:${tipRow(OT, "All other countries", B(d.other_countries[i]))}${tipRow(CN, "Mainland China", B(d.china[i]))}<div class="row"><span>China's share</span><span>${d.china_share[i]}%</span></div>`,
+    tip: (i) => `<b>${Y[i]}</b>Approved investment:${tipRow(OT, "All other countries", B(d.other_countries[i]))}${tipRow(CN, "China", B(d.china[i]))}<div class="row"><span>China's share</span><span>${d.china_share[i]}%</span></div>`,
   });
   const k0 = Y.indexOf(2016), Ys = Y.slice(k0), us = d.us.slice(k0), cn = d.china.slice(k0);
   lineChart(document.getElementById("chart-inv-us"), {
     n: Ys.length, yMin: 0, yMax: 15, yTicks: [0, 5, 10, 15], yFmt: (t) => "$" + t + "B", xTick: (i) => Ys[i],
     series: [
       { name: "U.S.", color: US, values: us, markers: true, label: true },
-      { name: "Mainland China", short: "China", color: CN, values: cn, markers: true, label: true },
+      { name: "China", short: "China", color: CN, values: cn, markers: true, label: true },
     ],
-    tip: (i) => `<b>${Ys[i]}</b>Approved investment:${tipRow(US, "U.S.", B(us[i]))}${tipRow(CN, "Mainland China", B(cn[i]))}`,
+    tip: (i) => `<b>${Ys[i]}</b>Approved investment:${tipRow(US, "U.S.", B(us[i]))}${tipRow(CN, "China", B(cn[i]))}`,
   });
   lineChart(document.getElementById("chart-inv-cn"), {
     n: Y.length, yMin: 0, yMax: 4000, yTicks: [0, 1000, 2000, 3000, 4000], yFmt: (t) => t.toLocaleString(), xTick: yearTick,
-    series: [{ name: "Projects in mainland China", color: CN, values: d.china_projects, markers: true }],
-    tip: (i) => `<b>${Y[i]}</b>Mainland China:${tipRow(CN, "Approved projects", d.china_projects[i].toLocaleString())}${tipRow(CN, "Approved amount", B(d.china[i]))}`,
+    series: [{ name: "Projects in China", color: CN, values: d.china_projects, markers: true }],
+    tip: (i) => `<b>${Y[i]}</b>China:${tipRow(CN, "Approved projects", d.china_projects[i].toLocaleString())}${tipRow(CN, "Approved amount", B(d.china[i]))}`,
   });
 }
 load("data/taiwan_orders.json", renderOrders);
@@ -512,7 +512,7 @@ function renderProductBars(d) {
     .sort((a, b) => b.us + b.cn - (a.us + a.cn)).slice(0, 10);
   const max = Math.max(...cats.flatMap((r) => [r.us, r.cn]));
   const r1 = (v) => (Math.round(v * 10) / 10).toFixed(1);
-  document.getElementById("legend-prod").innerHTML = `<span><i style="background:${US}"></i>To the U.S.</span><span><i style="background:${CN}"></i>To mainland China</span>`;
+  document.getElementById("legend-prod").innerHTML = `<span><i style="background:${US}"></i>To the U.S.</span><span><i style="background:${CN}"></i>To China</span>`;
   const box = document.getElementById("bars-prod");
   box.innerHTML = cats.map((r) => `<div class="bar-row pair" data-c="${r.c}" data-u="${r.us}" data-n="${r.cn}">
       <span class="bar-name">${r.c}</span>
@@ -520,7 +520,7 @@ function renderProductBars(d) {
       <span class="bar-track"><i class="bar" style="left:0;width:${(r.cn / max) * 100}%;background:${CN}"></i></span></span>
       <span class="bar-val">$${r1(r.us)}B<br>$${r1(r.cn)}B</span></div>`).join("");
   box.querySelectorAll(".bar-row").forEach((el) => {
-    const show = (ev) => showTip(`<b>${el.dataset.c}, ${year}</b>${tipRow(US, "To the U.S.", "$" + (+el.dataset.u).toFixed(2) + "B")}${tipRow(CN, "To mainland China", "$" + (+el.dataset.n).toFixed(2) + "B")}`, ev);
+    const show = (ev) => showTip(`<b>${el.dataset.c}, ${year}</b>${tipRow(US, "To the U.S.", "$" + (+el.dataset.u).toFixed(2) + "B")}${tipRow(CN, "To China", "$" + (+el.dataset.n).toFixed(2) + "B")}`, ev);
     el.addEventListener("pointermove", show);
     el.addEventListener("pointerleave", hideTip);
   });
@@ -541,7 +541,7 @@ function renderInvFlow(d) {
       { name: "Going out of Taiwan", short: "Out", color: OUTc, values: out, markers: true, label: true },
       { name: "Coming into Taiwan", short: "In", color: INc, values: inn, markers: true, label: true },
     ],
-    tip: (i) => `<b>${Y[i]}</b>${tipRow(OUTc, "Going out", B(out[i]))}<div class="row"><span>&nbsp;&nbsp;to mainland China</span><span>${B(d.china[i])}</span></div>${tipRow(INc, "Coming in", B(inn[i]))}<div class="row"><span>&nbsp;&nbsp;from mainland China</span><span>${B(d.china_into_taiwan?.[i])}</span></div>`,
+    tip: (i) => `<b>${Y[i]}</b>${tipRow(OUTc, "Going out", B(out[i]))}<div class="row"><span>&nbsp;&nbsp;to China</span><span>${B(d.china[i])}</span></div>${tipRow(INc, "Coming in", B(inn[i]))}<div class="row"><span>&nbsp;&nbsp;from China</span><span>${B(d.china_into_taiwan?.[i])}</span></div>`,
   });
 }
 load("data/taiwan_investment.json", renderInvFlow);
@@ -554,7 +554,7 @@ function renderImportBars(d) {
     .map((c) => ({ c, us: ui[c][k], cn: ci[c][k] })).sort((a, b) => b.us + b.cn - (a.us + a.cn));
   const max = Math.max(...cats.flatMap((r) => [r.us, r.cn]));
   const r1 = (v) => (Math.round(v * 10) / 10).toFixed(1);
-  document.getElementById("legend-imp").innerHTML = `<span><i style="background:${US}"></i>From the U.S.</span><span><i style="background:${CN}"></i>From mainland China</span>`;
+  document.getElementById("legend-imp").innerHTML = `<span><i style="background:${US}"></i>From the U.S.</span><span><i style="background:${CN}"></i>From China</span>`;
   const box = document.getElementById("bars-imp");
   box.innerHTML = cats.map((r) => `<div class="bar-row pair" data-c="${r.c}" data-u="${r.us}" data-n="${r.cn}">
       <span class="bar-name">${r.c}</span>
@@ -562,7 +562,7 @@ function renderImportBars(d) {
       <span class="bar-track"><i class="bar" style="left:0;width:${(r.cn / max) * 100}%;background:${CN}"></i></span></span>
       <span class="bar-val">$${r1(r.us)}B<br>$${r1(r.cn)}B</span></div>`).join("");
   box.querySelectorAll(".bar-row").forEach((el) => {
-    const show = (ev) => showTip(`<b>${el.dataset.c}, ${year}</b>${tipRow(US, "From the U.S.", "$" + (+el.dataset.u).toFixed(2) + "B")}${tipRow(CN, "From mainland China", "$" + (+el.dataset.n).toFixed(2) + "B")}`, ev);
+    const show = (ev) => showTip(`<b>${el.dataset.c}, ${year}</b>${tipRow(US, "From the U.S.", "$" + (+el.dataset.u).toFixed(2) + "B")}${tipRow(CN, "From China", "$" + (+el.dataset.n).toFixed(2) + "B")}`, ev);
     el.addEventListener("pointermove", show);
     el.addEventListener("pointerleave", hideTip);
   });
@@ -575,7 +575,7 @@ function renderInvRegions(d) {
   const Y = d.years, B = (v) => (v == null ? "n/a" : "$" + v.toFixed(1) + "B");
   const S = [
     { k: "North America", short: "N. America", color: css("--us") },
-    { k: "Asia", name: "Asia (outside mainland China)", color: css("--c3") },
+    { k: "Asia", name: "Asia (outside China)", color: css("--c3") },
     { k: "Latin America", short: "Latin Am.", color: css("--c5") },
     { k: "Europe", color: css("--c4") },
   ].filter((s) => R[s.k]);
@@ -586,7 +586,7 @@ function renderInvRegions(d) {
     tip: (i) => {
       const P = d.region_projects || {};
       const val = (k) => B(R[k][i]) + (P[k]?.[i] != null ? ` · ${P[k][i]} projects` : "");
-      return `<b>${Y[i]}</b>Approved investment:${S.map((s) => tipRow(s.color, s.name || s.k, val(s.k))).join("")}<div class="row"><span>All outside mainland China</span><span>${B(d.other_countries[i])}</span></div>`;
+      return `<b>${Y[i]}</b>Approved investment:${S.map((s) => tipRow(s.color, s.name || s.k, val(s.k))).join("")}<div class="row"><span>All outside China</span><span>${B(d.other_countries[i])}</span></div>`;
     },
   });
 }
