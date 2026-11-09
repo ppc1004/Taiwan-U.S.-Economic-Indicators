@@ -1,45 +1,45 @@
 {
- "updated": "2026-10-29",
+ "updated": "2026-11-09",
  "latest": {
-  "date": "2026-08",
+  "date": "2026-09",
   "score": 32,
   "light": "yellow-red",
   "recession": false,
   "indicators": {
    "money": {
-    "value": 5.6,
+    "value": 5.71,
     "points": 3
    },
    "stocks": {
-    "value": 23.41,
-    "points": 4
+    "value": 19.62,
+    "points": 3
    },
    "industry": {
-    "value": 1.62,
+    "value": 2.25,
     "points": 3
    },
    "hours": {
-    "value": 10.81,
+    "value": 5.26,
     "points": 4
    },
    "exports": {
-    "value": 10.69,
+    "value": 9.97,
     "points": 3
    },
    "equipment": {
-    "value": 14.1,
+    "value": 13.65,
     "points": 5
    },
    "factory": {
-    "value": -1.47,
+    "value": -2.27,
     "points": 2
    },
    "retail": {
-    "value": 5.56,
-    "points": 3
+    "value": 6.29,
+    "points": 4
    },
    "survey": {
-    "value": 47.4,
+    "value": 37.8,
     "points": 5
    }
   }
@@ -17898,7 +17898,7 @@
   },
   {
    "date": "2026-08",
-   "score": 32,
+   "score": 33,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -17919,15 +17919,15 @@
      "points": 4
     },
     "exports": {
-     "value": 10.69,
-     "points": 3
+     "value": 10.86,
+     "points": 4
     },
     "equipment": {
-     "value": 14.1,
+     "value": 14.07,
      "points": 5
     },
     "factory": {
-     "value": -1.47,
+     "value": -1.32,
      "points": 2
     },
     "retail": {
@@ -17936,6 +17936,50 @@
     },
     "survey": {
      "value": 47.4,
+     "points": 5
+    }
+   }
+  },
+  {
+   "date": "2026-09",
+   "score": 32,
+   "light": "yellow-red",
+   "recession": false,
+   "indicators": {
+    "money": {
+     "value": 5.71,
+     "points": 3
+    },
+    "stocks": {
+     "value": 19.62,
+     "points": 3
+    },
+    "industry": {
+     "value": 2.25,
+     "points": 3
+    },
+    "hours": {
+     "value": 5.26,
+     "points": 4
+    },
+    "exports": {
+     "value": 9.97,
+     "points": 3
+    },
+    "equipment": {
+     "value": 13.65,
+     "points": 5
+    },
+    "factory": {
+     "value": -2.27,
+     "points": 2
+    },
+    "retail": {
+     "value": 6.29,
+     "points": 4
+    },
+    "survey": {
+     "value": 37.8,
      "points": 5
     }
    }
