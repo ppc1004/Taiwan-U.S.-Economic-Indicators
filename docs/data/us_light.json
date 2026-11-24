@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16",
+ "updated": "2026-11-24",
  "latest": {
   "date": "2026-09",
   "score": 32,
@@ -15,7 +15,7 @@
     "points": 3
    },
    "industry": {
-    "value": 2.25,
+    "value": 2.14,
     "points": 3
    },
    "hours": {
@@ -35,7 +35,7 @@
     "points": 2
    },
    "retail": {
-    "value": 6.29,
+    "value": 6.57,
     "points": 4
    },
    "survey": {
@@ -17447,7 +17447,7 @@
      "points": 2
     },
     "retail": {
-     "value": 3.69,
+     "value": 3.64,
      "points": 3
     },
     "survey": {
@@ -17491,7 +17491,7 @@
      "points": 3
     },
     "retail": {
-     "value": 2.78,
+     "value": 2.73,
      "points": 2
     },
     "survey": {
@@ -17779,7 +17779,7 @@
      "points": 5
     },
     "industry": {
-     "value": 1.74,
+     "value": 1.71,
      "points": 3
     },
     "hours": {
@@ -17823,7 +17823,7 @@
      "points": 4
     },
     "industry": {
-     "value": 1.46,
+     "value": 1.47,
      "points": 2
     },
     "hours": {
@@ -17867,7 +17867,7 @@
      "points": 3
     },
     "industry": {
-     "value": 1.28,
+     "value": 1.25,
      "points": 2
     },
     "hours": {
@@ -17898,7 +17898,7 @@
   },
   {
    "date": "2026-08",
-   "score": 33,
+   "score": 32,
    "light": "yellow-red",
    "recession": false,
    "indicators": {
@@ -17911,8 +17911,8 @@
      "points": 4
     },
     "industry": {
-     "value": 1.62,
-     "points": 3
+     "value": 1.45,
+     "points": 2
     },
     "hours": {
      "value": 10.81,
@@ -17931,7 +17931,7 @@
      "points": 2
     },
     "retail": {
-     "value": 5.56,
+     "value": 5.72,
      "points": 3
     },
     "survey": {
@@ -17955,7 +17955,7 @@
      "points": 3
     },
     "industry": {
-     "value": 2.25,
+     "value": 2.14,
      "points": 3
     },
     "hours": {
@@ -17975,7 +17975,7 @@
      "points": 2
     },
     "retail": {
-     "value": 6.29,
+     "value": 6.57,
      "points": 4
     },
     "survey": {
